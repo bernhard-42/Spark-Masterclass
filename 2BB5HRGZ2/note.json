@@ -1,0 +1,1589 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n# (LAB 1) Preparation\n\n**Note:** Run this before any spark command in the notebook. Restart interpreter if necessary!\n",
+      "dateUpdated": "Feb 17, 2016 6:04:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455728526585_2142553540",
+      "id": "20160217-180206_320918471",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003e(LAB 1) Preparation\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Run this before any spark command in the notebook. Restart interpreter if necessary!\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:02:06 PM",
+      "dateStarted": "Feb 17, 2016 6:04:15 PM",
+      "dateFinished": "Feb 17, 2016 6:04:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\n",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677993_-632325202",
+      "id": "20160217-160757_1663731196",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@3dcf192\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \"yarn-client\"",
+      "dateUpdated": "Feb 17, 2016 7:20:13 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733189515_1381750602",
+      "id": "20160217-191949_732404084",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \u0026ldquo;yarn-client\u0026rdquo;\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:19:49 PM",
+      "dateStarted": "Feb 17, 2016 7:20:12 PM",
+      "dateFinished": "Feb 17, 2016 7:20:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nprint(sc.version)",
+      "dateUpdated": "Feb 17, 2016 7:20:30 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733196253_1519121284",
+      "id": "20160217-191956_841399617",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "1.5.2\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:19:56 PM",
+      "dateStarted": "Feb 17, 2016 7:20:30 PM",
+      "dateFinished": "Feb 17, 2016 7:20:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n# (LAB 2) Working with RDDs",
+      "dateUpdated": "Feb 17, 2016 6:04:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455728596566_-1362616209",
+      "id": "20160217-180316_454559233",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003e(LAB 2) Working with RDDs\u003c/h1\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:03:16 PM",
+      "dateStarted": "Feb 17, 2016 6:04:37 PM",
+      "dateFinished": "Feb 17, 2016 6:04:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndef pprint(array):\n    for a in array:\n        print a",
+      "dateUpdated": "Feb 17, 2016 6:43:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455730928852_1180141655",
+      "id": "20160217-184208_572421563",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 6:42:08 PM",
+      "dateStarted": "Feb 17, 2016 6:43:27 PM",
+      "dateFinished": "Feb 17, 2016 6:43:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## 2.1 Create a simple RDD and sum up rows ",
+      "dateUpdated": "Feb 17, 2016 6:33:23 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455730365406_-1911741022",
+      "id": "20160217-183245_1834168142",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e2.1 Create a simple RDD and sum up rows\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:32:45 PM",
+      "dateStarted": "Feb 17, 2016 6:33:18 PM",
+      "dateFinished": "Feb 17, 2016 6:33:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd.collect())",
+      "dateUpdated": "Feb 17, 2016 6:42:45 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455728685323_1785116355",
+      "id": "20160217-180445_1950689137",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[35, 96, 77, 79]\n[11, 10, 89, 16]\n[89, 90, 51, 15]\n[25, 77, 34, 76]\n[53, 39, 97, 10]\n[93, 34, 80, 24]\n[20, 26, 44, 36]\n[10, 10, 69, 36]\n[37, 63, 57, 38]\n[21, 41, 31, 93]\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:04:45 PM",
+      "dateStarted": "Feb 17, 2016 6:42:45 PM",
+      "dateFinished": "Feb 17, 2016 6:42:46 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nm \u003d rdd.map(lambda x: sum(x))\nprint(m.collect())\n\ns \u003d m.reduce(lambda x,y: x + y)\nprint \"total \u003d \", s\n",
+      "dateUpdated": "Feb 17, 2016 6:43:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455729974344_1711270805",
+      "id": "20160217-182614_514005626",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[287, 126, 245, 212, 199, 231, 126, 125, 195, 186]\ntotal \u003d  1932\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:26:14 PM",
+      "dateStarted": "Feb 17, 2016 6:43:38 PM",
+      "dateFinished": "Feb 17, 2016 6:43:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## 2.2 Load the famous Iris data from HDFS and so some basic calculations\n\nAttribute Information:\n    [0] sepal length in cm\n    [1] sepal width in cm\n    [2] petal length in cm\n    [3] petal width in cm\n    [4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n",
+      "dateUpdated": "Feb 17, 2016 7:17:00 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455730414140_-594083308",
+      "id": "20160217-183334_447701235",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e2.2 Load the famous Iris data from HDFS and so some basic calculations\u003c/h2\u003e\n\u003cp\u003eAttribute Information:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[0] sepal length in cm\n[1] sepal width in cm\n[2] petal length in cm\n[3] petal width in cm\n[4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n\u003c/code\u003e\u003c/pre\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:33:34 PM",
+      "dateStarted": "Feb 17, 2016 7:16:57 PM",
+      "dateFinished": "Feb 17, 2016 7:16:57 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndef split(row):\n    parts \u003d row.split(\",\")\n    return [float(v) for v in parts[:4]] + [parts[4]]\n    \nfile \u003d sc.textFile(\"/tmp/iris.data\")\n\n# remove empty lines and split each line\niris \u003d file.filter(lambda row: len(row)\u003e0)\\\n           .map(split)\n\nprint iris.count()\nprint \npprint(iris.sample(False, fraction\u003d0.1, seed\u003d42).collect())",
+      "dateUpdated": "Feb 17, 2016 8:08:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455730410574_1910262607",
+      "id": "20160217-183330_850886049",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "150\n\n[4.7, 3.2, 1.3, 0.2, u\u0027Iris-setosa\u0027]\n[4.9, 3.1, 1.5, 0.1, u\u0027Iris-setosa\u0027]\n[5.4, 3.9, 1.3, 0.4, u\u0027Iris-setosa\u0027]\n[5.1, 3.5, 1.4, 0.3, u\u0027Iris-setosa\u0027]\n[5.4, 3.4, 1.5, 0.4, u\u0027Iris-setosa\u0027]\n[4.9, 3.1, 1.5, 0.1, u\u0027Iris-setosa\u0027]\n[4.9, 2.4, 3.3, 1.0, u\u0027Iris-versicolor\u0027]\n[6.3, 2.3, 4.4, 1.3, u\u0027Iris-versicolor\u0027]\n[5.7, 3.0, 4.2, 1.2, u\u0027Iris-versicolor\u0027]\n[5.7, 2.9, 4.2, 1.3, u\u0027Iris-versicolor\u0027]\n[7.3, 2.9, 6.3, 1.8, u\u0027Iris-virginica\u0027]\n[7.7, 3.8, 6.7, 2.2, u\u0027Iris-virginica\u0027]\n[7.2, 3.0, 5.8, 1.6, u\u0027Iris-virginica\u0027]\n[6.4, 2.8, 5.6, 2.2, u\u0027Iris-virginica\u0027]\n[6.1, 2.6, 5.6, 1.4, u\u0027Iris-virginica\u0027]\n[6.9, 3.1, 5.1, 2.3, u\u0027Iris-virginica\u0027]\n[5.8, 2.7, 5.1, 1.9, u\u0027Iris-virginica\u0027]\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:33:30 PM",
+      "dateStarted": "Feb 17, 2016 8:08:31 PM",
+      "dateFinished": "Feb 17, 2016 8:08:32 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nCalculate average sepal length per class",
+      "dateUpdated": "Feb 17, 2016 7:12:36 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455732727584_1239523204",
+      "id": "20160217-191207_1811926142",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eCalculate average sepal length per class\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:12:07 PM",
+      "dateStarted": "Feb 17, 2016 7:12:33 PM",
+      "dateFinished": "Feb 17, 2016 7:12:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ntuples \u003d iris.map(lambda row: [row[4], row[0]]) \n\nresult \u003d tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\npprint(result.collect())",
+      "dateUpdated": "Feb 17, 2016 7:26:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455731053446_174159554",
+      "id": "20160217-184413_920390523",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(u\u0027Iris-virginica\u0027, 6.587999999999998)\n(u\u0027Iris-setosa\u0027, 5.005999999999999)\n(u\u0027Iris-versicolor\u0027, 5.936)\n"
+      },
+      "dateCreated": "Feb 17, 2016 6:44:13 PM",
+      "dateStarted": "Feb 17, 2016 7:26:28 PM",
+      "dateFinished": "Feb 17, 2016 7:26:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n# (LAB 3) Working with DataFrames converted from RDDs",
+      "dateUpdated": "Feb 17, 2016 7:24:12 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733095161_-1189880398",
+      "id": "20160217-191815_2111213829",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003e(LAB 3) Working with DataFrames converted from RDDs\u003c/h1\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:18:15 PM",
+      "dateStarted": "Feb 17, 2016 7:24:10 PM",
+      "dateFinished": "Feb 17, 2016 7:24:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## 3.1 Transform Iris RDD to DataFrame",
+      "dateUpdated": "Feb 17, 2016 7:27:13 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733606592_736892833",
+      "id": "20160217-192646_1655733180",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e3.1 Transform Iris RDD to DataFrame\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:26:46 PM",
+      "dateStarted": "Feb 17, 2016 7:27:08 PM",
+      "dateFinished": "Feb 17, 2016 7:27:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"sepalLength\", DoubleType(),  True), \\\n   StructField(\"sepalWidth\",  DoubleType(),  True), \\\n   StructField(\"PetalLength\", DoubleType(),  True), \\\n   StructField(\"PetalWidth\",  DoubleType(),  True), \\\n   StructField(\"Class\",       StringType(),  True)\n])\n\nirisDf \u003d sqlContext.createDataFrame(iris, schema\u003dschema)\n\nsqlContext.registerDataFrameAsTable(irisDf, \"Iris\")\n\nirisDf.show()",
+      "dateUpdated": "Feb 17, 2016 7:45:53 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733137494_-827370313",
+      "id": "20160217-191857_674202811",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-----------+----------+-----------+----------+-----------+\n|sepalLength|sepalWidth|PetalLength|PetalWidth|      Class|\n+-----------+----------+-----------+----------+-----------+\n|        5.1|       3.5|        1.4|       0.2|Iris-setosa|\n|        4.9|       3.0|        1.4|       0.2|Iris-setosa|\n|        4.7|       3.2|        1.3|       0.2|Iris-setosa|\n|        4.6|       3.1|        1.5|       0.2|Iris-setosa|\n|        5.0|       3.6|        1.4|       0.2|Iris-setosa|\n|        5.4|       3.9|        1.7|       0.4|Iris-setosa|\n|        4.6|       3.4|        1.4|       0.3|Iris-setosa|\n|        5.0|       3.4|        1.5|       0.2|Iris-setosa|\n|        4.4|       2.9|        1.4|       0.2|Iris-setosa|\n|        4.9|       3.1|        1.5|       0.1|Iris-setosa|\n|        5.4|       3.7|        1.5|       0.2|Iris-setosa|\n|        4.8|       3.4|        1.6|       0.2|Iris-setosa|\n|        4.8|       3.0|        1.4|       0.1|Iris-setosa|\n|        4.3|       3.0|        1.1|       0.1|Iris-setosa|\n|        5.8|       4.0|        1.2|       0.2|Iris-setosa|\n|        5.7|       4.4|        1.5|       0.4|Iris-setosa|\n|        5.4|       3.9|        1.3|       0.4|Iris-setosa|\n|        5.1|       3.5|        1.4|       0.3|Iris-setosa|\n|        5.7|       3.8|        1.7|       0.3|Iris-setosa|\n|        5.1|       3.8|        1.5|       0.3|Iris-setosa|\n+-----------+----------+-----------+----------+-----------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:18:57 PM",
+      "dateStarted": "Feb 17, 2016 7:45:53 PM",
+      "dateFinished": "Feb 17, 2016 7:45:54 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nirisDf.select([\"Class\", \"sepalLength\"]).groupBy(\"Class\").avg(\"sepalLength\").show()",
+      "dateUpdated": "Feb 17, 2016 7:25:55 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455733142141_535025542",
+      "id": "20160217-191902_1601893514",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---------------+-----------------+\n|          Class| avg(sepalLength)|\n+---------------+-----------------+\n|    Iris-setosa|5.005999999999999|\n| Iris-virginica|6.587999999999998|\n|Iris-versicolor|            5.936|\n+---------------+-----------------+\n\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:19:02 PM",
+      "dateStarted": "Feb 17, 2016 7:25:55 PM",
+      "dateFinished": "Feb 17, 2016 7:26:00 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nselect Class, avg(sepalLength) as avgSL\nfrom Iris\ngroup by Class",
+      "dateUpdated": "Feb 17, 2016 8:09:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avgSL",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455734701542_-4767895",
+      "id": "20160217-194501_913187085",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Class\tavgSL\nIris-setosa\t5.005999999999999\nIris-virginica\t6.587999999999998\nIris-versicolor\t5.936\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:45:01 PM",
+      "dateStarted": "Feb 17, 2016 8:08:54 PM",
+      "dateFinished": "Feb 17, 2016 8:08:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\n# (LAB 4) Analyze World Development Indicators \n\n## 4.1 Load World Development Indicators from HDFS as DataFrame\n\nFYI, source: https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip",
+      "dateUpdated": "Feb 17, 2016 7:30:23 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677992_-631940453",
+      "id": "20160217-160757_172602457",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003e(LAB 4) Analyze World Development Indicators\u003c/h1\u003e\n\u003ch2\u003e4.1 Load World Development Indicators from HDFS as DataFrame\u003c/h2\u003e\n\u003cp\u003eFYI, source: https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:30:20 PM",
+      "dateFinished": "Feb 17, 2016 7:30:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nhdfs dfs -ls /tmp/world-development-indicators",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677994_-631170955",
+      "id": "20160217-160757_474000621",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Found 6 items\n-rw-r--r--   3 zeppelin hadoop     131845 2016-02-10 19:22 /tmp/world-development-indicators/Country.csv\n-rw-r--r--   3 zeppelin hadoop     655490 2016-02-10 19:22 /tmp/world-development-indicators/CountryNotes.csv\n-rw-r--r--   3 zeppelin hadoop   52390816 2016-02-10 19:22 /tmp/world-development-indicators/Footnotes.csv\n-rw-r--r--   3 zeppelin hadoop  574305253 2016-02-10 19:22 /tmp/world-development-indicators/Indicators.csv\n-rw-r--r--   3 zeppelin hadoop    3309006 2016-02-10 19:22 /tmp/world-development-indicators/Series.csv\n-rw-r--r--   3 zeppelin hadoop      32782 2016-02-10 19:22 /tmp/world-development-indicators/SeriesNotes.csv\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.types import *\n\ndef loadCsv(table, schema):\n    data \u003d sqlContext.read.load(\u0027/tmp/world-development-indicators/\u0027 + table + \u0027.csv\u0027, format\u003d\u0027com.databricks.spark.csv\u0027, header\u003d\u0027true\u0027, schema\u003dschema).cache()\n    sqlContext.registerDataFrameAsTable(data, table+\"RDD\")\n    return data\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\nindicators_csv \u003d loadCsv(\"Indicators\", schema)\n\nprint(indicators_csv.count())\n\n",
+      "dateUpdated": "Feb 17, 2016 7:54:56 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677994_-631170955",
+      "id": "20160217-160757_227211711",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "5656458\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:54:56 PM",
+      "dateFinished": "Feb 17, 2016 7:55:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLet\u0027s look at the schema of the Indicators table",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677994_-631170955",
+      "id": "20160217-160757_324524249",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eLet\u0027s look at the schema of the Indicators table\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nindicators_csv.printSchema()\nindicators_csv.show()",
+      "dateUpdated": "Feb 17, 2016 7:54:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677994_-631170955",
+      "id": "20160217-160757_785447344",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- CountryName: string (nullable \u003d true)\n |-- CountryCode: string (nullable \u003d true)\n |-- IndicatorName: string (nullable \u003d true)\n |-- IndicatorCode: string (nullable \u003d true)\n |-- Year: integer (nullable \u003d true)\n |-- Value: double (nullable \u003d true)\n\n+-----------+-----------+--------------------+-----------------+----+------------------+\n|CountryName|CountryCode|       IndicatorName|    IndicatorCode|Year|             Value|\n+-----------+-----------+--------------------+-----------------+----+------------------+\n| Arab World|        ARB|Adolescent fertil...|      SP.ADO.TFRT|1960|133.56090740552298|\n| Arab World|        ARB|Age dependency ra...|      SP.POP.DPND|1960|  87.7976011532547|\n| Arab World|        ARB|Age dependency ra...|   SP.POP.DPND.OL|1960| 6.634579191565161|\n| Arab World|        ARB|Age dependency ra...|   SP.POP.DPND.YG|1960| 81.02332950839141|\n| Arab World|        ARB|Arms exports (SIP...|   MS.MIL.XPRT.KD|1960|         3000000.0|\n| Arab World|        ARB|Arms imports (SIP...|   MS.MIL.MPRT.KD|1960|            5.38E8|\n| Arab World|        ARB|Birth rate, crude...|   SP.DYN.CBRT.IN|1960|47.697888095096395|\n| Arab World|        ARB|  CO2 emissions (kt)|   EN.ATM.CO2E.KT|1960|  59563.9892169935|\n| Arab World|        ARB|CO2 emissions (me...|   EN.ATM.CO2E.PC|1960|0.6439635478877049|\n| Arab World|        ARB|CO2 emissions fro...|EN.ATM.CO2E.GF.ZS|1960| 5.041291753975099|\n| Arab World|        ARB|CO2 emissions fro...|EN.ATM.CO2E.LF.ZS|1960|  84.8514729446567|\n| Arab World|        ARB|CO2 emissions fro...|EN.ATM.CO2E.LF.KT|1960|49541.707291032304|\n| Arab World|        ARB|CO2 emissions fro...|EN.ATM.CO2E.SF.ZS|1960|  4.72698138789597|\n| Arab World|        ARB|Death rate, crude...|   SP.DYN.CDRT.IN|1960|  19.7544519237187|\n| Arab World|        ARB|Fertility rate, t...|   SP.DYN.TFRT.IN|1960|  6.92402738655897|\n| Arab World|        ARB|Fixed telephone s...|      IT.MLT.MAIN|1960|          406833.0|\n| Arab World|        ARB|Fixed telephone s...|   IT.MLT.MAIN.P2|1960|   0.6167005703199|\n| Arab World|        ARB|Hospital beds (pe...|   SH.MED.BEDS.ZS|1960|1.9296220724398703|\n| Arab World|        ARB|International mig...|   SM.POP.TOTL.ZS|1960|2.9906371279862403|\n| Arab World|        ARB|International mig...|      SM.POP.TOTL|1960|         3324685.0|\n+-----------+-----------+--------------------+-----------------+----+------------------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:54:51 PM",
+      "dateFinished": "Feb 17, 2016 7:54:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCode/value encoding is not that optimal ... Let\u0027s transform the data set and store the result os ORC\n",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677994_-631555704",
+      "id": "20160217-160757_938348355",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eCode/value encoding is not that optimal \u0026hellip; Let\u0027s transform the data set and store the result os ORC\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## 4.2 Transform Indicators table to Columns \n",
+      "dateUpdated": "Feb 17, 2016 7:30:45 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677995_-631555704",
+      "id": "20160217-160757_1836277504",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e4.2 Transform Indicators table to Columns\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:30:42 PM",
+      "dateFinished": "Feb 17, 2016 7:30:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nSpark 1.5 does not provide a `pivot` method for DataFrames, hence we need to write our own pivot via RDDs and `aggregateByKey`\n\nSome caveats for this step:\n- Return a row from `merge`, python dictionaries are deprecated\n- `**value` is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\n- Initialize with all indicators and set them to None\n- `.`are not allowed in column names, so replace with `_`",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677995_-631555704",
+      "id": "20160217-160757_1078973287",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eSpark 1.5 does not provide a \u003ccode\u003epivot\u003c/code\u003e method for DataFrames, hence we need to write our own pivot via RDDs and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSome caveats for this step:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eReturn a row from \u003ccode\u003emerge\u003c/code\u003e, python dictionaries are deprecated\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e**value\u003c/code\u003e is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\u003c/li\u003e\n\u003cli\u003eInitialize with all indicators and set them to None\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e.\u003c/code\u003eare not allowed in column names, so replace with \u003ccode\u003e_\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncolumns \u003d indicators_csv.map(lambda row: row.IndicatorCode.replace(\".\", \"_\")).distinct().collect()\nbc \u003d sc.broadcast(columns)\n\ndef seq(u, v):\n    if u \u003d\u003d None: \n        u \u003d {ind: None for ind in bc.value}          # Use value of broadcast variable to initialize the dictionary and ensure all rows have all indicators\n    u[v.IndicatorCode.replace(\".\",\"_\")] \u003d v.Value    # Set this indicators value converted to float\n    return u\n\ndef comb(u1, u2):\n    u1.update(u2)\n    return u1\n\ndef merge(keys, value):\n    value[\"Country\"] \u003d keys[0]\n    value[\"Year\"] \u003d int(keys[1])\n    return Row(**value)\n\ndata \u003d indicators_csv.select([\"CountryCode\", \"IndicatorCode\", \"Year\", \"Value\"])\\\n                     .rdd\\\n                     .keyBy(lambda row: row.CountryCode + \"|\" + str(row.Year))\\\n                     .aggregateByKey(None, seq, comb)\\\n                     .map(lambda tuple: merge(tuple[0].split(\"|\"), tuple[1]))\\\n                     .cache()\n\n",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677995_-631555704",
+      "id": "20160217-160757_1769713575",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\n\n**Notes:**\n\n- The StructType schema **has to be sorted!** Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\n- Also, due to the many null values, automatic schema inference will only work properly when \"samplingRatio\u003d100\" in createDataFrame. However, I wouldn\u0027t rely on it ...",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677995_-631555704",
+      "id": "20160217-160757_774386140",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNotes:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe StructType schema \u003cstrong\u003ehas to be sorted!\u003c/strong\u003e Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\u003c/li\u003e\n\u003cli\u003eAlso, due to the many null values, automatic schema inference will only work properly when \u0026ldquo;samplingRatio\u003d100\u0026rdquo; in createDataFrame. However, I wouldn\u0027t rely on it \u0026hellip;\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nfrom pyspark.sql import HiveContext\nhiveContext \u003d HiveContext(sc)\nhiveContext.setConf(\"spark.sql.orc.filterPushdown\", \"true\")\n\nfields \u003d [StructField(ind, StringType(), True) for ind in columns ] + \\\n         [StructField(\"Year\", IntegerType(), False), StructField(\"Country\", StringType(), False)]\nsortedFields \u003d sorted(fields, key\u003dlambda x: x.name)\nsortedSchema \u003d StructType(fields\u003dsortedFields)\n\nindicators \u003d sqlContext.createDataFrame(data, schema \u003d sortedSchema)\nsqlContext.registerDataFrameAsTable(indicators, \"Indicators\")",
+      "dateUpdated": "Feb 17, 2016 4:07:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677995_-631555704",
+      "id": "20160217-160757_1498734662",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nprint indicators.first()\n\n",
+      "dateUpdated": "Feb 17, 2016 7:56:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677996_-633479449",
+      "id": "20160217-160757_1732166880",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Row(AG_AGR_TRAC_NO\u003du\u002749701.0\u0027, AG_CON_FERT_PT_ZS\u003dNone, AG_CON_FERT_ZS\u003dNone, AG_LND_AGRI_K2\u003du\u00277199720.0\u0027, AG_LND_AGRI_ZS\u003du\u002736.447227095962894\u0027, AG_LND_ARBL_HA\u003dNone, AG_LND_ARBL_HA_PC\u003du\u00270.42433506453451\u0027, AG_LND_ARBL_ZS\u003du\u00275.6291894110005405\u0027, AG_LND_CREL_HA\u003du\u00273.7930099E7\u0027, AG_LND_CROP_ZS\u003du\u00270.656176848013354\u0027, AG_LND_EL5M_ZS\u003dNone, AG_LND_FRST_K2\u003dNone, AG_LND_FRST_ZS\u003dNone, AG_LND_IRIG_AG_ZS\u003dNone, AG_LND_PRCP_MM\u003dNone, AG_LND_TOTL_K2\u003du\u00271.9854821E7\u0027, AG_LND_TRAC_ZS\u003du\u00276.53178431089091\u0027, AG_PRD_CREL_MT\u003du\u00273.4864315E7\u0027, AG_PRD_CROP_XD\u003du\u002750.79262221827721\u0027, AG_PRD_FOOD_XD\u003du\u002750.7986539003605\u0027, AG_PRD_LVSK_XD\u003du\u002752.594705751053\u0027, AG_SRF_TOTL_K2\u003du\u00272.0510951E7\u0027, AG_YLD_CREL_KG\u003du\u0027919.172756424443\u0027, BG_GSR_NFSV_GD_ZS\u003dNone, BM_GSR_CMCP_ZS\u003dNone, BM_GSR_FCTY_CD\u003dNone, BM_GSR_GNFS_CD\u003dNone, BM_GSR_INSF_ZS\u003dNone, BM_GSR_MRCH_CD\u003dNone, BM_GSR_NFSV_CD\u003dNone, BM_GSR_ROYL_CD\u003dNone, BM_GSR_TOTL_CD\u003dNone, BM_GSR_TRAN_ZS\u003dNone, BM_GSR_TRVL_ZS\u003dNone, BM_KLT_DINV_GD_ZS\u003dNone, BM_TRF_PRVT_CD\u003dNone, BM_TRF_PWKR_CD_DT\u003du\u00271.2091962476679E9\u0027, BN_CAB_XOKA_CD\u003dNone, BN_CAB_XOKA_GD_ZS\u003dNone, BN_FIN_TOTL_CD\u003dNone, BN_GSR_FCTY_CD\u003dNone, BN_GSR_GNFS_CD\u003dNone, BN_GSR_MRCH_CD\u003dNone, BN_KAC_EOMS_CD\u003dNone, BN_KLT_DINV_CD\u003dNone, BN_KLT_PTXL_CD\u003dNone, BN_RES_INCL_CD\u003dNone, BN_TRF_CURR_CD\u003dNone, BN_TRF_KOGT_CD\u003dNone, BX_GRT_EXTA_CD_WD\u003dNone, BX_GRT_TECH_CD_WD\u003dNone, BX_GSR_CCIS_CD\u003dNone, BX_GSR_CCIS_ZS\u003dNone, BX_GSR_CMCP_ZS\u003dNone, BX_GSR_FCTY_CD\u003dNone, BX_GSR_GNFS_CD\u003dNone, BX_GSR_INSF_ZS\u003dNone, BX_GSR_MRCH_CD\u003dNone, BX_GSR_NFSV_CD\u003dNone, BX_GSR_ROYL_CD\u003dNone, BX_GSR_TOTL_CD\u003dNone, BX_GSR_TRAN_ZS\u003dNone, BX_GSR_TRVL_ZS\u003dNone, BX_KLT_DINV_CD_WD\u003du\u00277.271585446336089E8\u0027, BX_KLT_DINV_WD_GD_ZS\u003du\u00270.8530550566141629\u0027, BX_KLT_DREM_CD_DT\u003dNone, BX_PEF_TOTL_CD_WD\u003du\u00272.23094551561523E7\u0027, BX_TRF_CURR_CD\u003dNone, BX_TRF_PWKR_CD\u003dNone, BX_TRF_PWKR_CD_DT\u003du\u00276.188676039558E8\u0027, BX_TRF_PWKR_DT_GD_ZS\u003dNone, CM_MKT_INDX_ZG\u003dNone, CM_MKT_LCAP_CD\u003dNone, CM_MKT_LCAP_GD_ZS\u003dNone, CM_MKT_LDOM_NO\u003dNone, CM_MKT_TRAD_CD\u003dNone, CM_MKT_TRAD_GD_ZS\u003dNone, CM_MKT_TRNR\u003dNone, Country\u003du\u0027HPC\u0027, DC_DAC_AUSL_CD\u003du\u00277790000.0\u0027, DC_DAC_AUTL_CD\u003du\u00276860000.0\u0027, DC_DAC_BELL_CD\u003du\u00272.7139E8\u0027, DC_DAC_CANL_CD\u003du\u00271.8153E8\u0027, DC_DAC_CECL_CD\u003du\u00276.285E8\u0027, DC_DAC_CHEL_CD\u003du\u00273.753E7\u0027, DC_DAC_CZEL_CD\u003dNone, DC_DAC_DEUL_CD\u003du\u00276.0308E8\u0027, DC_DAC_DNKL_CD\u003du\u00278.032E7\u0027, DC_DAC_ESPL_CD\u003dNone, DC_DAC_FINL_CD\u003du\u00272.457E7\u0027, DC_DAC_FRAL_CD\u003du\u00276.091E8\u0027, DC_DAC_GBRL_CD\u003du\u00272.4477E8\u0027, DC_DAC_GRCL_CD\u003dNone, DC_DAC_IRLL_CD\u003du\u00271640000.0\u0027, DC_DAC_ISLL_CD\u003dNone, DC_DAC_ITAL_CD\u003du\u00271.905E7\u0027, DC_DAC_JPNL_CD\u003du\u00272.1043E8\u0027, DC_DAC_KORL_CD\u003dNone, DC_DAC_LUXL_CD\u003dNone, DC_DAC_NLDL_CD\u003du\u00272.3505E8\u0027, DC_DAC_NORL_CD\u003du\u00278.408E7\u0027, DC_DAC_NZLL_CD\u003du\u0027870000.0\u0027, DC_DAC_POLL_CD\u003dNone, DC_DAC_PRTL_CD\u003dNone, DC_DAC_SVKL_CD\u003dNone, DC_DAC_SVNL_CD\u003dNone, DC_DAC_SWEL_CD\u003du\u00272.1451E8\u0027, DC_DAC_TOTL_CD\u003du\u00273.95207E9\u0027, DC_DAC_USAL_CD\u003du\u00274.91E8\u0027, DT_AMT_BLAT_CD\u003dNone, DT_AMT_BLTC_CD\u003dNone, DT_AMT_DIMF_CD\u003dNone, DT_AMT_DLTF_CD\u003dNone, DT_AMT_DLXF_CD\u003dNone, DT_AMT_DPNG_CD\u003dNone, DT_AMT_DPPG_CD\u003dNone, DT_AMT_MIBR_CD\u003dNone, DT_AMT_MIDA_CD\u003dNone, DT_AMT_MLAT_CD\u003dNone, DT_AMT_MLTC_CD\u003dNone, DT_AMT_OFFT_CD\u003dNone, DT_AMT_PBND_CD\u003dNone, DT_AMT_PCBK_CD\u003dNone, DT_AMT_PNGB_CD\u003dNone, DT_AMT_PNGC_CD\u003dNone, DT_AMT_PROP_CD\u003dNone, DT_AMT_PRVT_CD\u003dNone, DT_AXA_DPPG_CD\u003dNone, DT_AXA_OFFT_CD\u003dNone, DT_AXA_PRVT_CD\u003dNone, DT_AXF_DPPG_CD\u003dNone, DT_AXR_DPPG_CD\u003dNone, DT_AXR_OFFT_CD\u003dNone, DT_AXR_PRVT_CD\u003dNone, DT_COM_DPPG_CD\u003dNone, DT_COM_MIBR_CD\u003dNone, DT_COM_MIDA_CD\u003dNone, DT_COM_OFFT_CD\u003dNone, DT_COM_PRVT_CD\u003dNone, DT_CUR_DMAK_ZS\u003dNone, DT_CUR_EURO_ZS\u003dNone, DT_CUR_FFRC_ZS\u003dNone, DT_CUR_JYEN_ZS\u003dNone, DT_CUR_MULC_ZS\u003dNone, DT_CUR_OTHC_ZS\u003dNone, DT_CUR_SDRW_ZS\u003dNone, DT_CUR_SWFR_ZS\u003dNone, DT_CUR_UKPS_ZS\u003dNone, DT_CUR_USDL_ZS\u003dNone, DT_DFR_DPPG_CD\u003dNone, DT_DIS_BLAT_CD\u003dNone, DT_DIS_BLTC_CD\u003dNone, DT_DIS_DIMF_CD\u003dNone, DT_DIS_DLTF_CD\u003dNone, DT_DIS_DLXF_CD\u003dNone, DT_DIS_DPNG_CD\u003dNone, DT_DIS_DPPG_CD\u003dNone, DT_DIS_IDAG_CD\u003dNone, DT_DIS_MIBR_CD\u003dNone, DT_DIS_MIDA_CD\u003dNone, DT_DIS_MLAT_CD\u003dNone, DT_DIS_MLTC_CD\u003dNone, DT_DIS_OFFT_CD\u003dNone, DT_DIS_PBND_CD\u003dNone, DT_DIS_PCBK_CD\u003dNone, DT_DIS_PNGB_CD\u003dNone, DT_DIS_PNGC_CD\u003dNone, DT_DIS_PROP_CD\u003dNone, DT_DIS_PRVT_CD\u003dNone, DT_DOD_ALLC_CD\u003dNone, DT_DOD_ALLC_ZS\u003dNone, DT_DOD_BLAT_CD\u003dNone, DT_DOD_BLTC_CD\u003dNone, DT_DOD_DECT_CD\u003dNone, DT_DOD_DECT_CD_CG\u003dNone, DT_DOD_DECT_EX_ZS\u003dNone, DT_DOD_DECT_GN_ZS\u003dNone, DT_DOD_DIMF_CD\u003dNone, DT_DOD_DLXF_CD\u003dNone, DT_DOD_DPNG_CD\u003dNone, DT_DOD_DPPG_CD\u003dNone, DT_DOD_DSTC_CD\u003dNone, DT_DOD_DSTC_IR_ZS\u003du\u0027186.82136382373798\u0027, DT_DOD_DSTC_XP_ZS\u003dNone, DT_DOD_DSTC_ZS\u003dNone, DT_DOD_MDRI_CD\u003dNone, DT_DOD_MIBR_CD\u003dNone, DT_DOD_MIDA_CD\u003dNone, DT_DOD_MLAT_CD\u003dNone, DT_DOD_MLAT_ZS\u003dNone, DT_DOD_MLTC_CD\u003dNone, DT_DOD_MWBG_CD\u003dNone, DT_DOD_OFFT_CD\u003dNone, DT_DOD_PBND_CD\u003dNone, DT_DOD_PCBK_CD\u003dNone, DT_DOD_PNGB_CD\u003dNone, DT_DOD_PNGC_CD\u003dNone, DT_DOD_PROP_CD\u003dNone, DT_DOD_PRVS_CD\u003dNone, DT_DOD_PRVT_CD\u003dNone, DT_DOD_PUBS_CD\u003dNone, DT_DOD_PVLX_CD\u003dNone, DT_DOD_PVLX_EX_ZS\u003dNone, DT_DOD_PVLX_GN_ZS\u003dNone, DT_DOD_RSDL_CD\u003dNone, DT_DOD_VTOT_CD\u003dNone, DT_DSB_DPPG_CD\u003dNone, DT_DSF_DPPG_CD\u003dNone, DT_DXR_DPPG_CD\u003dNone, DT_GPA_DPPG\u003dNone, DT_GPA_OFFT\u003dNone, DT_GPA_PRVT\u003dNone, DT_GRE_DPPG\u003dNone, DT_GRE_OFFT\u003dNone, DT_GRE_PRVT\u003dNone, DT_INR_DPPG\u003dNone, DT_INR_OFFT\u003dNone, DT_INR_PRVT\u003dNone, DT_INT_BLAT_CD\u003dNone, DT_INT_BLTC_CD\u003dNone, DT_INT_DECT_CD\u003dNone, DT_INT_DECT_EX_ZS\u003dNone, DT_INT_DECT_GN_ZS\u003dNone, DT_INT_DIMF_CD\u003dNone, DT_INT_DLXF_CD\u003dNone, DT_INT_DPNG_CD\u003dNone, DT_INT_DPPG_CD\u003dNone, DT_INT_DSTC_CD\u003dNone, DT_INT_MIBR_CD\u003dNone, DT_INT_MIDA_CD\u003dNone, DT_INT_MLAT_CD\u003dNone, DT_INT_MLTC_CD\u003dNone, DT_INT_OFFT_CD\u003dNone, DT_INT_PBND_CD\u003dNone, DT_INT_PCBK_CD\u003dNone, DT_INT_PNGB_CD\u003dNone, DT_INT_PNGC_CD\u003dNone, DT_INT_PROP_CD\u003dNone, DT_INT_PRVT_CD\u003dNone, DT_IXA_DPPG_CD\u003dNone, DT_IXA_DPPG_CD_CG\u003dNone, DT_IXA_OFFT_CD\u003dNone, DT_IXA_PRVT_CD\u003dNone, DT_IXF_DPPG_CD\u003dNone, DT_IXR_DPPG_CD\u003dNone, DT_IXR_OFFT_CD\u003dNone, DT_IXR_PRVT_CD\u003dNone, DT_MAT_DPPG\u003dNone, DT_MAT_OFFT\u003dNone, DT_MAT_PRVT\u003dNone, DT_NFL_BLAT_CD\u003dNone, DT_NFL_BLTC_CD\u003dNone, DT_NFL_BOND_CD\u003dNone, DT_NFL_DECT_CD\u003dNone, DT_NFL_DLXF_CD\u003dNone, DT_NFL_DPNG_CD\u003dNone, DT_NFL_DPPG_CD\u003dNone, DT_NFL_DSTC_CD\u003dNone, DT_NFL_IAEA_CD\u003dNone, DT_NFL_IFAD_CD\u003du\u00271100000.0\u0027, DT_NFL_IMFC_CD\u003dNone, DT_NFL_IMFN_CD\u003dNone, DT_NFL_MIBR_CD\u003dNone, DT_NFL_MIDA_CD\u003dNone, DT_NFL_MLAT_CD\u003dNone, DT_NFL_MLTC_CD\u003dNone, DT_NFL_MOTH_CD\u003dNone, DT_NFL_NEBR_CD\u003dNone, DT_NFL_NIFC_CD\u003dNone, DT_NFL_OFFT_CD\u003dNone, DT_NFL_PBND_CD\u003dNone, DT_NFL_PCBK_CD\u003dNone, DT_NFL_PCBO_CD\u003dNone, DT_NFL_PNGB_CD\u003dNone, DT_NFL_PNGC_CD\u003dNone, DT_NFL_PROP_CD\u003dNone, DT_NFL_PRVT_CD\u003dNone, DT_NFL_RDBC_CD\u003dNone, DT_NFL_RDBN_CD\u003dNone, DT_NFL_UNAI_CD\u003dNone, DT_NFL_UNCF_CD\u003du\u00274.419E7\u0027, DT_NFL_UNCR_CD\u003du\u00274.569E7\u0027, DT_NFL_UNDP_CD\u003du\u00271.3702E8\u0027, DT_NFL_UNEC_CD\u003dNone, DT_NFL_UNFP_CD\u003dNone, DT_NFL_UNPB_CD\u003dNone, DT_NFL_UNRW_CD\u003dNone, DT_NFL_UNTA_CD\u003du\u00272.258E7\u0027, DT_NFL_WFPG_CD\u003du\u00271.381E8\u0027, DT_NFL_WHOL_CD\u003dNone, DT_NTR_BLAT_CD\u003dNone, DT_NTR_BLTC_CD\u003dNone, DT_NTR_DECT_CD\u003dNone, DT_NTR_DLXF_CD\u003dNone, DT_NTR_DPNG_CD\u003dNone, DT_NTR_DPPG_CD\u003dNone, DT_NTR_MIBR_CD\u003dNone, DT_NTR_MIDA_CD\u003dNone, DT_NTR_MLAT_CD\u003dNone, DT_NTR_MLTC_CD\u003dNone, DT_NTR_OFFT_CD\u003dNone, DT_NTR_PBND_CD\u003dNone, DT_NTR_PCBK_CD\u003dNone, DT_NTR_PNGB_CD\u003dNone, DT_NTR_PNGC_CD\u003dNone, DT_NTR_PROP_CD\u003dNone, DT_NTR_PRVT_CD\u003dNone, DT_ODA_ALLD_CD\u003du\u00276.13484E9\u0027, DT_ODA_ALLD_KD\u003du\u00271.614036E10\u0027, DT_ODA_OATL_CD\u003dNone, DT_ODA_OATL_KD\u003dNone, DT_ODA_ODAT_CD\u003du\u00276.13484E9\u0027, DT_ODA_ODAT_GI_ZS\u003du\u002735.1082897259412\u0027, DT_ODA_ODAT_GN_ZS\u003du\u00276.2181147820192395\u0027, DT_ODA_ODAT_KD\u003du\u00271.614036E10\u0027, DT_ODA_ODAT_MP_ZS\u003dNone, DT_ODA_ODAT_PC_ZS\u003du\u002723.205647700665804\u0027, DT_ODA_ODAT_XP_ZS\u003dNone, DT_TDS_BLAT_CD\u003dNone, DT_TDS_BLTC_CD\u003dNone, DT_TDS_DECT_CD\u003dNone, DT_TDS_DECT_EX_ZS\u003dNone, DT_TDS_DECT_GN_ZS\u003du\u00273.79882546472135\u0027, DT_TDS_DIMF_CD\u003dNone, DT_TDS_DLXF_CD\u003dNone, DT_TDS_DPNG_CD\u003dNone, DT_TDS_DPPF_XP_ZS\u003dNone, DT_TDS_DPPG_CD\u003dNone, DT_TDS_DPPG_GN_ZS\u003du\u00273.10716357299147\u0027, DT_TDS_DPPG_XP_ZS\u003dNone, DT_TDS_MIBR_CD\u003dNone, DT_TDS_MIDA_CD\u003dNone, DT_TDS_MLAT_CD\u003dNone, DT_TDS_MLAT_PG_ZS\u003dNone, DT_TDS_MLTC_CD\u003dNone, DT_TDS_OFFT_CD\u003dNone, DT_TDS_PBND_CD\u003dNone, DT_TDS_PCBK_CD\u003dNone, DT_TDS_PNGB_CD\u003dNone, DT_TDS_PNGC_CD\u003dNone, DT_TDS_PROP_CD\u003dNone, DT_TDS_PRVT_CD\u003dNone, DT_TXR_DPPG_CD\u003dNone, DT_UND_DPPG_CD\u003dNone, DT_UND_OFFT_CD\u003dNone, DT_UND_PRVT_CD\u003dNone, EA_PRD_AGRI_KD\u003dNone, EG_EGY_PRIM_PP_KD\u003dNone, EG_ELC_ACCS_RU_ZS\u003dNone, EG_ELC_ACCS_UR_ZS\u003dNone, EG_ELC_ACCS_ZS\u003dNone, EG_ELC_COAL_ZS\u003du\u00270.11467850872055599\u0027, EG_ELC_FOSL_ZS\u003du\u002710.8587805701842\u0027, EG_ELC_HYRO_ZS\u003du\u002761.9518788221493\u0027, EG_ELC_LOSS_ZS\u003du\u002710.753551359463902\u0027, EG_ELC_NGAS_ZS\u003du\u00270.840975730617412\u0027, EG_ELC_NUCL_ZS\u003du\u00270.0\u0027, EG_ELC_PETR_ZS\u003du\u00279.90312633084625\u0027, EG_ELC_RNEW_ZS\u003dNone, EG_ELC_RNWX_KH\u003du\u00278.8E7\u0027, EG_ELC_RNWX_ZS\u003du\u00270.22426019483131\u0027, EG_FEC_RNEW_ZS\u003dNone, EG_GDP_PUSE_KO_PP\u003dNone, EG_GDP_PUSE_KO_PP_KD\u003dNone, EG_IMP_CONS_ZS\u003du\u00271.7275641266011799\u0027, EG_NSF_ACCS_RU_ZS\u003dNone, EG_NSF_ACCS_UR_ZS\u003dNone, EG_NSF_ACCS_ZS\u003dNone, EG_USE_COMM_CL_ZS\u003du\u00272.8716205961014403\u0027, EG_USE_COMM_FO_ZS\u003du\u002715.7821241212696\u0027, EG_USE_COMM_GD_PP_KD\u003dNone, EG_USE_CRNW_ZS\u003du\u002781.64145396804521\u0027, EG_USE_ELEC_KH_PC\u003dNone, EG_USE_PCAP_KG_OE\u003dNone, EN_ATM_CO2E_EG_ZS\u003du\u00270.570602968845407\u0027, EN_ATM_CO2E_GF_KT\u003dNone, EN_ATM_CO2E_GF_ZS\u003du\u00271.95553174390571\u0027, EN_ATM_CO2E_KD_GD\u003du\u00270.429803622146556\u0027, EN_ATM_CO2E_KT\u003du\u002755289.388467450306\u0027, EN_ATM_CO2E_LF_KT\u003du\u002747372.104616913304\u0027, EN_ATM_CO2E_LF_ZS\u003du\u002786.84034288775791\u0027, EN_ATM_CO2E_PC\u003du\u00270.209137658090661\u0027, EN_ATM_CO2E_PP_GD\u003dNone, EN_ATM_CO2E_PP_GD_KD\u003dNone, EN_ATM_CO2E_SF_KT\u003dNone, EN_ATM_CO2E_SF_ZS\u003du\u00275.933565496919369\u0027, EN_ATM_GHGO_KT_CE\u003dNone, EN_ATM_HFCG_KT_CE\u003dNone, EN_ATM_METH_AG_KT_CE\u003dNone, EN_ATM_METH_AG_ZS\u003dNone, EN_ATM_METH_EG_KT_CE\u003dNone, EN_ATM_METH_EG_ZS\u003dNone, EN_ATM_METH_KT_CE\u003dNone, EN_ATM_NOXE_AG_KT_CE\u003dNone, EN_ATM_NOXE_AG_ZS\u003dNone, EN_ATM_NOXE_EG_KT_CE\u003dNone, EN_ATM_NOXE_EI_ZS\u003dNone, EN_ATM_NOXE_IN_KT_CE\u003dNone, EN_ATM_NOXE_KT_CE\u003dNone, EN_ATM_PFCG_KT_CE\u003dNone, EN_ATM_PM25_MC_M3\u003dNone, EN_ATM_PM25_MC_ZS\u003dNone, EN_ATM_SF6G_KT_CE\u003dNone, EN_BIR_THRD_NO\u003dNone, EN_CLC_DRSK_XQ\u003dNone, EN_CLC_GHGR_MT_CE\u003dNone, EN_CLC_MDAT_ZS\u003dNone, EN_CO2_BLDG_ZS\u003du\u00278.8455772113943\u0027, EN_CO2_ETOT_ZS\u003du\u002716.6416791604198\u0027, EN_CO2_MANF_ZS\u003du\u002723.808095952024\u0027, EN_CO2_OTHX_ZS\u003du\u00278.36581709145427\u0027, EN_CO2_TRAN_ZS\u003du\u002742.3388305847076\u0027, EN_FSH_THRD_NO\u003dNone, EN_HPT_THRD_NO\u003dNone, EN_MAM_THRD_NO\u003dNone, EN_POP_DNST\u003du\u002713.3150735531688\u0027, EN_POP_EL5M_ZS\u003dNone, EN_URB_LCTY\u003dNone, EN_URB_LCTY_UR_ZS\u003du\u002736.4704607297881\u0027, EN_URB_MCTY\u003dNone, EN_URB_MCTY_TL_ZS\u003du\u00278.94494992691964\u0027, EP_PMP_DESL_CD\u003dNone, EP_PMP_SGAS_CD\u003dNone, ER_BDV_TOTL_XQ\u003dNone, ER_GDP_FWTL_M3_KD\u003dNone, ER_H2O_FWAG_ZS\u003dNone, ER_H2O_FWDM_ZS\u003dNone, ER_H2O_FWIN_ZS\u003dNone, ER_H2O_FWTL_K3\u003dNone, ER_H2O_FWTL_ZS\u003dNone, ER_H2O_INTR_K3\u003dNone, ER_H2O_INTR_PC\u003dNone, ER_LND_PTLD_ZS\u003dNone, ER_MRN_PTMR_ZS\u003dNone, ER_PTD_TOTL_ZS\u003dNone, FB_AST_NPER_ZS\u003dNone, FB_ATM_TOTL_P5\u003dNone, FB_BNK_CAPA_ZS\u003dNone, FB_CBK_BRCH_P5\u003dNone, FB_CBK_BRWR_P3\u003dNone, FB_CBK_DPTR_P3\u003dNone, FB_POS_TOTL_P5\u003dNone, FD_AST_PRVT_GD_ZS\u003dNone, FD_RES_LIQU_AS_ZS\u003dNone, FI_RES_TOTL_CD\u003dNone, FI_RES_TOTL_DT_ZS\u003du\u00279.05188481033643\u0027, FI_RES_TOTL_MO\u003dNone, FI_RES_XGLD_CD\u003dNone, FM_AST_CGOV_ZG_M3\u003dNone, FM_AST_DOMO_ZG_M3\u003dNone, FM_AST_DOMS_CN\u003dNone, FM_AST_NFRG_CN\u003dNone, FM_AST_PRVT_ZG_M3\u003dNone, FM_LBL_BMNY_CN\u003dNone, FM_LBL_BMNY_GD_ZS\u003dNone, FM_LBL_BMNY_IR_ZS\u003dNone, FM_LBL_BMNY_ZG\u003dNone, FM_LBL_MONY_CN\u003dNone, FM_LBL_MQMY_CN\u003dNone, FM_LBL_MQMY_GD_ZS\u003dNone, FM_LBL_MQMY_IR_ZS\u003dNone, FM_LBL_MQMY_ZG\u003dNone, FM_LBL_QMNY_CN\u003dNone, FP_CPI_TOTL\u003dNone, FP_CPI_TOTL_ZG\u003dNone, FP_WPI_TOTL\u003dNone, FR_INR_DPST\u003dNone, FR_INR_LEND\u003dNone, FR_INR_LNDP\u003du\u00276.0\u0027, FR_INR_RINR\u003dNone, FR_INR_RISK\u003dNone, FS_AST_CGOV_GD_ZS\u003dNone, FS_AST_DOMO_GD_ZS\u003dNone, FS_AST_DOMS_GD_ZS\u003dNone, FS_AST_PRVT_GD_ZS\u003dNone, FS_LBL_LIQU_GD_ZS\u003dNone, FS_LBL_QLIQ_GD_ZS\u003dNone, GB_XPD_RSDV_GD_ZS\u003dNone, GC_BAL_CASH_CN\u003dNone, GC_BAL_CASH_GD_ZS\u003dNone, GC_DOD_TOTL_CN\u003dNone, GC_DOD_TOTL_GD_ZS\u003dNone, GC_FIN_DOMS_CN\u003dNone, GC_FIN_DOMS_GD_ZS\u003dNone, GC_FIN_FRGN_CN\u003dNone, GC_FIN_FRGN_GD_ZS\u003dNone, GC_REV_GOTR_CN\u003dNone, GC_REV_GOTR_ZS\u003dNone, GC_REV_SOCL_CN\u003dNone, GC_REV_SOCL_ZS\u003dNone, GC_REV_XGRT_CN\u003dNone, GC_REV_XGRT_GD_ZS\u003dNone, GC_TAX_EXPT_CN\u003dNone, GC_TAX_EXPT_ZS\u003dNone, GC_TAX_GSRV_CN\u003dNone, GC_TAX_GSRV_RV_ZS\u003dNone, GC_TAX_GSRV_VA_ZS\u003dNone, GC_TAX_IMPT_CN\u003dNone, GC_TAX_IMPT_ZS\u003dNone, GC_TAX_INTT_CN\u003dNone, GC_TAX_INTT_RV_ZS\u003dNone, GC_TAX_OTHR_CN\u003dNone, GC_TAX_OTHR_RV_ZS\u003dNone, GC_TAX_TOTL_CN\u003dNone, GC_TAX_TOTL_GD_ZS\u003dNone, GC_TAX_YPKG_CN\u003dNone, GC_TAX_YPKG_RV_ZS\u003dNone, GC_TAX_YPKG_ZS\u003dNone, GC_XPN_COMP_CN\u003dNone, GC_XPN_COMP_ZS\u003dNone, GC_XPN_GSRV_CN\u003dNone, GC_XPN_GSRV_ZS\u003dNone, GC_XPN_INTP_CN\u003dNone, GC_XPN_INTP_RV_ZS\u003dNone, GC_XPN_INTP_ZS\u003dNone, GC_XPN_OTHR_CN\u003dNone, GC_XPN_OTHR_ZS\u003dNone, GC_XPN_TOTL_CN\u003dNone, GC_XPN_TOTL_GD_ZS\u003dNone, GC_XPN_TRFT_CN\u003dNone, GC_XPN_TRFT_ZS\u003dNone, IC_BUS_DFRN_XQ\u003dNone, IC_BUS_DISC_XQ\u003dNone, IC_BUS_EASE_XQ\u003dNone, IC_BUS_NDNS_ZS\u003dNone, IC_BUS_NREG\u003dNone, IC_CRD_INFO_XQ\u003dNone, IC_CRD_PRVT_ZS\u003dNone, IC_CRD_PUBL_ZS\u003dNone, IC_CUS_DURS_EX\u003dNone, IC_ELC_DURS\u003dNone, IC_ELC_OUTG\u003dNone, IC_ELC_TIME\u003dNone, IC_EXP_COST_CD\u003dNone, IC_EXP_DOCS\u003dNone, IC_EXP_DURS\u003dNone, IC_FRM_BKWC_ZS\u003dNone, IC_FRM_BNKS_ZS\u003dNone, IC_FRM_BRIB_ZS\u003dNone, IC_FRM_CMPU_ZS\u003dNone, IC_FRM_CORR_ZS\u003dNone, IC_FRM_CRIM_ZS\u003dNone, IC_FRM_DURS\u003dNone, IC_FRM_FEMM_ZS\u003dNone, IC_FRM_FEMO_ZS\u003dNone, IC_FRM_FREG_ZS\u003dNone, IC_FRM_INFM_ZS\u003dNone, IC_FRM_ISOC_ZS\u003dNone, IC_FRM_OUTG_ZS\u003dNone, IC_FRM_TRNG_ZS\u003dNone, IC_GOV_DURS_ZS\u003dNone, IC_IMP_COST_CD\u003dNone, IC_IMP_DOCS\u003dNone, IC_IMP_DURS\u003dNone, IC_ISV_DURS\u003dNone, IC_LGL_CRED_XQ\u003dNone, IC_LGL_DURS\u003dNone, IC_PRP_DURS\u003dNone, IC_PRP_PROC\u003dNone, IC_REG_COST_PC_ZS\u003dNone, IC_REG_DURS\u003dNone, IC_REG_PROC\u003dNone, IC_TAX_DURS\u003dNone, IC_TAX_GIFT_ZS\u003dNone, IC_TAX_LABR_CP_ZS\u003dNone, IC_TAX_METG\u003dNone, IC_TAX_OTHR_CP_ZS\u003dNone, IC_TAX_PAYM\u003dNone, IC_TAX_PRFT_CP_ZS\u003dNone, IC_TAX_TOTL_CP_ZS\u003dNone, IC_WRH_DURS\u003dNone, IC_WRH_PROC\u003dNone, IE_PPI_ENGY_CD\u003dNone, IE_PPI_TELE_CD\u003dNone, IE_PPI_TRAN_CD\u003dNone, IE_PPI_WATR_CD\u003dNone, IP_JRN_ARTC_SC\u003dNone, IP_PAT_NRES\u003dNone, IP_PAT_RESD\u003dNone, IP_TMK_NRES\u003dNone, IP_TMK_RESD\u003dNone, IP_TMK_TOTL\u003dNone, IQ_CPA_BREG_XQ\u003dNone, IQ_CPA_DEBT_XQ\u003dNone, IQ_CPA_ECON_XQ\u003dNone, IQ_CPA_ENVR_XQ\u003dNone, IQ_CPA_FINQ_XQ\u003dNone, IQ_CPA_FINS_XQ\u003dNone, IQ_CPA_FISP_XQ\u003dNone, IQ_CPA_GNDR_XQ\u003dNone, IQ_CPA_HRES_XQ\u003dNone, IQ_CPA_IRAI_XQ\u003dNone, IQ_CPA_MACR_XQ\u003dNone, IQ_CPA_PADM_XQ\u003dNone, IQ_CPA_PRES_XQ\u003dNone, IQ_CPA_PROP_XQ\u003dNone, IQ_CPA_PROT_XQ\u003dNone, IQ_CPA_PUBS_XQ\u003dNone, IQ_CPA_REVN_XQ\u003dNone, IQ_CPA_SOCI_XQ\u003dNone, IQ_CPA_STRC_XQ\u003dNone, IQ_CPA_TRAD_XQ\u003dNone, IQ_CPA_TRAN_XQ\u003dNone, IQ_SCI_MTHD\u003dNone, IQ_SCI_OVRL\u003dNone, IQ_SCI_PRDC\u003dNone, IQ_SCI_SRCE\u003dNone, IQ_WEF_CUST_XQ\u003dNone, IQ_WEF_PORT_XQ\u003dNone, IS_AIR_DPRT\u003du\u0027206900.0\u0027, IS_AIR_GOOD_MT_K1\u003du\u0027435.5000033606\u0027, IS_AIR_PSGR\u003du\u00276468300.0\u0027, IS_RRS_GOOD_MT_K6\u003dNone, IS_RRS_PASG_KM\u003dNone, IS_RRS_TOTL_KM\u003dNone, IS_SHP_GCNW_XQ\u003dNone, IS_SHP_GOOD_TU\u003dNone, IT_CEL_SETS\u003du\u00270.0\u0027, IT_CEL_SETS_P2\u003du\u00270.0\u0027, IT_MLT_MAIN\u003du\u0027509005.0\u0027, IT_MLT_MAIN_P2\u003du\u00270.22687263772022198\u0027, IT_NET_BBND\u003dNone, IT_NET_BBND_P2\u003dNone, IT_NET_SECR\u003dNone, IT_NET_SECR_P6\u003dNone, IT_NET_USER_P2\u003dNone, LP_EXP_DURS_MD\u003dNone, LP_IMP_DURS_MD\u003dNone, LP_LPI_CUST_XQ\u003dNone, LP_LPI_INFR_XQ\u003dNone, LP_LPI_ITRN_XQ\u003dNone, LP_LPI_LOGS_XQ\u003dNone, LP_LPI_OVRL_XQ\u003dNone, LP_LPI_TIME_XQ\u003dNone, LP_LPI_TRAC_XQ\u003dNone, MS_MIL_MPRT_KD\u003du\u00271.327E9\u0027, MS_MIL_TOTL_P1\u003dNone, MS_MIL_TOTL_TF_ZS\u003dNone, MS_MIL_XPND_CN\u003dNone, MS_MIL_XPND_GD_ZS\u003dNone, MS_MIL_XPND_ZS\u003dNone, MS_MIL_XPRT_KD\u003du\u00277000000.0\u0027, NE_CON_GOVT_CD\u003du\u00271.36593623214979E10\u0027, NE_CON_GOVT_CN\u003dNone, NE_CON_GOVT_KD\u003dNone, NE_CON_GOVT_KD_ZG\u003dNone, NE_CON_GOVT_KN\u003dNone, NE_CON_GOVT_ZS\u003du\u002715.2027660358057\u0027, NE_CON_PETC_CD\u003du\u00277.48268540788592E10\u0027, NE_CON_PETC_CN\u003dNone, NE_CON_PETC_KD\u003dNone, NE_CON_PETC_KD_ZG\u003dNone, NE_CON_PETC_KN\u003dNone, NE_CON_PETC_ZS\u003du\u002773.0584471256622\u0027, NE_CON_PRVT_CD\u003du\u00277.68149844075616E10\u0027, NE_CON_PRVT_CN\u003dNone, NE_CON_PRVT_KD\u003dNone, NE_CON_PRVT_KD_ZG\u003dNone, NE_CON_PRVT_KN\u003dNone, NE_CON_PRVT_PC_KD\u003dNone, NE_CON_PRVT_PC_KD_ZG\u003dNone, NE_CON_PRVT_PP_CD\u003dNone, NE_CON_PRVT_PP_KD\u003dNone, NE_CON_TETC_CD\u003du\u00278.85887506235751E10\u0027, NE_CON_TETC_CN\u003dNone, NE_CON_TETC_KD\u003dNone, NE_CON_TETC_KD_ZG\u003dNone, NE_CON_TETC_KN\u003dNone, NE_CON_TETC_ZS\u003dNone, NE_CON_TOTL_CD\u003dNone, NE_CON_TOTL_CN\u003dNone, NE_CON_TOTL_KD\u003dNone, NE_CON_TOTL_KN\u003dNone, NE_DAB_DEFL_ZS\u003dNone, NE_DAB_TOTL_CD\u003du\u00271.07120204614136E11\u0027, NE_DAB_TOTL_CN\u003dNone, NE_DAB_TOTL_KD\u003dNone, NE_DAB_TOTL_KN\u003dNone, NE_DAB_TOTL_ZS\u003dNone, NE_EXP_GNFS_CD\u003du\u00272.03819445538606E10\u0027, NE_EXP_GNFS_CN\u003dNone, NE_EXP_GNFS_KD\u003dNone, NE_EXP_GNFS_KD_ZG\u003dNone, NE_EXP_GNFS_KN\u003dNone, NE_EXP_GNFS_ZS\u003du\u002723.277367543581\u0027, NE_GDI_FPRV_CN\u003dNone, NE_GDI_FPRV_ZS\u003dNone, NE_GDI_FTOT_CD\u003du\u00271.69332757247785E10\u0027, NE_GDI_FTOT_CN\u003dNone, NE_GDI_FTOT_KD\u003dNone, NE_GDI_FTOT_KD_ZG\u003dNone, NE_GDI_FTOT_KN\u003dNone, NE_GDI_FTOT_ZS\u003dNone, NE_GDI_STKB_CD\u003dNone, NE_GDI_STKB_CN\u003dNone, NE_GDI_STKB_KN\u003dNone, NE_GDI_TOTL_CD\u003du\u00271.74740497127293E10\u0027, NE_GDI_TOTL_CN\u003dNone, NE_GDI_TOTL_KD\u003dNone, NE_GDI_TOTL_KD_ZG\u003dNone, NE_GDI_TOTL_KN\u003dNone, NE_GDI_TOTL_ZS\u003du\u002718.0947747577485\u0027, NE_IMP_GNFS_CD\u003du\u00272.85880113870032E10\u0027, NE_IMP_GNFS_CN\u003dNone, NE_IMP_GNFS_KD\u003dNone, NE_IMP_GNFS_KD_ZG\u003dNone, NE_IMP_GNFS_KN\u003dNone, NE_IMP_GNFS_ZS\u003du\u002730.121677946581602\u0027, NE_RSB_GNFS_CD\u003dNone, NE_RSB_GNFS_CN\u003dNone, NE_RSB_GNFS_KN\u003dNone, NE_RSB_GNFS_ZS\u003du\u0027-6.84431040300053\u0027, NE_TRD_GNFS_ZS\u003du\u002753.3990454901626\u0027, NV_AGR_TOTL_CD\u003du\u00273.52323958738103E10\u0027, NV_AGR_TOTL_CN\u003dNone, NV_AGR_TOTL_KD\u003dNone, NV_AGR_TOTL_KD_ZG\u003dNone, NV_AGR_TOTL_KN\u003dNone, NV_AGR_TOTL_ZS\u003du\u002736.14367855164679\u0027, NV_IND_MANF_CD\u003dNone, NV_IND_MANF_CN\u003dNone, NV_IND_MANF_KD\u003dNone, NV_IND_MANF_KD_ZG\u003dNone, NV_IND_MANF_KN\u003dNone, NV_IND_MANF_ZS\u003dNone, NV_IND_TOTL_CD\u003du\u00272.07397149185114E10\u0027, NV_IND_TOTL_CN\u003dNone, NV_IND_TOTL_KD\u003dNone, NV_IND_TOTL_KD_ZG\u003dNone, NV_IND_TOTL_KN\u003dNone, NV_IND_TOTL_ZS\u003dNone, NV_MNF_CHEM_ZS_UN\u003dNone, NV_MNF_FBTO_ZS_UN\u003dNone, NV_MNF_MTRN_ZS_UN\u003dNone, NV_MNF_OTHR_ZS_UN\u003dNone, NV_MNF_TXTL_ZS_UN\u003dNone, NV_SRV_TETC_CD\u003du\u00274.33361683911773E10\u0027, NV_SRV_TETC_CN\u003dNone, NV_SRV_TETC_KD\u003dNone, NV_SRV_TETC_KD_ZG\u003dNone, NV_SRV_TETC_KN\u003dNone, NV_SRV_TETC_ZS\u003du\u002744.321250225990894\u0027, NY_ADJ_AEDU_CD\u003dNone, NY_ADJ_AEDU_GN_ZS\u003du\u00273.0821183190159602\u0027, NY_ADJ_DCO2_CD\u003dNone, NY_ADJ_DCO2_GN_ZS\u003du\u00270.14954569773852802\u0027, NY_ADJ_DFOR_CD\u003dNone, NY_ADJ_DFOR_GN_ZS\u003du\u00271.94609386104927\u0027, NY_ADJ_DKAP_CD\u003dNone, NY_ADJ_DKAP_GN_ZS\u003du\u00276.47282259365337\u0027, NY_ADJ_DMIN_CD\u003dNone, NY_ADJ_DMIN_GN_ZS\u003du\u00270.893022330365129\u0027, NY_ADJ_DNGY_CD\u003dNone, NY_ADJ_DNGY_GN_ZS\u003du\u00271.44971080068948\u0027, NY_ADJ_DPEM_CD\u003dNone, NY_ADJ_DPEM_GN_ZS\u003dNone, NY_ADJ_DRES_GN_ZS\u003du\u00274.55302271868079\u0027, NY_ADJ_ICTR_GN_ZS\u003du\u002711.9254147705232\u0027, NY_ADJ_NNAT_CD\u003dNone, NY_ADJ_NNAT_GN_ZS\u003du\u00275.45259217686984\u0027, NY_ADJ_NNTY_CD\u003du\u00278.93643564289489E10\u0027, NY_ADJ_NNTY_KD\u003dNone, NY_ADJ_NNTY_KD_ZG\u003dNone, NY_ADJ_NNTY_PC_CD\u003du\u0027338.02964254763305\u0027, NY_ADJ_NNTY_PC_KD\u003dNone, NY_ADJ_NNTY_PC_KD_ZG\u003dNone, NY_ADJ_SVNG_CD\u003dNone, NY_ADJ_SVNG_GN_ZS\u003dNone, NY_ADJ_SVNX_CD\u003dNone, NY_ADJ_SVNX_GN_ZS\u003du\u00274.09633780604339\u0027, NY_EXP_CAPM_KN\u003dNone, NY_GDP_COAL_RT_ZS\u003du\u00270.00370641228348289\u0027, NY_GDP_DEFL_KD_ZG\u003du\u002711.4212450696215\u0027, NY_GDP_DEFL_ZS\u003dNone, NY_GDP_DISC_CN\u003dNone, NY_GDP_DISC_KN\u003dNone, NY_GDP_FCST_CD\u003du\u00279.5919963636419E10\u0027, NY_GDP_FCST_CN\u003dNone, NY_GDP_FCST_KD\u003dNone, NY_GDP_FCST_KN\u003dNone, NY_GDP_FRST_RT_ZS\u003du\u00275.479612995831599\u0027, NY_GDP_MINR_RT_ZS\u003du\u00271.80885403388464\u0027, NY_GDP_MKTP_CD\u003du\u00271.0170180089487E11\u0027, NY_GDP_MKTP_CN\u003dNone, NY_GDP_MKTP_KD\u003du\u00271.28638721542923E11\u0027, NY_GDP_MKTP_KD_ZG\u003du\u00270.0352206290861403\u0027, NY_GDP_MKTP_KN\u003dNone, NY_GDP_MKTP_PP_CD\u003dNone, NY_GDP_MKTP_PP_KD\u003dNone, NY_GDP_NGAS_RT_ZS\u003du\u00270.17570900808888\u0027, NY_GDP_PCAP_CD\u003du\u0027384.69726383893\u0027, NY_GDP_PCAP_CN\u003dNone, NY_GDP_PCAP_KD\u003du\u0027486.588868297969\u0027, NY_GDP_PCAP_KD_ZG\u003du\u0027-2.5415871234520298\u0027, NY_GDP_PCAP_KN\u003dNone, NY_GDP_PCAP_PP_CD\u003dNone, NY_GDP_PCAP_PP_KD\u003dNone, NY_GDP_PETR_RT_ZS\u003du\u00272.15432874214466\u0027, NY_GDP_TOTL_RT_ZS\u003du\u00279.62221119223326\u0027, NY_GDS_TOTL_CD\u003du\u00271.31130502712951E10\u0027, NY_GDS_TOTL_CN\u003dNone, NY_GDS_TOTL_KN\u003dNone, NY_GDS_TOTL_ZS\u003du\u002711.5063944120606\u0027, NY_GDY_TOTL_KD\u003du\u00273.46614333717462E13\u0027, NY_GDY_TOTL_KN\u003dNone, NY_GNP_ATLS_CD\u003du\u00271.01536144956361E11\u0027, NY_GNP_MKTP_CD\u003du\u00279.86607712314986E10\u0027, NY_GNP_MKTP_CN\u003dNone, NY_GNP_MKTP_KD\u003dNone, NY_GNP_MKTP_KD_ZG\u003dNone, NY_GNP_MKTP_KN\u003dNone, NY_GNP_MKTP_PP_CD\u003dNone, NY_GNP_MKTP_PP_KD\u003dNone, NY_GNP_PCAP_CD\u003du\u0027384.07065363417\u0027, NY_GNP_PCAP_CN\u003dNone, NY_GNP_PCAP_KD\u003dNone, NY_GNP_PCAP_KD_ZG\u003dNone, NY_GNP_PCAP_KN\u003dNone, NY_GNP_PCAP_PP_CD\u003dNone, NY_GNP_PCAP_PP_KD\u003dNone, NY_GNS_ICTR_CD\u003dNone, NY_GNS_ICTR_CN\u003dNone, NY_GNS_ICTR_GN_ZS\u003du\u002712.173625867842901\u0027, NY_GNS_ICTR_ZS\u003dNone, NY_GSR_NFCY_CD\u003dNone, NY_GSR_NFCY_CN\u003dNone, NY_GSR_NFCY_KN\u003dNone, NY_TAX_NIND_CD\u003dNone, NY_TAX_NIND_CN\u003dNone, NY_TAX_NIND_KN\u003dNone, NY_TRF_NCTR_CD\u003dNone, NY_TRF_NCTR_CN\u003dNone, NY_TRF_NCTR_KN\u003dNone, NY_TTF_GNFS_KN\u003dNone, PA_NUS_ATLS\u003dNone, PA_NUS_FCRF\u003dNone, PA_NUS_PPP\u003dNone, PA_NUS_PPPC_RF\u003dNone, PA_NUS_PPP_05\u003dNone, PA_NUS_PRVT_PP\u003dNone, PA_NUS_PRVT_PP_05\u003dNone, PX_REX_REER\u003dNone, SE_ADT_1524_LT_FE_ZS\u003dNone, SE_ADT_1524_LT_FM_ZS\u003dNone, SE_ADT_1524_LT_MA_ZS\u003dNone, SE_ADT_1524_LT_ZS\u003dNone, SE_ADT_LITR_FE_ZS\u003dNone, SE_ADT_LITR_MA_ZS\u003dNone, SE_ADT_LITR_ZS\u003dNone, SE_ENR_PRIM_FM_ZS\u003du\u00270.7274500131607059\u0027, SE_ENR_PRSC_FM_ZS\u003du\u00270.6917099952697751\u0027, SE_ENR_SECO_FM_ZS\u003du\u00270.543569982051849\u0027, SE_ENR_TERT_FM_ZS\u003du\u00270.548020005226135\u0027, SE_PRE_ENRR\u003du\u00276.4799699783325195\u0027, SE_PRE_ENRR_FE\u003du\u00276.4711799621582005\u0027, SE_PRE_ENRR_MA\u003du\u00276.48864984512329\u0027, SE_PRM_AGES\u003dNone, SE_PRM_CMPT_FE_ZS\u003du\u002731.4725360870361\u0027, SE_PRM_CMPT_MA_ZS\u003du\u002749.3417739868164\u0027, SE_PRM_CMPT_ZS\u003du\u002740.449714660644496\u0027, SE_PRM_DURS\u003dNone, SE_PRM_ENRL\u003du\u00272.84457E7\u0027, SE_PRM_ENRL_FE_ZS\u003du\u002741.8636016845703\u0027, SE_PRM_ENRL_TC_ZS\u003du\u002742.01588821411129\u0027, SE_PRM_ENRR\u003du\u002763.837188720703104\u0027, SE_PRM_ENRR_FE\u003du\u002753.7220802307129\u0027, SE_PRM_ENRR_MA\u003du\u002773.8500213623047\u0027, SE_PRM_GINT_FE_ZS\u003du\u002763.6394195556641\u0027, SE_PRM_GINT_MA_ZS\u003du\u002782.713020324707\u0027, SE_PRM_GINT_ZS\u003du\u002773.2337188720703\u0027, SE_PRM_NENR\u003du\u002746.843021392822294\u0027, SE_PRM_NENR_FE\u003dNone, SE_PRM_NENR_MA\u003dNone, SE_PRM_NINT_FE_ZS\u003dNone, SE_PRM_NINT_MA_ZS\u003dNone, SE_PRM_NINT_ZS\u003dNone, SE_PRM_PRIV_ZS\u003du\u00279.770750045776369\u0027, SE_PRM_PRS5_FE_ZS\u003dNone, SE_PRM_PRS5_MA_ZS\u003dNone, SE_PRM_PRS5_ZS\u003dNone, SE_PRM_PRSL_FE_ZS\u003du\u002737.262901306152294\u0027, SE_PRM_PRSL_MA_ZS\u003du\u002744.8097114562988\u0027, SE_PRM_PRSL_ZS\u003du\u002741.5318183898926\u0027, SE_PRM_REPT_FE_ZS\u003du\u002714.1860885620117\u0027, SE_PRM_REPT_MA_ZS\u003du\u002714.659020423889197\u0027, SE_PRM_REPT_ZS\u003du\u002714.461036682128901\u0027, SE_PRM_TCAQ_FE_ZS\u003dNone, SE_PRM_TCAQ_MA_ZS\u003dNone, SE_PRM_TCAQ_ZS\u003dNone, SE_PRM_TCHR\u003du\u0027677022.375\u0027, SE_PRM_TCHR_FE_ZS\u003du\u002735.2690391540527\u0027, SE_PRM_TENR\u003du\u002746.8955688476563\u0027, SE_PRM_TENR_FE\u003du\u002741.958099365234396\u0027, SE_PRM_TENR_MA\u003du\u002751.783111572265604\u0027, SE_PRM_UNER\u003du\u00272.3663206E7\u0027, SE_PRM_UNER_FE\u003du\u00271.2865952E7\u0027, SE_PRM_UNER_MA\u003du\u00271.0797254E7\u0027, SE_SEC_AGES\u003dNone, SE_SEC_CMPT_LO_FE_ZS\u003du\u002713.9909915924072\u0027, SE_SEC_CMPT_LO_MA_ZS\u003du\u002722.4403648376465\u0027, SE_SEC_CMPT_LO_ZS\u003du\u002718.2335166931152\u0027, SE_SEC_DURS\u003dNone, SE_SEC_ENRL\u003du\u00275767604.0\u0027, SE_SEC_ENRL_FE_ZS\u003du\u002735.1817092895508\u0027, SE_SEC_ENRL_GC\u003du\u00275166677.5\u0027, SE_SEC_ENRL_GC_FE_ZS\u003du\u002735.348239898681605\u0027, SE_SEC_ENRL_TC_ZS\u003du\u002725.490310668945302\u0027, SE_SEC_ENRL_VO\u003du\u0027600926.6875\u0027, SE_SEC_ENRL_VO_FE_ZS\u003du\u002733.7499313354492\u0027, SE_SEC_ENRR\u003du\u002715.839130401611301\u0027, SE_SEC_ENRR_FE\u003du\u002711.1530704498291\u0027, SE_SEC_ENRR_MA\u003du\u002720.5183601379395\u0027, SE_SEC_NENR\u003dNone, SE_SEC_NENR_FE\u003dNone, SE_SEC_NENR_MA\u003dNone, SE_SEC_PRIV_ZS\u003dNone, SE_SEC_PROG_FE_ZS\u003du\u002753.904052734375\u0027, SE_SEC_PROG_MA_ZS\u003du\u002755.6487808227539\u0027, SE_SEC_PROG_ZS\u003du\u002755.0025215148926\u0027, SE_SEC_REPT_FE_ZS\u003du\u00279.48400974273682\u0027, SE_SEC_REPT_MA_ZS\u003du\u00279.6515998840332\u0027, SE_SEC_REPT_ZS\u003du\u00279.59235763549805\u0027, SE_SEC_TCHR\u003du\u0027226266.546875\u0027, SE_SEC_TCHR_FE\u003du\u002763805.47265625\u0027, SE_SEC_TCHR_FE_ZS\u003du\u002728.1992492675781\u0027, SE_TER_ENRR\u003du\u00272.0758900642394997\u0027, SE_TER_ENRR_FE\u003du\u00271.4712100028991597\u0027, SE_TER_ENRR_MA\u003du\u00272.68460011482239\u0027, SE_TER_TCHR_FE_ZS\u003dNone, SE_XPD_CPRM_ZS\u003dNone, SE_XPD_CSEC_ZS\u003dNone, SE_XPD_CTER_ZS\u003dNone, SE_XPD_CTOT_ZS\u003dNone, SE_XPD_MPRM_ZS\u003dNone, SE_XPD_MSEC_ZS\u003dNone, SE_XPD_MTER_ZS\u003dNone, SE_XPD_MTOT_ZS\u003dNone, SE_XPD_PRIM_PC_ZS\u003dNone, SE_XPD_PRIM_ZS\u003dNone, SE_XPD_SECO_PC_ZS\u003dNone, SE_XPD_SECO_ZS\u003dNone, SE_XPD_TERT_PC_ZS\u003dNone, SE_XPD_TERT_ZS\u003dNone, SE_XPD_TOTL_GB_ZS\u003dNone, SE_XPD_TOTL_GD_ZS\u003dNone, SG_GEN_LSOM_ZS\u003dNone, SG_GEN_PARL_ZS\u003dNone, SG_VAW_ARGU_ZS\u003dNone, SG_VAW_BURN_ZS\u003dNone, SG_VAW_GOES_ZS\u003dNone, SG_VAW_NEGL_ZS\u003dNone, SG_VAW_REAS_ZS\u003dNone, SG_VAW_REFU_ZS\u003dNone, SH_ANM_CHLD_ZS\u003dNone, SH_ANM_NPRG_ZS\u003dNone, SH_CON_1524_FE_ZS\u003dNone, SH_CON_1524_MA_ZS\u003dNone, SH_DTH_COMM_ZS\u003dNone, SH_DTH_IMRT\u003dNone, SH_DTH_INJR_ZS\u003dNone, SH_DTH_MORT\u003dNone, SH_DTH_NCOM_ZS\u003dNone, SH_DTH_NMRT\u003dNone, SH_DYN_AIDS_FE_ZS\u003dNone, SH_DYN_AIDS_ZS\u003dNone, SH_DYN_MORT\u003du\u0027216.87371378372\u0027, SH_DYN_MORT_FE\u003dNone, SH_DYN_MORT_MA\u003dNone, SH_DYN_NMRT\u003dNone, SH_H2O_SAFE_RU_ZS\u003dNone, SH_H2O_SAFE_UR_ZS\u003dNone, SH_H2O_SAFE_ZS\u003dNone, SH_HIV_0014\u003dNone, SH_HIV_1524_FE_ZS\u003dNone, SH_HIV_1524_MA_ZS\u003dNone, SH_HIV_ARTC_ZS\u003dNone, SH_IMM_IDPT\u003dNone, SH_IMM_MEAS\u003dNone, SH_MED_BEDS_ZS\u003dNone, SH_MED_CMHW_P3\u003dNone, SH_MED_NUMW_P3\u003dNone, SH_MED_PHYS_ZS\u003dNone, SH_MLR_NETS_ZS\u003dNone, SH_MLR_TRET_ZS\u003dNone, SH_MMR_DTHS\u003dNone, SH_MMR_RISK\u003dNone, SH_MMR_RISK_ZS\u003dNone, SH_PRG_ANEM\u003dNone, SH_PRV_SMOK_FE\u003dNone, SH_PRV_SMOK_MA\u003dNone, SH_STA_ACSN\u003dNone, SH_STA_ACSN_RU\u003dNone, SH_STA_ACSN_UR\u003dNone, SH_STA_ANVC_ZS\u003dNone, SH_STA_ARIC_ZS\u003dNone, SH_STA_BFED_ZS\u003dNone, SH_STA_BRTC_ZS\u003dNone, SH_STA_BRTW_ZS\u003dNone, SH_STA_DIAB_ZS\u003dNone, SH_STA_MALN_FE_ZS\u003dNone, SH_STA_MALN_MA_ZS\u003dNone, SH_STA_MALN_ZS\u003dNone, SH_STA_MMRT\u003dNone, SH_STA_MMRT_NE\u003dNone, SH_STA_ORCF_ZS\u003dNone, SH_STA_ORTH\u003dNone, SH_STA_OWGH_FE_ZS\u003dNone, SH_STA_OWGH_MA_ZS\u003dNone, SH_STA_OWGH_ZS\u003dNone, SH_STA_STNT_FE_ZS\u003dNone, SH_STA_STNT_MA_ZS\u003dNone, SH_STA_STNT_ZS\u003dNone, SH_STA_WAST_FE_ZS\u003dNone, SH_STA_WAST_MA_ZS\u003dNone, SH_STA_WAST_ZS\u003dNone, SH_SVR_WAST_FE_ZS\u003dNone, SH_SVR_WAST_MA_ZS\u003dNone, SH_SVR_WAST_ZS\u003dNone, SH_TBS_CURE_ZS\u003dNone, SH_TBS_DTEC_ZS\u003dNone, SH_TBS_INCD\u003dNone, SH_VAC_TTNS_ZS\u003dNone, SH_XPD_EXTR_ZS\u003dNone, SH_XPD_OOPC_TO_ZS\u003dNone, SH_XPD_OOPC_ZS\u003dNone, SH_XPD_PCAP\u003dNone, SH_XPD_PCAP_PP_KD\u003dNone, SH_XPD_PRIV_ZS\u003dNone, SH_XPD_PUBL\u003dNone, SH_XPD_PUBL_GX_ZS\u003dNone, SH_XPD_PUBL_ZS\u003dNone, SH_XPD_TOTL_ZS\u003dNone, SI_DST_02ND_20\u003dNone, SI_DST_03RD_20\u003dNone, SI_DST_04TH_20\u003dNone, SI_DST_05TH_20\u003dNone, SI_DST_10TH_10\u003dNone, SI_DST_FRST_10\u003dNone, SI_DST_FRST_20\u003dNone, SI_POV_2DAY\u003dNone, SI_POV_DDAY\u003dNone, SI_POV_GAP2\u003dNone, SI_POV_GAPS\u003dNone, SI_POV_GINI\u003dNone, SI_POV_NAGP\u003dNone, SI_POV_NAHC\u003dNone, SI_POV_RUGP\u003dNone, SI_POV_RUHC\u003dNone, SI_POV_URGP\u003dNone, SI_POV_URHC\u003dNone, SI_SPR_PC40\u003dNone, SI_SPR_PC40_05\u003dNone, SI_SPR_PC40_ZG\u003dNone, SI_SPR_PCAP\u003dNone, SI_SPR_PCAP_05\u003dNone, SI_SPR_PCAP_ZG\u003dNone, SL_AGR_0714_FE_ZS\u003dNone, SL_AGR_0714_MA_ZS\u003dNone, SL_AGR_0714_ZS\u003dNone, SL_AGR_EMPL_FE_ZS\u003dNone, SL_AGR_EMPL_MA_ZS\u003dNone, SL_AGR_EMPL_ZS\u003dNone, SL_EMP_1524_SP_FE_NE_ZS\u003dNone, SL_EMP_1524_SP_FE_ZS\u003dNone, SL_EMP_1524_SP_MA_NE_ZS\u003dNone, SL_EMP_1524_SP_MA_ZS\u003dNone, SL_EMP_1524_SP_NE_ZS\u003dNone, SL_EMP_1524_SP_ZS\u003dNone, SL_EMP_INSV_FE_ZS\u003dNone, SL_EMP_MPYR_FE_ZS\u003dNone, SL_EMP_MPYR_MA_ZS\u003dNone, SL_EMP_MPYR_ZS\u003dNone, SL_EMP_SELF_FE_ZS\u003dNone, SL_EMP_SELF_MA_ZS\u003dNone, SL_EMP_SELF_ZS\u003dNone, SL_EMP_TOTL_SP_FE_NE_ZS\u003dNone, SL_EMP_TOTL_SP_FE_ZS\u003dNone, SL_EMP_TOTL_SP_MA_NE_ZS\u003dNone, SL_EMP_TOTL_SP_MA_ZS\u003dNone, SL_EMP_TOTL_SP_NE_ZS\u003dNone, SL_EMP_TOTL_SP_ZS\u003dNone, SL_EMP_VULN_FE_ZS\u003dNone, SL_EMP_VULN_MA_ZS\u003dNone, SL_EMP_VULN_ZS\u003dNone, SL_EMP_WORK_FE_ZS\u003dNone, SL_EMP_WORK_MA_ZS\u003dNone, SL_EMP_WORK_ZS\u003dNone, SL_FAM_0714_FE_ZS\u003dNone, SL_FAM_0714_MA_ZS\u003dNone, SL_FAM_0714_ZS\u003dNone, SL_FAM_WORK_FE_ZS\u003dNone, SL_FAM_WORK_MA_ZS\u003dNone, SL_FAM_WORK_ZS\u003dNone, SL_GDP_PCAP_EM_KD\u003dNone, SL_IND_EMPL_FE_ZS\u003dNone, SL_IND_EMPL_MA_ZS\u003dNone, SL_IND_EMPL_ZS\u003dNone, SL_MNF_0714_FE_ZS\u003dNone, SL_MNF_0714_MA_ZS\u003dNone, SL_MNF_0714_ZS\u003dNone, SL_SLF_0714_FE_ZS\u003dNone, SL_SLF_0714_MA_ZS\u003dNone, SL_SLF_0714_ZS\u003dNone, SL_SRV_0714_FE_ZS\u003dNone, SL_SRV_0714_MA_ZS\u003dNone, SL_SRV_0714_ZS\u003dNone, SL_SRV_EMPL_FE_ZS\u003dNone, SL_SRV_EMPL_MA_ZS\u003dNone, SL_SRV_EMPL_ZS\u003dNone, SL_TLF_0714_FE_ZS\u003dNone, SL_TLF_0714_MA_ZS\u003dNone, SL_TLF_0714_SW_FE_TM\u003dNone, SL_TLF_0714_SW_FE_ZS\u003dNone, SL_TLF_0714_SW_MA_TM\u003dNone, SL_TLF_0714_SW_MA_ZS\u003dNone, SL_TLF_0714_SW_TM\u003dNone, SL_TLF_0714_SW_ZS\u003dNone, SL_TLF_0714_WK_FE_TM\u003dNone, SL_TLF_0714_WK_FE_ZS\u003dNone, SL_TLF_0714_WK_MA_TM\u003dNone, SL_TLF_0714_WK_MA_ZS\u003dNone, SL_TLF_0714_WK_TM\u003dNone, SL_TLF_0714_WK_ZS\u003dNone, SL_TLF_0714_ZS\u003dNone, SL_TLF_ACTI_1524_FE_NE_ZS\u003dNone, SL_TLF_ACTI_1524_FE_ZS\u003dNone, SL_TLF_ACTI_1524_MA_NE_ZS\u003dNone, SL_TLF_ACTI_1524_MA_ZS\u003dNone, SL_TLF_ACTI_1524_NE_ZS\u003dNone, SL_TLF_ACTI_1524_ZS\u003dNone, SL_TLF_ACTI_FE_ZS\u003dNone, SL_TLF_ACTI_MA_ZS\u003dNone, SL_TLF_ACTI_ZS\u003dNone, SL_TLF_CACT_FE_NE_ZS\u003dNone, SL_TLF_CACT_FE_ZS\u003dNone, SL_TLF_CACT_FM_NE_ZS\u003dNone, SL_TLF_CACT_FM_ZS\u003dNone, SL_TLF_CACT_MA_NE_ZS\u003dNone, SL_TLF_CACT_MA_ZS\u003dNone, SL_TLF_CACT_NE_ZS\u003dNone, SL_TLF_CACT_ZS\u003dNone, SL_TLF_PART_FE_ZS\u003dNone, SL_TLF_PART_MA_ZS\u003dNone, SL_TLF_PART_TL_FE_ZS\u003dNone, SL_TLF_PART_ZS\u003dNone, SL_TLF_PRIM_FE_ZS\u003dNone, SL_TLF_PRIM_MA_ZS\u003dNone, SL_TLF_PRIM_ZS\u003dNone, SL_TLF_SECO_FE_ZS\u003dNone, SL_TLF_SECO_MA_ZS\u003dNone, SL_TLF_SECO_ZS\u003dNone, SL_TLF_TERT_FE_ZS\u003dNone, SL_TLF_TERT_MA_ZS\u003dNone, SL_TLF_TERT_ZS\u003dNone, SL_TLF_TOTL_FE_ZS\u003dNone, SL_TLF_TOTL_IN\u003dNone, SL_UEM_1524_FE_NE_ZS\u003dNone, SL_UEM_1524_FE_ZS\u003dNone, SL_UEM_1524_MA_NE_ZS\u003dNone, SL_UEM_1524_MA_ZS\u003dNone, SL_UEM_1524_NE_ZS\u003dNone, SL_UEM_1524_ZS\u003dNone, SL_UEM_LTRM_FE_ZS\u003dNone, SL_UEM_LTRM_MA_ZS\u003dNone, SL_UEM_LTRM_ZS\u003dNone, SL_UEM_NEET_FE_ZS\u003dNone, SL_UEM_NEET_MA_ZS\u003dNone, SL_UEM_NEET_ZS\u003dNone, SL_UEM_PRIM_FE_ZS\u003dNone, SL_UEM_PRIM_MA_ZS\u003dNone, SL_UEM_PRIM_ZS\u003dNone, SL_UEM_SECO_FE_ZS\u003dNone, SL_UEM_SECO_MA_ZS\u003dNone, SL_UEM_SECO_ZS\u003dNone, SL_UEM_TERT_FE_ZS\u003dNone, SL_UEM_TERT_MA_ZS\u003dNone, SL_UEM_TERT_ZS\u003dNone, SL_UEM_TOTL_FE_NE_ZS\u003dNone, SL_UEM_TOTL_FE_ZS\u003dNone, SL_UEM_TOTL_MA_NE_ZS\u003dNone, SL_UEM_TOTL_MA_ZS\u003dNone, SL_UEM_TOTL_NE_ZS\u003dNone, SL_UEM_TOTL_ZS\u003dNone, SL_WAG_0714_FE_ZS\u003dNone, SL_WAG_0714_MA_ZS\u003dNone, SL_WAG_0714_ZS\u003dNone, SM_EMI_TERT_ZS\u003dNone, SM_POP_NETM\u003dNone, SM_POP_REFG\u003dNone, SM_POP_REFG_OR\u003dNone, SM_POP_TOTL\u003dNone, SM_POP_TOTL_ZS\u003dNone, SN_ITK_DEFC_ZS\u003dNone, SN_ITK_DFCT\u003dNone, SN_ITK_SALT_ZS\u003dNone, SN_ITK_VITA_ZS\u003dNone, SP_ADO_TFRT\u003du\u0027148.402311933255\u0027, SP_DTH_INFR_ZS\u003dNone, SP_DTH_REPT_ZS\u003dNone, SP_DYN_AMRT_FE\u003du\u0027348.59639605818603\u0027, SP_DYN_AMRT_MA\u003du\u0027404.44347058650595\u0027, SP_DYN_CBRT_IN\u003du\u002747.5320655769141\u0027, SP_DYN_CDRT_IN\u003du\u002718.5339370110502\u0027, SP_DYN_CONU_ZS\u003dNone, SP_DYN_IMRT_FE_IN\u003dNone, SP_DYN_IMRT_IN\u003du\u0027128.868769083959\u0027, SP_DYN_IMRT_MA_IN\u003dNone, SP_DYN_LE00_FE_IN\u003du\u002748.5261248303152\u0027, SP_DYN_LE00_IN\u003du\u002747.07260230374229\u0027, SP_DYN_LE00_MA_IN\u003du\u002745.690724783773796\u0027, SP_DYN_TFRT_IN\u003du\u00276.91397075544966\u0027, SP_DYN_TO65_FE_ZS\u003du\u002743.0105949520639\u0027, SP_DYN_TO65_MA_ZS\u003du\u002737.34561256146821\u0027, SP_DYN_WFRT\u003dNone, SP_HOU_FEMA_ZS\u003dNone, SP_MTR_1519_ZS\u003dNone, SP_POP_0014_TO_ZS\u003du\u002745.3892462534157\u0027, SP_POP_1564_TO_ZS\u003du\u002751.645951243447\u0027, SP_POP_65UP_TO_ZS\u003du\u00272.9648025031372702\u0027, SP_POP_DPND\u003du\u002793.7509351285092\u0027, SP_POP_DPND_OL\u003du\u00275.74062909435413\u0027, SP_POP_DPND_YG\u003du\u002787.8853911305871\u0027, SP_POP_GROW\u003du\u00272.64400750687605\u0027, SP_POP_SCIE_RD_P6\u003dNone, SP_POP_TECH_RD_P6\u003dNone, SP_POP_TOTL\u003du\u00272.64368402E8\u0027, SP_POP_TOTL_FE_ZS\u003du\u002750.3128569805404\u0027, SP_REG_BRTH_RU_ZS\u003dNone, SP_REG_BRTH_UR_ZS\u003dNone, SP_REG_BRTH_ZS\u003dNone, SP_REG_DTHS_ZS\u003dNone, SP_RUR_TOTL\u003du\u00272.10479663E8\u0027, SP_RUR_TOTL_ZG\u003du\u00272.10868649757209\u0027, SP_RUR_TOTL_ZS\u003du\u002779.6160433112199\u0027, SP_URB_GROW\u003du\u00274.78977481435791\u0027, SP_URB_TOTL\u003du\u00275.3888739E7\u0027, SP_URB_TOTL_IN_ZS\u003du\u002720.383956688780103\u0027, SP_UWT_TFRT\u003dNone, ST_INT_ARVL\u003dNone, ST_INT_DPRT\u003dNone, ST_INT_RCPT_CD\u003dNone, ST_INT_RCPT_XP_ZS\u003dNone, ST_INT_TRNR_CD\u003dNone, ST_INT_TRNX_CD\u003dNone, ST_INT_TVLR_CD\u003dNone, ST_INT_TVLX_CD\u003dNone, ST_INT_XPND_CD\u003dNone, ST_INT_XPND_MP_ZS\u003dNone, TG_VAL_TOTL_GD_ZS\u003du\u002737.135300541396205\u0027, TM_QTY_MRCH_XD_WD\u003dNone, TM_TAX_MANF_BC_ZS\u003dNone, TM_TAX_MANF_BR_ZS\u003dNone, TM_TAX_MANF_IP_ZS\u003dNone, TM_TAX_MANF_SM_AR_ZS\u003dNone, TM_TAX_MANF_SM_FN_ZS\u003dNone, TM_TAX_MANF_SR_ZS\u003dNone, TM_TAX_MANF_WM_AR_ZS\u003dNone, TM_TAX_MANF_WM_FN_ZS\u003dNone, TM_TAX_MRCH_BC_ZS\u003dNone, TM_TAX_MRCH_BR_ZS\u003dNone, TM_TAX_MRCH_IP_ZS\u003dNone, TM_TAX_MRCH_SM_AR_ZS\u003dNone, TM_TAX_MRCH_SM_FN_ZS\u003dNone, TM_TAX_MRCH_SR_ZS\u003dNone, TM_TAX_MRCH_WM_AR_ZS\u003dNone, TM_TAX_MRCH_WM_FN_ZS\u003dNone, TM_TAX_TCOM_BC_ZS\u003dNone, TM_TAX_TCOM_BR_ZS\u003dNone, TM_TAX_TCOM_IP_ZS\u003dNone, TM_TAX_TCOM_SM_AR_ZS\u003dNone, TM_TAX_TCOM_SM_FN_ZS\u003dNone, TM_TAX_TCOM_SR_ZS\u003dNone, TM_TAX_TCOM_WM_AR_ZS\u003dNone, TM_TAX_TCOM_WM_FN_ZS\u003dNone, TM_VAL_AGRI_ZS_UN\u003du\u00271.0032647643622599\u0027, TM_VAL_FOOD_ZS_UN\u003du\u002714.2360271895349\u0027, TM_VAL_FUEL_ZS_UN\u003du\u002712.6092679316272\u0027, TM_VAL_ICTG_ZS_UN\u003dNone, TM_VAL_INSF_ZS_WT\u003dNone, TM_VAL_MANF_ZS_UN\u003du\u002770.0875416021254\u0027, TM_VAL_MMTL_ZS_UN\u003du\u00271.28174749939329\u0027, TM_VAL_MRCH_AL_ZS\u003du\u00273.9592010500806296\u0027, TM_VAL_MRCH_CD_WT\u003du\u00271.90059993301444E10\u0027, TM_VAL_MRCH_HI_ZS\u003du\u002771.5461128804345\u0027, TM_VAL_MRCH_OR_ZS\u003du\u00271.7237800638033998\u0027, TM_VAL_MRCH_R1_ZS\u003du\u00270.221913532156885\u0027, TM_VAL_MRCH_R2_ZS\u003dNone, TM_VAL_MRCH_R3_ZS\u003du\u00272.98203615921481\u0027, TM_VAL_MRCH_R4_ZS\u003du\u00272.36307626848585\u0027, TM_VAL_MRCH_R5_ZS\u003du\u00271.6937273526771297\u0027, TM_VAL_MRCH_R6_ZS\u003du\u00276.765561593034309\u0027, TM_VAL_MRCH_RS_ZS\u003du\u002717.326223333911\u0027, TM_VAL_MRCH_WL_CD\u003du\u00271.72618421013E10\u0027, TM_VAL_MRCH_WR_ZS\u003du\u00279.40388372185103\u0027, TM_VAL_MRCH_XD_WD\u003dNone, TM_VAL_OTHR_ZS_WT\u003dNone, TM_VAL_SERV_CD_WT\u003dNone, TM_VAL_TRAN_ZS_WT\u003dNone, TM_VAL_TRVL_ZS_WT\u003dNone, TT_PRI_MRCH_XD_WD\u003dNone, TX_QTY_MRCH_XD_WD\u003dNone, TX_VAL_AGRI_ZS_UN\u003du\u002717.3352712644119\u0027, TX_VAL_FOOD_ZS_UN\u003du\u002746.865675447034704\u0027, TX_VAL_FUEL_ZS_UN\u003du\u002714.599566773718099\u0027, TX_VAL_ICTG_ZS_UN\u003dNone, TX_VAL_INSF_ZS_WT\u003dNone, TX_VAL_MANF_ZS_UN\u003du\u00277.37999867034342\u0027, TX_VAL_MMTL_ZS_UN\u003du\u002714.0566067494838\u0027, TX_VAL_MRCH_AL_ZS\u003du\u00272.28434126479749\u0027, TX_VAL_MRCH_CD_WT\u003du\u00271.71132884246072E10\u0027, TX_VAL_MRCH_HI_ZS\u003du\u002770.67586753719699\u0027, TX_VAL_MRCH_OR_ZS\u003du\u00270.995076570288215\u0027, TX_VAL_MRCH_R1_ZS\u003du\u00270.0194143319825017\u0027, TX_VAL_MRCH_R2_ZS\u003dNone, TX_VAL_MRCH_R3_ZS\u003du\u00272.33728195834721\u0027, TX_VAL_MRCH_R4_ZS\u003du\u00271.418714736734\u0027, TX_VAL_MRCH_R5_ZS\u003du\u00271.3928164278329298\u0027, TX_VAL_MRCH_R6_ZS\u003du\u00274.9039453665264405\u0027, TX_VAL_MRCH_RS_ZS\u003du\u002720.999169754299103\u0027, TX_VAL_MRCH_WL_CD\u003du\u00271.57512501731E10\u0027, TX_VAL_MRCH_WR_ZS\u003du\u00277.329886138215651\u0027, TX_VAL_MRCH_XD_WD\u003dNone, TX_VAL_OTHR_ZS_WT\u003dNone, TX_VAL_SERV_CD_WT\u003dNone, TX_VAL_TECH_CD\u003dNone, TX_VAL_TECH_MF_ZS\u003dNone, TX_VAL_TRAN_ZS_WT\u003dNone, TX_VAL_TRVL_ZS_WT\u003dNone, VC_BTL_DETH\u003dNone, VC_IDP_TOTL_HE\u003dNone, VC_IDP_TOTL_LE\u003dNone, VC_IHR_PSRC_P5\u003dNone, VC_PKP_TOTL_UN\u003dNone, Year\u003d1979, per_allsp_adq_pop_tot\u003dNone, per_allsp_ben_q1_tot\u003dNone, per_allsp_cov_pop_tot\u003dNone, per_lm_alllm_adq_pop_tot\u003dNone, per_lm_alllm_ben_q1_tot\u003dNone, per_lm_alllm_cov_pop_tot\u003dNone, per_sa_allsa_adq_pop_tot\u003dNone, per_sa_allsa_ben_q1_tot\u003dNone, per_sa_allsa_cov_pop_tot\u003dNone, per_si_allsi_adq_pop_tot\u003dNone, per_si_allsi_ben_q1_tot\u003dNone, per_si_allsi_cov_pop_tot\u003dNone)\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:55:55 PM",
+      "dateFinished": "Feb 17, 2016 7:55:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## 4.3 Save transformed table as ORC",
+      "dateUpdated": "Feb 17, 2016 7:31:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677999_-633094700",
+      "id": "20160217-160757_1019552859",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e4.3 Save transformed table as ORC\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "dateStarted": "Feb 17, 2016 7:31:01 PM",
+      "dateFinished": "Feb 17, 2016 7:31:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nhdfs dfs -rm -r /tmp/indicators_transformed_orc\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721677999_-633094700",
+      "id": "20160217-160757_1122870613",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "16/02/16 12:06:55 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval \u003d 360 minutes, Emptier interval \u003d 0 minutes.\nMoved: \u0027hdfs://beebox01.localdomain:8020/tmp/indicators_transformed_orc\u0027 to trash at: hdfs://beebox01.localdomain:8020/user/zeppelin/.Trash/Current\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:57 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nindicators.write.orc(\"/tmp/indicators_transformed_orc\")\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678000_-622706479",
+      "id": "20160217-160758_1399156780",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## 4.4 Some simple Queries",
+      "dateUpdated": "Feb 17, 2016 7:56:48 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678001_-623091228",
+      "id": "20160217-160758_1209691520",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003e4.4 Some simple Queries\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "dateStarted": "Feb 17, 2016 7:56:45 PM",
+      "dateFinished": "Feb 17, 2016 7:56:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nLoad ORC data again to benefit from predicate pushdow, etc",
+      "dateUpdated": "Feb 17, 2016 7:49:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678000_-622706479",
+      "id": "20160217-160758_1485544919",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eLoad ORC data again to benefit from predicate pushdow, etc\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "dateStarted": "Feb 17, 2016 7:49:54 PM",
+      "dateFinished": "Feb 17, 2016 7:49:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nindicators_t \u003d hiveContext.read.orc(\"/tmp/indicators_transformed_orc\")\nsqlContext.registerDataFrameAsTable(indicators_t, \"Indicators_t\")\nsqlContext.cacheTable(\"Indicators_t\")\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678000_-622706479",
+      "id": "20160217-160758_546796282",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nExecute some queries",
+      "dateUpdated": "Feb 17, 2016 7:50:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455735006822_383131805",
+      "id": "20160217-195006_1167058578",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eExecute some queries\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 7:50:06 PM",
+      "dateStarted": "Feb 17, 2016 7:50:25 PM",
+      "dateFinished": "Feb 17, 2016 7:50:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\n-- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)\n\nselect Country, Year, SP_DYN_CBRT_IN from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) and Year \u003e 1990\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum",
+              "$$hashKey": "object:360"
+            }
+          ],
+          "values": [
+            {
+              "name": "SP_DYN_CBRT_IN",
+              "index": 2.0,
+              "aggr": "sum",
+              "$$hashKey": "object:364"
+            }
+          ],
+          "groups": [
+            {
+              "name": "Country",
+              "index": 0.0,
+              "aggr": "sum",
+              "$$hashKey": "object:362"
+            }
+          ],
+          "scatter": {
+            "yAxis": {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678001_-623091228",
+      "id": "20160217-160758_635379121",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Country\tYear\tSP_DYN_CBRT_IN\nAUT\t2003\t9.5\nAUT\t2008\t9.3\nPRT\t2010\t9.6\nNLD\t2010\t11.1\nAUT\t2010\t9.4\nFRA\t2011\t12.7\nPRT\t2015\tnull\nFRA\t2006\t13.1\nITA\t1995\t9.2\nGBR\t1994\t13.0\nGBR\t1991\t13.8\nESP\t2008\t11.3\nESP\t2005\t10.6\nPRT\t1994\t10.9\nGRC\t1991\t10.0\nESP\t2010\t10.4\nGBR\t2013\t12.2\nGRC\t2003\t9.5\nGRC\t2008\t10.6\nITA\t2008\t9.8\nNLD\t1999\t12.7\nNLD\t1997\t12.3\nGBR\t2000\t11.5\nGRC\t2010\t10.3\nDEU\t2006\t8.2\nDEU\t2012\t8.4\nDEU\t2015\tnull\nIRL\t1997\t14.4\nDEU\t2001\t8.9\nITA\t2002\t9.4\nFRA\t1996\t12.8\nESP\t1991\t10.2\nITA\t2013\t8.5\nGRC\t1994\t9.8\nIRL\t2011\t16.2\nPRT\t2009\t9.4\nPRT\t2006\t10.0\nPRT\t2003\t10.8\nNLD\t2003\t12.3\nNLD\t2008\t11.2\nIRL\t2002\t15.4\nIRL\t2005\t14.8\nAUT\t2000\t9.8\nAUT\t2005\t9.5\nPRT\t2013\t7.9\nNLD\t2013\t10.2\nAUT\t2013\t9.4\nFRA\t2012\t12.6\nDEU\t1993\t9.8\nDEU\t1996\t9.7\nDEU\t1999\t9.4\nFRA\t2005\t12.8\nFRA\t2000\t13.3\nITA\t1997\t9.4\nITA\t1992\t10.0\nITA\t1999\t9.4\nGBR\t1999\t11.9\nGBR\t1996\t12.6\nGBR\t1993\t13.2\nESP\t2006\t10.8\nESP\t2003\t10.4\nPRT\t1997\t11.2\nPRT\t1992\t11.5\nPRT\t1998\t11.2\nESP\t2012\t9.7\nAUT\t1998\t10.2\nAUT\t1996\t11.2\nGBR\t2010\t12.9\nGBR\t2015\tnull\nGRC\t2000\t9.5\nGRC\t2005\t9.7\nITA\t2000\t9.5\nNLD\t1992\t13.0\nNLD\t1995\t12.3\nGBR\t2008\t12.9\nGBR\t2003\t11.7\nGBR\t2006\t12.3\nGRC\t2013\t8.5\nDEU\t2009\t8.1\nDEU\t2003\t8.6\nAUT\t1993\t12.0\nDEU\t2010\t8.3\nIRL\t1994\t13.4\nIRL\t1991\t14.9\nITA\t2007\t9.7\nFRA\t1993\t13.0\nFRA\t1994\t12.5\nFRA\t1999\t12.9\nITA\t2015\tnull\nESP\t1999\t9.5\nESP\t1994\t9.4\nESP\t1993\t9.8\nGRC\t1999\t9.2\nGRC\t1997\t9.5\nIRL\t2013\t15.0\nPRT\t2000\t11.7\nNLD\t2000\t13.0\nNLD\t2005\t11.5\nIRL\t2000\t14.4\nAUT\t2004\t9.7\nAUT\t2009\t9.2\nPRT\t2014\tnull\nDEU\t1997\t9.9\nFRA\t2001\t13.1\nITA\t1994\t9.4\nITA\t1993\t9.7\nGBR\t1998\t12.3\nGBR\t1995\t12.6\nGBR\t1992\t13.6\nESP\t2009\t10.6\nESP\t2002\t10.1\nGRC\t2009\t10.5\nPRT\t1993\t11.4\nPRT\t1999\t11.4\nESP\t2013\t9.1\nAUT\t1999\t9.8\nGBR\t2014\tnull\nGRC\t2004\t9.6\nITA\t2009\t9.6\nNLD\t1998\t12.7\nNLD\t1993\t12.8\nNLD\t1996\t12.2\nGBR\t2009\t12.7\nGBR\t2007\t12.6\nDEU\t2008\t8.3\nDEU\t2002\t8.7\nDEU\t2007\t8.3\nAUT\t1997\t10.5\nDEU\t2011\t8.1\nDEU\t2014\tnull\nITA\t2006\t9.6\nITA\t2003\t9.5\nFRA\t1992\t13.1\nFRA\t1997\t12.7\nFRA\t1998\t12.8\nITA\t2012\t9.0\nESP\t1995\t9.2\nIRL\t2012\t15.7\nPRT\t2007\t9.7\nNLD\t2004\t11.9\nNLD\t2009\t11.2\nIRL\t2001\t15.0\nIRL\t2004\t15.2\nESP\t2001\t9.9\nAUT\t2002\t9.7\nAUT\t2007\t9.2\nPRT\t2011\t9.2\nNLD\t2011\t10.8\nNLD\t2014\tnull\nAUT\t2011\t9.3\nAUT\t2014\tnull\nFRA\t2010\t12.9\nFRA\t2015\tnull\nIRL\t1993\t13.8\nDEU\t1991\t10.4\nDEU\t1994\t9.5\nFRA\t2008\t12.9\nFRA\t2007\t12.8\nFRA\t2002\t12.9\nAUT\t1991\t12.2\nPRT\t1995\t10.7\nITA\t1991\t9.9\nESP\t2011\t10.1\nGBR\t2012\t12.8\nFRA\t1991\t13.2\nGRC\t2002\t9.4\nGRC\t2007\t10.0\nESP\t2014\tnull\nGBR\t2001\t11.3\nGBR\t2004\t11.9\nGRC\t2011\t9.6\nGRC\t2014\tnull\nESP\t2004\t10.6\nDEU\t2000\t9.3\nDEU\t2005\t8.3\nAUT\t1994\t11.6\nDEU\t2013\t8.5\nIRL\t1999\t14.4\nIRL\t1996\t13.9\nITA\t2005\t9.6\nITA\t2010\t9.5\nESP\t1996\t9.2\nGRC\t1992\t10.0\nGRC\t1995\t9.5\nIRL\t2010\t16.5\nIRL\t2015\tnull\nPRT\t2008\t9.9\nPRT\t2005\t10.4\nPRT\t2002\t11.0\nNLD\t2002\t12.5\nNLD\t2007\t11.1\nIRL\t2008\t16.7\nIRL\t2003\t15.4\nIRL\t2006\t15.3\nESP\t2000\t9.9\nAUT\t2001\t9.4\nAUT\t2006\t9.4\nPRT\t2012\t8.5\nNLD\t2012\t10.5\nNLD\t2015\tnull\nAUT\t2012\t9.4\nAUT\t2015\tnull\nFRA\t2013\t12.3\nFRA\t2014\tnull\nDEU\t1992\t10.0\nDEU\t1995\t9.4\nDEU\t1998\t9.6\nFRA\t2009\t12.8\nFRA\t2004\t12.8\nFRA\t2003\t12.8\nPRT\t1996\t11.0\nPRT\t1991\t11.7\nITA\t1996\t9.3\nITA\t1998\t9.4\nGBR\t1997\t12.5\nESP\t2007\t10.9\nGRC\t1998\t9.3\nGBR\t2011\t12.8\nGRC\t2001\t9.3\nESP\t2015\tnull\nGRC\t2006\t10.1\nITA\t2001\t9.4\nNLD\t1991\t13.2\nNLD\t1994\t12.7\nGBR\t2002\t11.3\nGBR\t2005\t12.0\nGRC\t2012\t9.0\nGRC\t2015\tnull\nDEU\t2004\t8.6\nAUT\t1992\t12.2\nIRL\t1998\t14.5\nIRL\t1995\t13.5\nIRL\t1992\t14.4\nAUT\t1995\t11.2\nITA\t2004\t9.8\nFRA\t1995\t12.8\nITA\t2014\tnull\nITA\t2011\t9.2\nESP\t1998\t9.2\nESP\t1997\t9.3\nESP\t1992\t10.2\nGRC\t1993\t9.7\nGRC\t1996\t9.4\nIRL\t2014\tnull\nPRT\t2004\t10.4\nPRT\t2001\t10.9\nNLD\t2001\t12.6\nNLD\t2006\t11.3\nIRL\t2009\t16.7\nIRL\t2007\t16.2\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\n-- SL.UEM.1524.NE.ZS: Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n\nselect Country, Year, SL_UEM_1524_NE_ZS from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) and Year \u003e 1990\n\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum",
+              "$$hashKey": "object:1948"
+            }
+          ],
+          "values": [
+            {
+              "name": "SL_UEM_1524_NE_ZS",
+              "index": 2.0,
+              "aggr": "sum",
+              "$$hashKey": "object:1952"
+            }
+          ],
+          "groups": [
+            {
+              "name": "Country",
+              "index": 0.0,
+              "aggr": "sum",
+              "$$hashKey": "object:1950"
+            }
+          ],
+          "scatter": {
+            "yAxis": {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678001_-623091228",
+      "id": "20160217-160758_557730296",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\nAUT\t2003\t7.5\nAUT\t2008\t8.5\nPRT\t2010\t22.7999992370605\nNLD\t2010\t8.699999809265138\nAUT\t2010\t9.5\nFRA\t2011\t22.100000381469698\nPRT\t2015\tnull\nFRA\t2006\t21.600000381469698\nITA\t1995\t33.5\nGBR\t1994\t16.3999996185303\nGBR\t1991\t13.8999996185303\nESP\t2008\t24.5\nESP\t2005\t19.6000003814697\nPRT\t1994\t14.5\nGRC\t1991\t24.5\nESP\t2010\t41.5\nGBR\t2013\t20.7000007629395\nGRC\t2003\t26.899999618530302\nGRC\t2008\t22.100000381469698\nITA\t2008\t21.2000007629395\nNLD\t1999\t7.400000095367429\nNLD\t1997\t9.69999980926514\nGBR\t2000\t12.0\nGRC\t2010\t32.9000015258789\nDEU\t2006\t13.8000001907349\nDEU\t2012\t8.0\nDEU\t2015\tnull\nIRL\t1997\t15.8999996185303\nDEU\t2001\t7.800000190734861\nITA\t2002\t27.100000381469698\nFRA\t1996\t27.600000381469698\nESP\t1991\t30.5\nITA\t2013\t40.0\nGRC\t1994\t27.7000007629395\nIRL\t2011\t29.100000381469698\nPRT\t2009\t20.2999992370605\nPRT\t2006\t16.5\nPRT\t2003\t13.5\nNLD\t2003\t6.599999904632571\nNLD\t2008\t5.300000190734861\nIRL\t2002\t7.800000190734861\nIRL\t2005\t8.60000038146973\nAUT\t2000\t6.300000190734861\nAUT\t2005\t11.0\nPRT\t2013\t38.0999984741211\nNLD\t2013\t11.0\nAUT\t2013\t9.69999980926514\nFRA\t2012\t23.899999618530302\nDEU\t1993\t7.699999809265139\nDEU\t1996\t9.60000038146973\nDEU\t1999\t8.89999961853027\nFRA\t2005\t20.6000003814697\nFRA\t2000\t20.6000003814697\nITA\t1997\t34.5999984741211\nITA\t1992\t28.2999992370605\nITA\t1999\t33.0\nGBR\t1999\t12.3999996185303\nGBR\t1996\t14.8999996185303\nGBR\t1993\t17.5\nESP\t2006\t17.8999996185303\nESP\t2003\t22.2999992370605\nPRT\t1997\t14.1000003814697\nPRT\t1992\t9.69999980926514\nPRT\t1998\t9.39999961853027\nESP\t2012\t52.9000015258789\nAUT\t1998\t7.5\nAUT\t1996\t6.900000095367429\nGBR\t2010\t19.8999996185303\nGBR\t2015\tnull\nGRC\t2000\t29.5\nGRC\t2005\t26.0\nITA\t2000\t31.5\nNLD\t1992\t8.10000038146973\nNLD\t1995\t12.1000003814697\nGBR\t2008\t15.0\nGBR\t2003\t11.3999996185303\nGBR\t2006\t14.0\nGRC\t2013\t58.2999992370605\nDEU\t2009\t11.1999998092651\nDEU\t2003\t11.0\nAUT\t1993\t4.699999809265139\nDEU\t2010\t9.89999961853027\nIRL\t1994\t23.0\nIRL\t1991\t23.100000381469698\nITA\t2007\t20.3999996185303\nFRA\t1993\t25.600000381469698\nFRA\t1994\t28.7999992370605\nFRA\t1999\t26.5\nITA\t2015\tnull\nESP\t1999\t29.100000381469698\nESP\t1994\t44.9000015258789\nESP\t1993\t42.2000007629395\nGRC\t1999\t31.7000007629395\nGRC\t1997\t31.0\nIRL\t2013\t26.7999992370605\nPRT\t2000\t8.199999809265138\nNLD\t2000\t5.300000190734861\nNLD\t2005\t8.199999809265138\nIRL\t2000\t6.5\nAUT\t2004\t12.1000003814697\nAUT\t2009\t10.6999998092651\nPRT\t2014\t34.7999992370605\nDEU\t1997\t10.6999998092651\nFRA\t2001\t18.0\nITA\t1994\t31.7999992370605\nITA\t1993\t30.2000007629395\nGBR\t1998\t12.5\nGBR\t1995\t15.5\nGBR\t1992\t15.6999998092651\nESP\t2009\t37.7000007629395\nESP\t2002\t21.5\nGRC\t2009\t25.7999992370605\nPRT\t1993\t12.1000003814697\nPRT\t1999\t9.10000038146973\nESP\t2013\t55.5\nAUT\t1999\t5.900000095367429\nGBR\t2014\t16.8999996185303\nGRC\t2004\t26.899999618530302\nITA\t2009\t25.2999992370605\nNLD\t1998\t8.80000019073486\nNLD\t1993\t10.3999996185303\nNLD\t1996\t11.3999996185303\nGBR\t2009\t19.1000003814697\nGBR\t2007\t14.3000001907349\nDEU\t2008\t10.6000003814697\nDEU\t2002\t9.30000019073486\nDEU\t2007\t11.8999996185303\nAUT\t1997\t7.599999904632571\nDEU\t2011\t8.5\nDEU\t2014\t7.699999809265139\nITA\t2006\t21.7999992370605\nITA\t2003\t26.7999992370605\nFRA\t1992\t21.7000007629395\nFRA\t1997\t29.0\nFRA\t1998\t26.2000007629395\nITA\t2012\t35.2999992370605\nESP\t1995\t41.9000015258789\nIRL\t2012\t30.399999618530302\nPRT\t2007\t16.7000007629395\nNLD\t2004\t8.0\nNLD\t2009\t6.599999904632571\nIRL\t2001\t6.199999809265139\nIRL\t2004\t8.300000190734862\nESP\t2001\t20.7000007629395\nAUT\t2002\t7.199999809265139\nAUT\t2007\t9.39999961853027\nPRT\t2011\t30.2999992370605\nNLD\t2011\t7.599999904632571\nNLD\t2014\t10.5\nAUT\t2011\t8.89999961853027\nAUT\t2014\t10.3000001907349\nFRA\t2010\t22.899999618530302\nFRA\t2015\tnull\nIRL\t1993\t25.0\nDEU\t1991\t5.5\nDEU\t1994\t9.0\nFRA\t2008\t18.6000003814697\nFRA\t2007\t19.1000003814697\nFRA\t2002\t18.8999996185303\nAUT\t1991\t3.70000004768372\nPRT\t1995\t16.0\nITA\t1991\t28.100000381469698\nESP\t2011\t46.2000007629395\nGBR\t2012\t21.2000007629395\nFRA\t1991\t19.7999992370605\nGRC\t2002\t26.7999992370605\nGRC\t2007\t22.899999618530302\nESP\t2014\t53.2000007629395\nGBR\t2001\t10.3000001907349\nGBR\t2004\t10.6999998092651\nGRC\t2011\t44.4000015258789\nGRC\t2014\t52.4000015258789\nESP\t2004\t22.5\nDEU\t2000\t8.5\nDEU\t2005\t15.5\nAUT\t1994\t5.0\nDEU\t2013\t7.800000190734861\nIRL\t1999\t8.60000038146973\nIRL\t1996\t18.1000003814697\nITA\t2005\t24.100000381469698\nITA\t2010\t27.899999618530302\nESP\t1996\t41.7999992370605\nGRC\t1992\t25.0\nGRC\t1995\t27.899999618530302\nIRL\t2010\t27.600000381469698\nIRL\t2015\tnull\nPRT\t2008\t16.7000007629395\nPRT\t2005\t16.2000007629395\nPRT\t2002\t10.5\nNLD\t2002\t4.59999990463257\nNLD\t2007\t5.900000095367429\nIRL\t2008\t13.3000001907349\nIRL\t2003\t8.10000038146973\nIRL\t2006\t8.60000038146973\nESP\t2000\t25.2999992370605\nAUT\t2001\t6.0\nAUT\t2006\t9.80000019073486\nPRT\t2012\t37.9000015258789\nNLD\t2012\t9.5\nNLD\t2015\tnull\nAUT\t2012\t9.39999961853027\nAUT\t2015\tnull\nFRA\t2013\t23.899999618530302\nFRA\t2014\t23.2000007629395\nDEU\t1992\t6.0\nDEU\t1995\t8.5\nDEU\t1998\t9.80000019073486\nFRA\t2009\t23.2000007629395\nFRA\t2004\t19.7000007629395\nFRA\t2003\t18.2999992370605\nPRT\t1996\t17.0\nPRT\t1991\t8.699999809265138\nITA\t1996\t34.7000007629395\nITA\t1998\t33.7999992370605\nGBR\t1997\t13.6000003814697\nESP\t2007\t18.1000003814697\nGRC\t1998\t29.7000007629395\nGBR\t2011\t21.2999992370605\nGRC\t2001\t28.100000381469698\nESP\t2015\tnull\nGRC\t2006\t25.2000007629395\nITA\t2001\t27.7999992370605\nNLD\t1991\t11.1000003814697\nNLD\t1994\t11.3000001907349\nGBR\t2002\t10.8999996185303\nGBR\t2005\t12.8000001907349\nGRC\t2012\t55.2999992370605\nGRC\t2015\tnull\nDEU\t2004\t13.0\nAUT\t1992\t4.099999904632569\nIRL\t1998\t11.3999996185303\nIRL\t1995\t19.0\nIRL\t1992\t22.7000007629395\nAUT\t1995\t5.900000095367429\nITA\t2004\t24.399999618530302\nFRA\t1995\t27.100000381469698\nITA\t2014\t42.7000007629395\nITA\t2011\t29.2000007629395\nESP\t1998\t35.4000015258789\nESP\t1997\t39.0999984741211\nESP\t1992\t33.0999984741211\nGRC\t1993\t28.7999992370605\nGRC\t1996\t31.2000007629395\nIRL\t2014\t23.899999618530302\nPRT\t2004\t14.1000003814697\nPRT\t2001\t8.89999961853027\nNLD\t2001\t4.40000009536743\nNLD\t2006\t6.599999904632571\nIRL\t2009\t24.0\nIRL\t2007\t9.10000038146973\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\n-- SL.UEM.1524.NE.ZS: Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n-- SL.UEM.TOTL.NE.ZS: Unemployment, total (% of total labor force) (national estimate)\n-- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)\n\nselect Country, Year, SL_UEM_1524_NE_ZS, SP_DYN_CBRT_IN  from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) and Year \u003e 1990\n",
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "graph": {
+          "mode": "scatterChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "Country",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Year",
+              "index": 1.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "SL_UEM_1524_NE_ZS",
+              "index": 2.0,
+              "aggr": "sum"
+            },
+            "group": {
+              "name": "Country",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "size": {
+              "name": "SP_DYN_CBRT_IN",
+              "index": 3.0,
+              "aggr": "sum"
+            }
+          }
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678002_-621936982",
+      "id": "20160217-160758_983953287",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\tSP_DYN_CBRT_IN\nAUT\t2003\t7.5\t9.5\nAUT\t2008\t8.5\t9.3\nPRT\t2010\t22.7999992370605\t9.6\nNLD\t2010\t8.699999809265138\t11.1\nAUT\t2010\t9.5\t9.4\nFRA\t2011\t22.100000381469698\t12.7\nPRT\t2015\tnull\tnull\nFRA\t2006\t21.600000381469698\t13.1\nITA\t1995\t33.5\t9.2\nGBR\t1994\t16.3999996185303\t13.0\nGBR\t1991\t13.8999996185303\t13.8\nESP\t2008\t24.5\t11.3\nESP\t2005\t19.6000003814697\t10.6\nPRT\t1994\t14.5\t10.9\nGRC\t1991\t24.5\t10.0\nESP\t2010\t41.5\t10.4\nGBR\t2013\t20.7000007629395\t12.2\nGRC\t2003\t26.899999618530302\t9.5\nGRC\t2008\t22.100000381469698\t10.6\nITA\t2008\t21.2000007629395\t9.8\nNLD\t1999\t7.400000095367429\t12.7\nNLD\t1997\t9.69999980926514\t12.3\nGBR\t2000\t12.0\t11.5\nGRC\t2010\t32.9000015258789\t10.3\nDEU\t2006\t13.8000001907349\t8.2\nDEU\t2012\t8.0\t8.4\nDEU\t2015\tnull\tnull\nIRL\t1997\t15.8999996185303\t14.4\nDEU\t2001\t7.800000190734861\t8.9\nITA\t2002\t27.100000381469698\t9.4\nFRA\t1996\t27.600000381469698\t12.8\nESP\t1991\t30.5\t10.2\nITA\t2013\t40.0\t8.5\nGRC\t1994\t27.7000007629395\t9.8\nIRL\t2011\t29.100000381469698\t16.2\nPRT\t2009\t20.2999992370605\t9.4\nPRT\t2006\t16.5\t10.0\nPRT\t2003\t13.5\t10.8\nNLD\t2003\t6.599999904632571\t12.3\nNLD\t2008\t5.300000190734861\t11.2\nIRL\t2002\t7.800000190734861\t15.4\nIRL\t2005\t8.60000038146973\t14.8\nAUT\t2000\t6.300000190734861\t9.8\nAUT\t2005\t11.0\t9.5\nPRT\t2013\t38.0999984741211\t7.9\nNLD\t2013\t11.0\t10.2\nAUT\t2013\t9.69999980926514\t9.4\nFRA\t2012\t23.899999618530302\t12.6\nDEU\t1993\t7.699999809265139\t9.8\nDEU\t1996\t9.60000038146973\t9.7\nDEU\t1999\t8.89999961853027\t9.4\nFRA\t2005\t20.6000003814697\t12.8\nFRA\t2000\t20.6000003814697\t13.3\nITA\t1997\t34.5999984741211\t9.4\nITA\t1992\t28.2999992370605\t10.0\nITA\t1999\t33.0\t9.4\nGBR\t1999\t12.3999996185303\t11.9\nGBR\t1996\t14.8999996185303\t12.6\nGBR\t1993\t17.5\t13.2\nESP\t2006\t17.8999996185303\t10.8\nESP\t2003\t22.2999992370605\t10.4\nPRT\t1997\t14.1000003814697\t11.2\nPRT\t1992\t9.69999980926514\t11.5\nPRT\t1998\t9.39999961853027\t11.2\nESP\t2012\t52.9000015258789\t9.7\nAUT\t1998\t7.5\t10.2\nAUT\t1996\t6.900000095367429\t11.2\nGBR\t2010\t19.8999996185303\t12.9\nGBR\t2015\tnull\tnull\nGRC\t2000\t29.5\t9.5\nGRC\t2005\t26.0\t9.7\nITA\t2000\t31.5\t9.5\nNLD\t1992\t8.10000038146973\t13.0\nNLD\t1995\t12.1000003814697\t12.3\nGBR\t2008\t15.0\t12.9\nGBR\t2003\t11.3999996185303\t11.7\nGBR\t2006\t14.0\t12.3\nGRC\t2013\t58.2999992370605\t8.5\nDEU\t2009\t11.1999998092651\t8.1\nDEU\t2003\t11.0\t8.6\nAUT\t1993\t4.699999809265139\t12.0\nDEU\t2010\t9.89999961853027\t8.3\nIRL\t1994\t23.0\t13.4\nIRL\t1991\t23.100000381469698\t14.9\nITA\t2007\t20.3999996185303\t9.7\nFRA\t1993\t25.600000381469698\t13.0\nFRA\t1994\t28.7999992370605\t12.5\nFRA\t1999\t26.5\t12.9\nITA\t2015\tnull\tnull\nESP\t1999\t29.100000381469698\t9.5\nESP\t1994\t44.9000015258789\t9.4\nESP\t1993\t42.2000007629395\t9.8\nGRC\t1999\t31.7000007629395\t9.2\nGRC\t1997\t31.0\t9.5\nIRL\t2013\t26.7999992370605\t15.0\nPRT\t2000\t8.199999809265138\t11.7\nNLD\t2000\t5.300000190734861\t13.0\nNLD\t2005\t8.199999809265138\t11.5\nIRL\t2000\t6.5\t14.4\nAUT\t2004\t12.1000003814697\t9.7\nAUT\t2009\t10.6999998092651\t9.2\nPRT\t2014\t34.7999992370605\tnull\nDEU\t1997\t10.6999998092651\t9.9\nFRA\t2001\t18.0\t13.1\nITA\t1994\t31.7999992370605\t9.4\nITA\t1993\t30.2000007629395\t9.7\nGBR\t1998\t12.5\t12.3\nGBR\t1995\t15.5\t12.6\nGBR\t1992\t15.6999998092651\t13.6\nESP\t2009\t37.7000007629395\t10.6\nESP\t2002\t21.5\t10.1\nGRC\t2009\t25.7999992370605\t10.5\nPRT\t1993\t12.1000003814697\t11.4\nPRT\t1999\t9.10000038146973\t11.4\nESP\t2013\t55.5\t9.1\nAUT\t1999\t5.900000095367429\t9.8\nGBR\t2014\t16.8999996185303\tnull\nGRC\t2004\t26.899999618530302\t9.6\nITA\t2009\t25.2999992370605\t9.6\nNLD\t1998\t8.80000019073486\t12.7\nNLD\t1993\t10.3999996185303\t12.8\nNLD\t1996\t11.3999996185303\t12.2\nGBR\t2009\t19.1000003814697\t12.7\nGBR\t2007\t14.3000001907349\t12.6\nDEU\t2008\t10.6000003814697\t8.3\nDEU\t2002\t9.30000019073486\t8.7\nDEU\t2007\t11.8999996185303\t8.3\nAUT\t1997\t7.599999904632571\t10.5\nDEU\t2011\t8.5\t8.1\nDEU\t2014\t7.699999809265139\tnull\nITA\t2006\t21.7999992370605\t9.6\nITA\t2003\t26.7999992370605\t9.5\nFRA\t1992\t21.7000007629395\t13.1\nFRA\t1997\t29.0\t12.7\nFRA\t1998\t26.2000007629395\t12.8\nITA\t2012\t35.2999992370605\t9.0\nESP\t1995\t41.9000015258789\t9.2\nIRL\t2012\t30.399999618530302\t15.7\nPRT\t2007\t16.7000007629395\t9.7\nNLD\t2004\t8.0\t11.9\nNLD\t2009\t6.599999904632571\t11.2\nIRL\t2001\t6.199999809265139\t15.0\nIRL\t2004\t8.300000190734862\t15.2\nESP\t2001\t20.7000007629395\t9.9\nAUT\t2002\t7.199999809265139\t9.7\nAUT\t2007\t9.39999961853027\t9.2\nPRT\t2011\t30.2999992370605\t9.2\nNLD\t2011\t7.599999904632571\t10.8\nNLD\t2014\t10.5\tnull\nAUT\t2011\t8.89999961853027\t9.3\nAUT\t2014\t10.3000001907349\tnull\nFRA\t2010\t22.899999618530302\t12.9\nFRA\t2015\tnull\tnull\nIRL\t1993\t25.0\t13.8\nDEU\t1991\t5.5\t10.4\nDEU\t1994\t9.0\t9.5\nFRA\t2008\t18.6000003814697\t12.9\nFRA\t2007\t19.1000003814697\t12.8\nFRA\t2002\t18.8999996185303\t12.9\nAUT\t1991\t3.70000004768372\t12.2\nPRT\t1995\t16.0\t10.7\nITA\t1991\t28.100000381469698\t9.9\nESP\t2011\t46.2000007629395\t10.1\nGBR\t2012\t21.2000007629395\t12.8\nFRA\t1991\t19.7999992370605\t13.2\nGRC\t2002\t26.7999992370605\t9.4\nGRC\t2007\t22.899999618530302\t10.0\nESP\t2014\t53.2000007629395\tnull\nGBR\t2001\t10.3000001907349\t11.3\nGBR\t2004\t10.6999998092651\t11.9\nGRC\t2011\t44.4000015258789\t9.6\nGRC\t2014\t52.4000015258789\tnull\nESP\t2004\t22.5\t10.6\nDEU\t2000\t8.5\t9.3\nDEU\t2005\t15.5\t8.3\nAUT\t1994\t5.0\t11.6\nDEU\t2013\t7.800000190734861\t8.5\nIRL\t1999\t8.60000038146973\t14.4\nIRL\t1996\t18.1000003814697\t13.9\nITA\t2005\t24.100000381469698\t9.6\nITA\t2010\t27.899999618530302\t9.5\nESP\t1996\t41.7999992370605\t9.2\nGRC\t1992\t25.0\t10.0\nGRC\t1995\t27.899999618530302\t9.5\nIRL\t2010\t27.600000381469698\t16.5\nIRL\t2015\tnull\tnull\nPRT\t2008\t16.7000007629395\t9.9\nPRT\t2005\t16.2000007629395\t10.4\nPRT\t2002\t10.5\t11.0\nNLD\t2002\t4.59999990463257\t12.5\nNLD\t2007\t5.900000095367429\t11.1\nIRL\t2008\t13.3000001907349\t16.7\nIRL\t2003\t8.10000038146973\t15.4\nIRL\t2006\t8.60000038146973\t15.3\nESP\t2000\t25.2999992370605\t9.9\nAUT\t2001\t6.0\t9.4\nAUT\t2006\t9.80000019073486\t9.4\nPRT\t2012\t37.9000015258789\t8.5\nNLD\t2012\t9.5\t10.5\nNLD\t2015\tnull\tnull\nAUT\t2012\t9.39999961853027\t9.4\nAUT\t2015\tnull\tnull\nFRA\t2013\t23.899999618530302\t12.3\nFRA\t2014\t23.2000007629395\tnull\nDEU\t1992\t6.0\t10.0\nDEU\t1995\t8.5\t9.4\nDEU\t1998\t9.80000019073486\t9.6\nFRA\t2009\t23.2000007629395\t12.8\nFRA\t2004\t19.7000007629395\t12.8\nFRA\t2003\t18.2999992370605\t12.8\nPRT\t1996\t17.0\t11.0\nPRT\t1991\t8.699999809265138\t11.7\nITA\t1996\t34.7000007629395\t9.3\nITA\t1998\t33.7999992370605\t9.4\nGBR\t1997\t13.6000003814697\t12.5\nESP\t2007\t18.1000003814697\t10.9\nGRC\t1998\t29.7000007629395\t9.3\nGBR\t2011\t21.2999992370605\t12.8\nGRC\t2001\t28.100000381469698\t9.3\nESP\t2015\tnull\tnull\nGRC\t2006\t25.2000007629395\t10.1\nITA\t2001\t27.7999992370605\t9.4\nNLD\t1991\t11.1000003814697\t13.2\nNLD\t1994\t11.3000001907349\t12.7\nGBR\t2002\t10.8999996185303\t11.3\nGBR\t2005\t12.8000001907349\t12.0\nGRC\t2012\t55.2999992370605\t9.0\nGRC\t2015\tnull\tnull\nDEU\t2004\t13.0\t8.6\nAUT\t1992\t4.099999904632569\t12.2\nIRL\t1998\t11.3999996185303\t14.5\nIRL\t1995\t19.0\t13.5\nIRL\t1992\t22.7000007629395\t14.4\nAUT\t1995\t5.900000095367429\t11.2\nITA\t2004\t24.399999618530302\t9.8\nFRA\t1995\t27.100000381469698\t12.8\nITA\t2014\t42.7000007629395\tnull\nITA\t2011\t29.2000007629395\t9.2\nESP\t1998\t35.4000015258789\t9.2\nESP\t1997\t39.0999984741211\t9.3\nESP\t1992\t33.0999984741211\t10.2\nGRC\t1993\t28.7999992370605\t9.7\nGRC\t1996\t31.2000007629395\t9.4\nIRL\t2014\t23.899999618530302\tnull\nPRT\t2004\t14.1000003814697\t10.4\nPRT\t2001\t8.89999961853027\t10.9\nNLD\t2001\t4.40000009536743\t12.6\nNLD\t2006\t6.599999904632571\t11.3\nIRL\t2009\t24.0\t16.7\nIRL\t2007\t9.10000038146973\t16.2\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Optional: Pure SQL approach\n\nOf course, this result could have been calculated without pivoting the table",
+      "dateUpdated": "Feb 17, 2016 7:32:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678002_-621936982",
+      "id": "20160217-160758_558424894",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eOptional: Pure SQL approach\u003c/h2\u003e\n\u003cp\u003eOf course, this result could have been calculated without pivoting the table\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "dateStarted": "Feb 17, 2016 7:32:01 PM",
+      "dateFinished": "Feb 17, 2016 7:32:01 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nsqlContext.registerDataFrameAsTable(indicators_csv, \"Indicators\")",
+      "dateUpdated": "Feb 17, 2016 8:04:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678003_-622321730",
+      "id": "20160217-160758_2082947123",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "dateStarted": "Feb 17, 2016 8:04:19 PM",
+      "dateFinished": "Feb 17, 2016 8:04:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nselect Year, CountryCode, max(SL) as UNEM, max(SP) as CBRT from\n  (select Year, CountryCode, \n          case IndicatorCode when \u0027SP.DYN.CBRT.IN\u0027  then max(Value) else NULL end as SP,\n          case IndicatorCode when \u0027SL.UEM.1524.NE.ZS\u0027 then max(Value) else NULL end as SL\n   from Indicators\n   where IndicatorCode in (\u0027SP.DYN.CBRT.IN\u0027, \u0027SL.UEM.1524.NE.ZS\u0027) \n     and CountryCode in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) \n     and year \u003e 1990\n   group by Year, CountryCode, IndicatorCode\n   order by Year, CountryCode\n  ) Indicators2\ngroup by Year, CountryCode",
+      "dateUpdated": "Feb 17, 2016 8:04:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "graph": {
+          "mode": "scatterChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "Year",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "CountryCode",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Year",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "group": {
+              "name": "CountryCode",
+              "index": 1.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "UNEM",
+              "index": 2.0,
+              "aggr": "sum"
+            },
+            "size": {
+              "name": "CBRT",
+              "index": 3.0,
+              "aggr": "sum"
+            }
+          }
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678003_-622321730",
+      "id": "20160217-160758_797292486",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Year\tCountryCode\tUNEM\tCBRT\n1991\tAUT\t3.70000004768372\t12.2\n1991\tDEU\t5.5\t10.4\n1991\tESP\t30.5\t10.2\n1991\tFRA\t19.7999992370605\t13.2\n1991\tGBR\t13.8999996185303\t13.8\n1991\tGRC\t24.5\t10.0\n1991\tIRL\t23.100000381469698\t14.9\n1991\tITA\t28.100000381469698\t9.9\n1991\tNLD\t11.1000003814697\t13.2\n1991\tPRT\t8.699999809265138\t11.7\n1992\tAUT\t4.099999904632569\t12.2\n1992\tDEU\t6.0\t10.0\n1992\tESP\t33.0999984741211\t10.2\n1992\tFRA\t21.7000007629395\t13.1\n1992\tGBR\t15.6999998092651\t13.6\n1992\tGRC\t25.0\t10.0\n1992\tIRL\t22.7000007629395\t14.4\n1992\tITA\t28.2999992370605\t10.0\n1992\tNLD\t8.10000038146973\t13.0\n1992\tPRT\t9.69999980926514\t11.5\n1993\tAUT\t4.699999809265139\t12.0\n1993\tDEU\t7.699999809265139\t9.8\n1993\tESP\t42.2000007629395\t9.8\n1993\tFRA\t25.600000381469698\t13.0\n1993\tGBR\t17.5\t13.2\n1993\tGRC\t28.7999992370605\t9.7\n1993\tIRL\t25.0\t13.8\n1993\tITA\t30.2000007629395\t9.7\n1993\tNLD\t10.3999996185303\t12.8\n1993\tPRT\t12.1000003814697\t11.4\n1994\tAUT\t5.0\t11.6\n1994\tDEU\t9.0\t9.5\n1994\tESP\t44.9000015258789\t9.4\n1994\tFRA\t28.7999992370605\t12.5\n1994\tGBR\t16.3999996185303\t13.0\n1994\tGRC\t27.7000007629395\t9.8\n1994\tIRL\t23.0\t13.4\n1994\tITA\t31.7999992370605\t9.4\n1994\tNLD\t11.3000001907349\t12.7\n1994\tPRT\t14.5\t10.9\n1995\tAUT\t5.900000095367429\t11.2\n1995\tDEU\t8.5\t9.4\n1995\tESP\t41.9000015258789\t9.2\n1995\tFRA\t27.100000381469698\t12.8\n1995\tGBR\t15.5\t12.6\n1995\tGRC\t27.899999618530302\t9.5\n1995\tIRL\t19.0\t13.5\n1995\tITA\t33.5\t9.2\n1995\tNLD\t12.1000003814697\t12.3\n1995\tPRT\t16.0\t10.7\n1996\tAUT\t6.900000095367429\t11.2\n1996\tDEU\t9.60000038146973\t9.7\n1996\tESP\t41.7999992370605\t9.2\n1996\tFRA\t27.600000381469698\t12.8\n1996\tGBR\t14.8999996185303\t12.6\n1996\tGRC\t31.2000007629395\t9.4\n1996\tIRL\t18.1000003814697\t13.9\n1996\tITA\t34.7000007629395\t9.3\n1996\tNLD\t11.3999996185303\t12.2\n1996\tPRT\t17.0\t11.0\n1997\tAUT\t7.599999904632571\t10.5\n1997\tDEU\t10.6999998092651\t9.9\n1997\tESP\t39.0999984741211\t9.3\n1997\tFRA\t29.0\t12.7\n1997\tGBR\t13.6000003814697\t12.5\n1997\tGRC\t31.0\t9.5\n1997\tIRL\t15.8999996185303\t14.4\n1997\tITA\t34.5999984741211\t9.4\n1997\tNLD\t9.69999980926514\t12.3\n1997\tPRT\t14.1000003814697\t11.2\n1998\tAUT\t7.5\t10.2\n1998\tDEU\t9.80000019073486\t9.6\n1998\tESP\t35.4000015258789\t9.2\n1998\tFRA\t26.2000007629395\t12.8\n1998\tGBR\t12.5\t12.3\n1998\tGRC\t29.7000007629395\t9.3\n1998\tIRL\t11.3999996185303\t14.5\n1998\tITA\t33.7999992370605\t9.4\n1998\tNLD\t8.80000019073486\t12.7\n1998\tPRT\t9.39999961853027\t11.2\n1999\tAUT\t5.900000095367429\t9.8\n1999\tDEU\t8.89999961853027\t9.4\n1999\tESP\t29.100000381469698\t9.5\n1999\tFRA\t26.5\t12.9\n1999\tGBR\t12.3999996185303\t11.9\n1999\tGRC\t31.7000007629395\t9.2\n1999\tIRL\t8.60000038146973\t14.4\n1999\tITA\t33.0\t9.4\n1999\tNLD\t7.400000095367429\t12.7\n1999\tPRT\t9.10000038146973\t11.4\n2000\tAUT\t6.300000190734861\t9.8\n2000\tDEU\t8.5\t9.3\n2000\tESP\t25.2999992370605\t9.9\n2000\tFRA\t20.6000003814697\t13.3\n2000\tGBR\t12.0\t11.5\n2000\tGRC\t29.5\t9.5\n2000\tIRL\t6.5\t14.4\n2000\tITA\t31.5\t9.5\n2000\tNLD\t5.300000190734861\t13.0\n2000\tPRT\t8.199999809265138\t11.7\n2001\tAUT\t6.0\t9.4\n2001\tDEU\t7.800000190734861\t8.9\n2001\tESP\t20.7000007629395\t9.9\n2001\tFRA\t18.0\t13.1\n2001\tGBR\t10.3000001907349\t11.3\n2001\tGRC\t28.100000381469698\t9.3\n2001\tIRL\t6.199999809265139\t15.0\n2001\tITA\t27.7999992370605\t9.4\n2001\tNLD\t4.40000009536743\t12.6\n2001\tPRT\t8.89999961853027\t10.9\n2002\tAUT\t7.199999809265139\t9.7\n2002\tDEU\t9.30000019073486\t8.7\n2002\tESP\t21.5\t10.1\n2002\tFRA\t18.8999996185303\t12.9\n2002\tGBR\t10.8999996185303\t11.3\n2002\tGRC\t26.7999992370605\t9.4\n2002\tIRL\t7.800000190734861\t15.4\n2002\tITA\t27.100000381469698\t9.4\n2002\tNLD\t4.59999990463257\t12.5\n2002\tPRT\t10.5\t11.0\n2003\tAUT\t7.5\t9.5\n2003\tDEU\t11.0\t8.6\n2003\tESP\t22.2999992370605\t10.4\n2003\tFRA\t18.2999992370605\t12.8\n2003\tGBR\t11.3999996185303\t11.7\n2003\tGRC\t26.899999618530302\t9.5\n2003\tIRL\t8.10000038146973\t15.4\n2003\tITA\t26.7999992370605\t9.5\n2003\tNLD\t6.599999904632571\t12.3\n2003\tPRT\t13.5\t10.8\n2004\tAUT\t12.1000003814697\t9.7\n2004\tDEU\t13.0\t8.6\n2004\tESP\t22.5\t10.6\n2004\tFRA\t19.7000007629395\t12.8\n2004\tGBR\t10.6999998092651\t11.9\n2004\tGRC\t26.899999618530302\t9.6\n2004\tIRL\t8.300000190734862\t15.2\n2004\tITA\t24.399999618530302\t9.8\n2004\tNLD\t8.0\t11.9\n2004\tPRT\t14.1000003814697\t10.4\n2005\tAUT\t11.0\t9.5\n2005\tDEU\t15.5\t8.3\n2005\tESP\t19.6000003814697\t10.6\n2005\tFRA\t20.6000003814697\t12.8\n2005\tGBR\t12.8000001907349\t12.0\n2005\tGRC\t26.0\t9.7\n2005\tIRL\t8.60000038146973\t14.8\n2005\tITA\t24.100000381469698\t9.6\n2005\tNLD\t8.199999809265138\t11.5\n2005\tPRT\t16.2000007629395\t10.4\n2006\tAUT\t9.80000019073486\t9.4\n2006\tDEU\t13.8000001907349\t8.2\n2006\tESP\t17.8999996185303\t10.8\n2006\tFRA\t21.600000381469698\t13.1\n2006\tGBR\t14.0\t12.3\n2006\tGRC\t25.2000007629395\t10.1\n2006\tIRL\t8.60000038146973\t15.3\n2006\tITA\t21.7999992370605\t9.6\n2006\tNLD\t6.599999904632571\t11.3\n2006\tPRT\t16.5\t10.0\n2007\tAUT\t9.39999961853027\t9.2\n2007\tDEU\t11.8999996185303\t8.3\n2007\tESP\t18.1000003814697\t10.9\n2007\tFRA\t19.1000003814697\t12.8\n2007\tGBR\t14.3000001907349\t12.6\n2007\tGRC\t22.899999618530302\t10.0\n2007\tIRL\t9.10000038146973\t16.2\n2007\tITA\t20.3999996185303\t9.7\n2007\tNLD\t5.900000095367429\t11.1\n2007\tPRT\t16.7000007629395\t9.7\n2008\tAUT\t8.5\t9.3\n2008\tDEU\t10.6000003814697\t8.3\n2008\tESP\t24.5\t11.3\n2008\tFRA\t18.6000003814697\t12.9\n2008\tGBR\t15.0\t12.9\n2008\tGRC\t22.100000381469698\t10.6\n2008\tIRL\t13.3000001907349\t16.7\n2008\tITA\t21.2000007629395\t9.8\n2008\tNLD\t5.300000190734861\t11.2\n2008\tPRT\t16.7000007629395\t9.9\n2009\tAUT\t10.6999998092651\t9.2\n2009\tDEU\t11.1999998092651\t8.1\n2009\tESP\t37.7000007629395\t10.6\n2009\tFRA\t23.2000007629395\t12.8\n2009\tGBR\t19.1000003814697\t12.7\n2009\tGRC\t25.7999992370605\t10.5\n2009\tIRL\t24.0\t16.7\n2009\tITA\t25.2999992370605\t9.6\n2009\tNLD\t6.599999904632571\t11.2\n2009\tPRT\t20.2999992370605\t9.4\n2010\tAUT\t9.5\t9.4\n2010\tDEU\t9.89999961853027\t8.3\n2010\tESP\t41.5\t10.4\n2010\tFRA\t22.899999618530302\t12.9\n2010\tGBR\t19.8999996185303\t12.9\n2010\tGRC\t32.9000015258789\t10.3\n2010\tIRL\t27.600000381469698\t16.5\n2010\tITA\t27.899999618530302\t9.5\n2010\tNLD\t8.699999809265138\t11.1\n2010\tPRT\t22.7999992370605\t9.6\n2011\tAUT\t8.89999961853027\t9.3\n2011\tDEU\t8.5\t8.1\n2011\tESP\t46.2000007629395\t10.1\n2011\tFRA\t22.100000381469698\t12.7\n2011\tGBR\t21.2999992370605\t12.8\n2011\tGRC\t44.4000015258789\t9.6\n2011\tIRL\t29.100000381469698\t16.2\n2011\tITA\t29.2000007629395\t9.2\n2011\tNLD\t7.599999904632571\t10.8\n2011\tPRT\t30.2999992370605\t9.2\n2012\tAUT\t9.39999961853027\t9.4\n2012\tDEU\t8.0\t8.4\n2012\tESP\t52.9000015258789\t9.7\n2012\tFRA\t23.899999618530302\t12.6\n2012\tGBR\t21.2000007629395\t12.8\n2012\tGRC\t55.2999992370605\t9.0\n2012\tIRL\t30.399999618530302\t15.7\n2012\tITA\t35.2999992370605\t9.0\n2012\tNLD\t9.5\t10.5\n2012\tPRT\t37.9000015258789\t8.5\n2013\tAUT\t9.69999980926514\t9.4\n2013\tDEU\t7.800000190734861\t8.5\n2013\tESP\t55.5\t9.1\n2013\tFRA\t23.899999618530302\t12.3\n2013\tGBR\t20.7000007629395\t12.2\n2013\tGRC\t58.2999992370605\t8.5\n2013\tIRL\t26.7999992370605\t15.0\n2013\tITA\t40.0\t8.5\n2013\tNLD\t11.0\t10.2\n2013\tPRT\t38.0999984741211\t7.9\n2014\tAUT\t10.3000001907349\tnull\n2014\tDEU\t7.699999809265139\tnull\n2014\tESP\t53.2000007629395\tnull\n2014\tFRA\t23.2000007629395\tnull\n2014\tGBR\t16.8999996185303\tnull\n2014\tGRC\t52.4000015258789\tnull\n2014\tIRL\t23.899999618530302\tnull\n2014\tITA\t42.7000007629395\tnull\n2014\tNLD\t10.5\tnull\n2014\tPRT\t34.7999992370605\tnull\n"
+      },
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "dateStarted": "Feb 17, 2016 8:04:22 PM",
+      "dateFinished": "Feb 17, 2016 8:05:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Feb 17, 2016 4:07:58 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1455721678004_-624245475",
+      "id": "20160217-160758_1878689418",
+      "dateCreated": "Feb 17, 2016 4:07:58 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Spark Masterclass",
+  "id": "2BB5HRGZ2",
+  "angularObjects": {
+    "2BCGDSGJS": [],
+    "2BC9YMRZX": [],
+    "2BDMRZZ3T": []
+  },
+  "config": {},
+  "info": {}
+}
