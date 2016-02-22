@@ -29,6 +29,6 @@
 	and restart Apache Zeppelin
 
 
-## Code View without Zepopelin
+## Code View without Apache Zeppelin
 
 Click on [Code.md](./Code.md)
