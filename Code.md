@@ -182,7 +182,7 @@ schema = StructType([ \
 ])
 
 indicators_csv = sqlContext.read.load('/tmp/europe-indicators.csv', format='com.databricks.spark.csv', header='true', schema=schema).cache()
-sqlContext.registerDataFrameAsTable(data, "IndicatorsRDD")
+sqlContext.registerDataFrameAsTable(indicators_csv, "IndicatorsRDD")
 
 print(indicators_csv.count())
 

@@ -656,7 +656,7 @@
     },
     {
       "text": "%sh\n\nhdfs dfs -ls /tmp/europe-indicators.csv",
-      "dateUpdated": "Feb 22, 2016 6:55:58 PM",
+      "dateUpdated": "Feb 22, 2016 7:30:33 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sh",
@@ -682,14 +682,14 @@
         "msg": "-rw-r--r--   3 root hdfs   61626644 2016-02-22 18:54 /tmp/europe-indicators.csv\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:55:58 PM",
-      "dateFinished": "Feb 22, 2016 6:56:04 PM",
+      "dateStarted": "Feb 22, 2016 7:30:33 PM",
+      "dateFinished": "Feb 22, 2016 7:30:42 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\nindicators_csv \u003d sqlContext.read.load(\u0027/tmp/europe-indicators.csv\u0027, format\u003d\u0027com.databricks.spark.csv\u0027, header\u003d\u0027true\u0027, schema\u003dschema).cache()\nsqlContext.registerDataFrameAsTable(data, \"IndicatorsRDD\")\n\nprint(indicators_csv.count())\n\n",
-      "dateUpdated": "Feb 22, 2016 6:58:14 PM",
+      "text": "%pyspark\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\nindicators_csv \u003d sqlContext.read.load(\u0027/tmp/europe-indicators.csv\u0027, format\u003d\u0027com.databricks.spark.csv\u0027, header\u003d\u0027true\u0027, schema\u003dschema).cache()\nsqlContext.registerDataFrameAsTable(indicators_csv, \"IndicatorsRDD\")\n\nprint(indicators_csv.count())\n\n",
+      "dateUpdated": "Feb 22, 2016 7:31:01 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -715,8 +715,8 @@
         "msg": "618067\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:58:14 PM",
-      "dateFinished": "Feb 22, 2016 6:58:25 PM",
+      "dateStarted": "Feb 22, 2016 7:31:01 PM",
+      "dateFinished": "Feb 22, 2016 7:31:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -756,7 +756,7 @@
     },
     {
       "text": "%pyspark\nindicators_csv.printSchema()\nindicators_csv.show()",
-      "dateUpdated": "Feb 22, 2016 6:58:31 PM",
+      "dateUpdated": "Feb 22, 2016 7:31:16 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -782,8 +782,8 @@
         "msg": "root\n |-- CountryName: string (nullable \u003d true)\n |-- CountryCode: string (nullable \u003d true)\n |-- IndicatorName: string (nullable \u003d true)\n |-- IndicatorCode: string (nullable \u003d true)\n |-- Year: integer (nullable \u003d true)\n |-- Value: double (nullable \u003d true)\n\n+-----------+-----------+--------------------+-----------------+----+------------------+\n|CountryName|CountryCode|       IndicatorName|    IndicatorCode|Year|             Value|\n+-----------+-----------+--------------------+-----------------+----+------------------+\n|    Austria|        AUT|Adolescent fertil...|      SP.ADO.TFRT|1960|           48.3914|\n|    Austria|        AUT|Age dependency ra...|      SP.POP.DPND|1960|52.348170383459205|\n|    Austria|        AUT|Age dependency ra...|   SP.POP.DPND.OL|1960|  18.4951086719202|\n|    Austria|        AUT|Age dependency ra...|   SP.POP.DPND.YG|1960|   33.853061711539|\n|    Austria|        AUT|Alternative and n...|EG.USE.COMM.CL.ZS|1960|  8.96433606078842|\n|    Austria|        AUT|Arms imports (SIP...|   MS.MIL.MPRT.KD|1960|         7000000.0|\n|    Austria|        AUT|Birth rate, crude...|   SP.DYN.CBRT.IN|1960|              17.9|\n|    Austria|        AUT|CO2 emissions (kg...|EN.ATM.CO2E.KD.GD|1960| 0.388626120450145|\n|    Austria|        AUT|  CO2 emissions (kt)|   EN.ATM.CO2E.KT|1960|         30821.135|\n|    Austria|        AUT|CO2 emissions (me...|   EN.ATM.CO2E.PC|1960|  4.37331882803344|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.ETOT.ZS|1960|    17.62554040572|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.GF.ZS|1960|   9.4824509220702|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.GF.KT|1960|          2922.599|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.LF.ZS|1960|  27.3289708506841|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.LF.KT|1960|          8423.099|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.MANF.ZS|1960|40.438975723312296|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.OTHX.ZS|1960|0.0332557366145661|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.BLDG.ZS|1960|23.378782840039896|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.SF.ZS|1960|58.607971445568104|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.SF.KT|1960|         18063.642|\n+-----------+-----------+--------------------+-----------------+----+------------------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:58:31 PM",
-      "dateFinished": "Feb 22, 2016 6:58:31 PM",
+      "dateStarted": "Feb 22, 2016 7:31:16 PM",
+      "dateFinished": "Feb 22, 2016 7:31:16 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -891,7 +891,7 @@
     },
     {
       "text": "%pyspark\n\ncolumns \u003d indicators_csv.map(lambda row: row.IndicatorCode.replace(\".\", \"_\")).distinct().collect()\nbc \u003d sc.broadcast(columns)\n\ndef seq(u, v):\n    if u \u003d\u003d None: \n        u \u003d {ind: None for ind in bc.value}          # Use value of broadcast variable to initialize the dictionary and ensure all rows have all indicators\n    u[v.IndicatorCode.replace(\".\",\"_\")] \u003d v.Value    # Set this indicators value converted to float\n    return u\n\ndef comb(u1, u2):\n    u1.update(u2)\n    return u1\n\ndef merge(keys, value):\n    value[\"Country\"] \u003d keys[0]\n    value[\"Year\"] \u003d int(keys[1])\n    return Row(**value)\n\ndata \u003d indicators_csv.select([\"CountryCode\", \"IndicatorCode\", \"Year\", \"Value\"])\\\n                     .rdd\\\n                     .keyBy(lambda row: row.CountryCode + \"|\" + str(row.Year))\\\n                     .aggregateByKey(None, seq, comb)\\\n                     .map(lambda tuple: merge(tuple[0].split(\"|\"), tuple[1]))\\\n                     .cache()\n\n",
-      "dateUpdated": "Feb 22, 2016 6:58:38 PM",
+      "dateUpdated": "Feb 22, 2016 7:31:21 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -917,8 +917,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:58:38 PM",
-      "dateFinished": "Feb 22, 2016 6:58:49 PM",
+      "dateStarted": "Feb 22, 2016 7:31:21 PM",
+      "dateFinished": "Feb 22, 2016 7:31:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -958,7 +958,7 @@
     },
     {
       "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nsqlContext.setConf(\"spark.sql.orc.filterPushdown\", \"true\")\n\nfields \u003d [StructField(ind, DoubleType(), True) for ind in columns ] + \\\n         [StructField(\"Year\", IntegerType(), False), StructField(\"Country\", StringType(), False)]\nsortedFields \u003d sorted(fields, key\u003dlambda x: x.name)\nsortedSchema \u003d StructType(fields\u003dsortedFields)\n\nindicators \u003d sqlContext.createDataFrame(data, schema \u003d sortedSchema)\nsqlContext.registerDataFrameAsTable(indicators, \"Indicators\")",
-      "dateUpdated": "Feb 22, 2016 6:59:59 PM",
+      "dateUpdated": "Feb 22, 2016 7:31:35 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -984,8 +984,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:59:59 PM",
-      "dateFinished": "Feb 22, 2016 7:00:00 PM",
+      "dateStarted": "Feb 22, 2016 7:31:35 PM",
+      "dateFinished": "Feb 22, 2016 7:31:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1025,7 +1025,7 @@
     },
     {
       "text": "%sh\nhdfs dfs -rm -r /tmp/europe-indicators_transformed_orc\n",
-      "dateUpdated": "Feb 22, 2016 7:00:32 PM",
+      "dateUpdated": "Feb 22, 2016 7:31:56 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sh",
@@ -1046,19 +1046,19 @@
       "jobName": "paragraph_1455721677999_-633094700",
       "id": "20160217-160757_1122870613",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Process exited with an error: 1 (Exit value: 1)"
+        "msg": "16/02/22 19:32:01 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval \u003d 360 minutes, Emptier interval \u003d 0 minutes.\nMoved: \u0027hdfs://beebox01.localdomain:8020/tmp/europe-indicators_transformed_orc\u0027 to trash at: hdfs://beebox01.localdomain:8020/user/zeppelin/.Trash/Current\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:00:32 PM",
-      "dateFinished": "Feb 22, 2016 7:00:40 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 22, 2016 7:31:56 PM",
+      "dateFinished": "Feb 22, 2016 7:32:02 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nindicators.write.orc(\"/tmp/europe-indicators_transformed_orc\")\n",
-      "dateUpdated": "Feb 22, 2016 7:00:41 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:06 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1084,8 +1084,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:00:41 PM",
-      "dateFinished": "Feb 22, 2016 7:00:50 PM",
+      "dateStarted": "Feb 22, 2016 7:32:06 PM",
+      "dateFinished": "Feb 22, 2016 7:32:14 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1159,7 +1159,7 @@
     },
     {
       "text": "%pyspark\n\nindicators_t \u003d sqlContext.read.orc(\"/tmp/europe-indicators_transformed_orc\")\nsqlContext.registerDataFrameAsTable(indicators_t, \"Indicators_t\")\nsqlContext.cacheTable(\"Indicators_t\")\n",
-      "dateUpdated": "Feb 22, 2016 7:00:51 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:15 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1185,8 +1185,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:00:51 PM",
-      "dateFinished": "Feb 22, 2016 7:00:52 PM",
+      "dateStarted": "Feb 22, 2016 7:32:15 PM",
+      "dateFinished": "Feb 22, 2016 7:32:16 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1226,7 +1226,7 @@
     },
     {
       "text": "%sql\n\n-- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)\n\nselect Country, Year, SP_DYN_CBRT_IN from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) \n  and Year \u003e 1990\norder by Country, Year\n",
-      "dateUpdated": "Feb 22, 2016 7:01:27 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:20 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -1279,14 +1279,14 @@
         "msg": "Country\tYear\tSP_DYN_CBRT_IN\nAUT\t1991\t12.2\nAUT\t1992\t12.2\nAUT\t1993\t12.0\nAUT\t1994\t11.6\nAUT\t1995\t11.2\nAUT\t1996\t11.2\nAUT\t1997\t10.5\nAUT\t1998\t10.2\nAUT\t1999\t9.8\nAUT\t2000\t9.8\nAUT\t2001\t9.4\nAUT\t2002\t9.7\nAUT\t2003\t9.5\nAUT\t2004\t9.7\nAUT\t2005\t9.5\nAUT\t2006\t9.4\nAUT\t2007\t9.2\nAUT\t2008\t9.3\nAUT\t2009\t9.2\nAUT\t2010\t9.4\nAUT\t2011\t9.3\nAUT\t2012\t9.4\nAUT\t2013\t9.4\nAUT\t2014\tnull\nAUT\t2015\tnull\nDEU\t1991\t10.4\nDEU\t1992\t10.0\nDEU\t1993\t9.8\nDEU\t1994\t9.5\nDEU\t1995\t9.4\nDEU\t1996\t9.7\nDEU\t1997\t9.9\nDEU\t1998\t9.6\nDEU\t1999\t9.4\nDEU\t2000\t9.3\nDEU\t2001\t8.9\nDEU\t2002\t8.7\nDEU\t2003\t8.6\nDEU\t2004\t8.6\nDEU\t2005\t8.3\nDEU\t2006\t8.2\nDEU\t2007\t8.3\nDEU\t2008\t8.3\nDEU\t2009\t8.1\nDEU\t2010\t8.3\nDEU\t2011\t8.1\nDEU\t2012\t8.4\nDEU\t2013\t8.5\nDEU\t2014\tnull\nDEU\t2015\tnull\nESP\t1991\t10.2\nESP\t1992\t10.2\nESP\t1993\t9.8\nESP\t1994\t9.4\nESP\t1995\t9.2\nESP\t1996\t9.2\nESP\t1997\t9.3\nESP\t1998\t9.2\nESP\t1999\t9.5\nESP\t2000\t9.9\nESP\t2001\t9.9\nESP\t2002\t10.1\nESP\t2003\t10.4\nESP\t2004\t10.6\nESP\t2005\t10.6\nESP\t2006\t10.8\nESP\t2007\t10.9\nESP\t2008\t11.3\nESP\t2009\t10.6\nESP\t2010\t10.4\nESP\t2011\t10.1\nESP\t2012\t9.7\nESP\t2013\t9.1\nESP\t2014\tnull\nESP\t2015\tnull\nFRA\t1991\t13.2\nFRA\t1992\t13.1\nFRA\t1993\t13.0\nFRA\t1994\t12.5\nFRA\t1995\t12.8\nFRA\t1996\t12.8\nFRA\t1997\t12.7\nFRA\t1998\t12.8\nFRA\t1999\t12.9\nFRA\t2000\t13.3\nFRA\t2001\t13.1\nFRA\t2002\t12.9\nFRA\t2003\t12.8\nFRA\t2004\t12.8\nFRA\t2005\t12.8\nFRA\t2006\t13.1\nFRA\t2007\t12.8\nFRA\t2008\t12.9\nFRA\t2009\t12.8\nFRA\t2010\t12.9\nFRA\t2011\t12.7\nFRA\t2012\t12.6\nFRA\t2013\t12.3\nFRA\t2014\tnull\nFRA\t2015\tnull\nGBR\t1991\t13.8\nGBR\t1992\t13.6\nGBR\t1993\t13.2\nGBR\t1994\t13.0\nGBR\t1995\t12.6\nGBR\t1996\t12.6\nGBR\t1997\t12.5\nGBR\t1998\t12.3\nGBR\t1999\t11.9\nGBR\t2000\t11.5\nGBR\t2001\t11.3\nGBR\t2002\t11.3\nGBR\t2003\t11.7\nGBR\t2004\t11.9\nGBR\t2005\t12.0\nGBR\t2006\t12.3\nGBR\t2007\t12.6\nGBR\t2008\t12.9\nGBR\t2009\t12.7\nGBR\t2010\t12.9\nGBR\t2011\t12.8\nGBR\t2012\t12.8\nGBR\t2013\t12.2\nGBR\t2014\tnull\nGBR\t2015\tnull\nGRC\t1991\t10.0\nGRC\t1992\t10.0\nGRC\t1993\t9.7\nGRC\t1994\t9.8\nGRC\t1995\t9.5\nGRC\t1996\t9.4\nGRC\t1997\t9.5\nGRC\t1998\t9.3\nGRC\t1999\t9.2\nGRC\t2000\t9.5\nGRC\t2001\t9.3\nGRC\t2002\t9.4\nGRC\t2003\t9.5\nGRC\t2004\t9.6\nGRC\t2005\t9.7\nGRC\t2006\t10.1\nGRC\t2007\t10.0\nGRC\t2008\t10.6\nGRC\t2009\t10.5\nGRC\t2010\t10.3\nGRC\t2011\t9.6\nGRC\t2012\t9.0\nGRC\t2013\t8.5\nGRC\t2014\tnull\nGRC\t2015\tnull\nIRL\t1991\t14.9\nIRL\t1992\t14.4\nIRL\t1993\t13.8\nIRL\t1994\t13.4\nIRL\t1995\t13.5\nIRL\t1996\t13.9\nIRL\t1997\t14.4\nIRL\t1998\t14.5\nIRL\t1999\t14.4\nIRL\t2000\t14.4\nIRL\t2001\t15.0\nIRL\t2002\t15.4\nIRL\t2003\t15.4\nIRL\t2004\t15.2\nIRL\t2005\t14.8\nIRL\t2006\t15.3\nIRL\t2007\t16.2\nIRL\t2008\t16.7\nIRL\t2009\t16.7\nIRL\t2010\t16.5\nIRL\t2011\t16.2\nIRL\t2012\t15.7\nIRL\t2013\t15.0\nIRL\t2014\tnull\nIRL\t2015\tnull\nITA\t1991\t9.9\nITA\t1992\t10.0\nITA\t1993\t9.7\nITA\t1994\t9.4\nITA\t1995\t9.2\nITA\t1996\t9.3\nITA\t1997\t9.4\nITA\t1998\t9.4\nITA\t1999\t9.4\nITA\t2000\t9.5\nITA\t2001\t9.4\nITA\t2002\t9.4\nITA\t2003\t9.5\nITA\t2004\t9.8\nITA\t2005\t9.6\nITA\t2006\t9.6\nITA\t2007\t9.7\nITA\t2008\t9.8\nITA\t2009\t9.6\nITA\t2010\t9.5\nITA\t2011\t9.2\nITA\t2012\t9.0\nITA\t2013\t8.5\nITA\t2014\tnull\nITA\t2015\tnull\nNLD\t1991\t13.2\nNLD\t1992\t13.0\nNLD\t1993\t12.8\nNLD\t1994\t12.7\nNLD\t1995\t12.3\nNLD\t1996\t12.2\nNLD\t1997\t12.3\nNLD\t1998\t12.7\nNLD\t1999\t12.7\nNLD\t2000\t13.0\nNLD\t2001\t12.6\nNLD\t2002\t12.5\nNLD\t2003\t12.3\nNLD\t2004\t11.9\nNLD\t2005\t11.5\nNLD\t2006\t11.3\nNLD\t2007\t11.1\nNLD\t2008\t11.2\nNLD\t2009\t11.2\nNLD\t2010\t11.1\nNLD\t2011\t10.8\nNLD\t2012\t10.5\nNLD\t2013\t10.2\nNLD\t2014\tnull\nNLD\t2015\tnull\nPRT\t1991\t11.7\nPRT\t1992\t11.5\nPRT\t1993\t11.4\nPRT\t1994\t10.9\nPRT\t1995\t10.7\nPRT\t1996\t11.0\nPRT\t1997\t11.2\nPRT\t1998\t11.2\nPRT\t1999\t11.4\nPRT\t2000\t11.7\nPRT\t2001\t10.9\nPRT\t2002\t11.0\nPRT\t2003\t10.8\nPRT\t2004\t10.4\nPRT\t2005\t10.4\nPRT\t2006\t10.0\nPRT\t2007\t9.7\nPRT\t2008\t9.9\nPRT\t2009\t9.4\nPRT\t2010\t9.6\nPRT\t2011\t9.2\nPRT\t2012\t8.5\nPRT\t2013\t7.9\nPRT\t2014\tnull\nPRT\t2015\tnull\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:01:27 PM",
-      "dateFinished": "Feb 22, 2016 7:01:31 PM",
+      "dateStarted": "Feb 22, 2016 7:32:20 PM",
+      "dateFinished": "Feb 22, 2016 7:32:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n\n-- SL.UEM.1524.NE.ZS: Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n\nselect Country, Year, SL_UEM_1524_NE_ZS from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) \n  and Year \u003e 1990\norder by Country, Year\n\n",
-      "dateUpdated": "Feb 22, 2016 7:01:57 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:28 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -1339,14 +1339,14 @@
         "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\nAUT\t1991\t3.70000004768372\nAUT\t1992\t4.099999904632569\nAUT\t1993\t4.699999809265139\nAUT\t1994\t5.0\nAUT\t1995\t5.900000095367429\nAUT\t1996\t6.900000095367429\nAUT\t1997\t7.599999904632571\nAUT\t1998\t7.5\nAUT\t1999\t5.900000095367429\nAUT\t2000\t6.300000190734861\nAUT\t2001\t6.0\nAUT\t2002\t7.199999809265139\nAUT\t2003\t7.5\nAUT\t2004\t12.1000003814697\nAUT\t2005\t11.0\nAUT\t2006\t9.80000019073486\nAUT\t2007\t9.39999961853027\nAUT\t2008\t8.5\nAUT\t2009\t10.6999998092651\nAUT\t2010\t9.5\nAUT\t2011\t8.89999961853027\nAUT\t2012\t9.39999961853027\nAUT\t2013\t9.69999980926514\nAUT\t2014\t10.3000001907349\nAUT\t2015\tnull\nDEU\t1991\t5.5\nDEU\t1992\t6.0\nDEU\t1993\t7.699999809265139\nDEU\t1994\t9.0\nDEU\t1995\t8.5\nDEU\t1996\t9.60000038146973\nDEU\t1997\t10.6999998092651\nDEU\t1998\t9.80000019073486\nDEU\t1999\t8.89999961853027\nDEU\t2000\t8.5\nDEU\t2001\t7.800000190734861\nDEU\t2002\t9.30000019073486\nDEU\t2003\t11.0\nDEU\t2004\t13.0\nDEU\t2005\t15.5\nDEU\t2006\t13.8000001907349\nDEU\t2007\t11.8999996185303\nDEU\t2008\t10.6000003814697\nDEU\t2009\t11.1999998092651\nDEU\t2010\t9.89999961853027\nDEU\t2011\t8.5\nDEU\t2012\t8.0\nDEU\t2013\t7.800000190734861\nDEU\t2014\t7.699999809265139\nDEU\t2015\tnull\nESP\t1991\t30.5\nESP\t1992\t33.0999984741211\nESP\t1993\t42.2000007629395\nESP\t1994\t44.9000015258789\nESP\t1995\t41.9000015258789\nESP\t1996\t41.7999992370605\nESP\t1997\t39.0999984741211\nESP\t1998\t35.4000015258789\nESP\t1999\t29.100000381469698\nESP\t2000\t25.2999992370605\nESP\t2001\t20.7000007629395\nESP\t2002\t21.5\nESP\t2003\t22.2999992370605\nESP\t2004\t22.5\nESP\t2005\t19.6000003814697\nESP\t2006\t17.8999996185303\nESP\t2007\t18.1000003814697\nESP\t2008\t24.5\nESP\t2009\t37.7000007629395\nESP\t2010\t41.5\nESP\t2011\t46.2000007629395\nESP\t2012\t52.9000015258789\nESP\t2013\t55.5\nESP\t2014\t53.2000007629395\nESP\t2015\tnull\nFRA\t1991\t19.7999992370605\nFRA\t1992\t21.7000007629395\nFRA\t1993\t25.600000381469698\nFRA\t1994\t28.7999992370605\nFRA\t1995\t27.100000381469698\nFRA\t1996\t27.600000381469698\nFRA\t1997\t29.0\nFRA\t1998\t26.2000007629395\nFRA\t1999\t26.5\nFRA\t2000\t20.6000003814697\nFRA\t2001\t18.0\nFRA\t2002\t18.8999996185303\nFRA\t2003\t18.2999992370605\nFRA\t2004\t19.7000007629395\nFRA\t2005\t20.6000003814697\nFRA\t2006\t21.600000381469698\nFRA\t2007\t19.1000003814697\nFRA\t2008\t18.6000003814697\nFRA\t2009\t23.2000007629395\nFRA\t2010\t22.899999618530302\nFRA\t2011\t22.100000381469698\nFRA\t2012\t23.899999618530302\nFRA\t2013\t23.899999618530302\nFRA\t2014\t23.2000007629395\nFRA\t2015\tnull\nGBR\t1991\t13.8999996185303\nGBR\t1992\t15.6999998092651\nGBR\t1993\t17.5\nGBR\t1994\t16.3999996185303\nGBR\t1995\t15.5\nGBR\t1996\t14.8999996185303\nGBR\t1997\t13.6000003814697\nGBR\t1998\t12.5\nGBR\t1999\t12.3999996185303\nGBR\t2000\t12.0\nGBR\t2001\t10.3000001907349\nGBR\t2002\t10.8999996185303\nGBR\t2003\t11.3999996185303\nGBR\t2004\t10.6999998092651\nGBR\t2005\t12.8000001907349\nGBR\t2006\t14.0\nGBR\t2007\t14.3000001907349\nGBR\t2008\t15.0\nGBR\t2009\t19.1000003814697\nGBR\t2010\t19.8999996185303\nGBR\t2011\t21.2999992370605\nGBR\t2012\t21.2000007629395\nGBR\t2013\t20.7000007629395\nGBR\t2014\t16.8999996185303\nGBR\t2015\tnull\nGRC\t1991\t24.5\nGRC\t1992\t25.0\nGRC\t1993\t28.7999992370605\nGRC\t1994\t27.7000007629395\nGRC\t1995\t27.899999618530302\nGRC\t1996\t31.2000007629395\nGRC\t1997\t31.0\nGRC\t1998\t29.7000007629395\nGRC\t1999\t31.7000007629395\nGRC\t2000\t29.5\nGRC\t2001\t28.100000381469698\nGRC\t2002\t26.7999992370605\nGRC\t2003\t26.899999618530302\nGRC\t2004\t26.899999618530302\nGRC\t2005\t26.0\nGRC\t2006\t25.2000007629395\nGRC\t2007\t22.899999618530302\nGRC\t2008\t22.100000381469698\nGRC\t2009\t25.7999992370605\nGRC\t2010\t32.9000015258789\nGRC\t2011\t44.4000015258789\nGRC\t2012\t55.2999992370605\nGRC\t2013\t58.2999992370605\nGRC\t2014\t52.4000015258789\nGRC\t2015\tnull\nIRL\t1991\t23.100000381469698\nIRL\t1992\t22.7000007629395\nIRL\t1993\t25.0\nIRL\t1994\t23.0\nIRL\t1995\t19.0\nIRL\t1996\t18.1000003814697\nIRL\t1997\t15.8999996185303\nIRL\t1998\t11.3999996185303\nIRL\t1999\t8.60000038146973\nIRL\t2000\t6.5\nIRL\t2001\t6.199999809265139\nIRL\t2002\t7.800000190734861\nIRL\t2003\t8.10000038146973\nIRL\t2004\t8.300000190734862\nIRL\t2005\t8.60000038146973\nIRL\t2006\t8.60000038146973\nIRL\t2007\t9.10000038146973\nIRL\t2008\t13.3000001907349\nIRL\t2009\t24.0\nIRL\t2010\t27.600000381469698\nIRL\t2011\t29.100000381469698\nIRL\t2012\t30.399999618530302\nIRL\t2013\t26.7999992370605\nIRL\t2014\t23.899999618530302\nIRL\t2015\tnull\nITA\t1991\t28.100000381469698\nITA\t1992\t28.2999992370605\nITA\t1993\t30.2000007629395\nITA\t1994\t31.7999992370605\nITA\t1995\t33.5\nITA\t1996\t34.7000007629395\nITA\t1997\t34.5999984741211\nITA\t1998\t33.7999992370605\nITA\t1999\t33.0\nITA\t2000\t31.5\nITA\t2001\t27.7999992370605\nITA\t2002\t27.100000381469698\nITA\t2003\t26.7999992370605\nITA\t2004\t24.399999618530302\nITA\t2005\t24.100000381469698\nITA\t2006\t21.7999992370605\nITA\t2007\t20.3999996185303\nITA\t2008\t21.2000007629395\nITA\t2009\t25.2999992370605\nITA\t2010\t27.899999618530302\nITA\t2011\t29.2000007629395\nITA\t2012\t35.2999992370605\nITA\t2013\t40.0\nITA\t2014\t42.7000007629395\nITA\t2015\tnull\nNLD\t1991\t11.1000003814697\nNLD\t1992\t8.10000038146973\nNLD\t1993\t10.3999996185303\nNLD\t1994\t11.3000001907349\nNLD\t1995\t12.1000003814697\nNLD\t1996\t11.3999996185303\nNLD\t1997\t9.69999980926514\nNLD\t1998\t8.80000019073486\nNLD\t1999\t7.400000095367429\nNLD\t2000\t5.300000190734861\nNLD\t2001\t4.40000009536743\nNLD\t2002\t4.59999990463257\nNLD\t2003\t6.599999904632571\nNLD\t2004\t8.0\nNLD\t2005\t8.199999809265138\nNLD\t2006\t6.599999904632571\nNLD\t2007\t5.900000095367429\nNLD\t2008\t5.300000190734861\nNLD\t2009\t6.599999904632571\nNLD\t2010\t8.699999809265138\nNLD\t2011\t7.599999904632571\nNLD\t2012\t9.5\nNLD\t2013\t11.0\nNLD\t2014\t10.5\nNLD\t2015\tnull\nPRT\t1991\t8.699999809265138\nPRT\t1992\t9.69999980926514\nPRT\t1993\t12.1000003814697\nPRT\t1994\t14.5\nPRT\t1995\t16.0\nPRT\t1996\t17.0\nPRT\t1997\t14.1000003814697\nPRT\t1998\t9.39999961853027\nPRT\t1999\t9.10000038146973\nPRT\t2000\t8.199999809265138\nPRT\t2001\t8.89999961853027\nPRT\t2002\t10.5\nPRT\t2003\t13.5\nPRT\t2004\t14.1000003814697\nPRT\t2005\t16.2000007629395\nPRT\t2006\t16.5\nPRT\t2007\t16.7000007629395\nPRT\t2008\t16.7000007629395\nPRT\t2009\t20.2999992370605\nPRT\t2010\t22.7999992370605\nPRT\t2011\t30.2999992370605\nPRT\t2012\t37.9000015258789\nPRT\t2013\t38.0999984741211\nPRT\t2014\t34.7999992370605\nPRT\t2015\tnull\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:01:57 PM",
-      "dateFinished": "Feb 22, 2016 7:01:58 PM",
+      "dateStarted": "Feb 22, 2016 7:32:28 PM",
+      "dateFinished": "Feb 22, 2016 7:32:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n\n-- SL.UEM.1524.NE.ZS: Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n-- SL.UEM.TOTL.NE.ZS: Unemployment, total (% of total labor force) (national estimate)\n-- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)\n\nselect Country, Year, SL_UEM_1524_NE_ZS, SP_DYN_CBRT_IN  from Indicators_t\nwhere Country in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027)\n  and Year \u003e 1990\n  and Year \u003c 2015\norder by Country, Year\n",
-      "dateUpdated": "Feb 22, 2016 7:02:09 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:34 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -1405,8 +1405,8 @@
         "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\tSP_DYN_CBRT_IN\nAUT\t1991\t3.70000004768372\t12.2\nAUT\t1992\t4.099999904632569\t12.2\nAUT\t1993\t4.699999809265139\t12.0\nAUT\t1994\t5.0\t11.6\nAUT\t1995\t5.900000095367429\t11.2\nAUT\t1996\t6.900000095367429\t11.2\nAUT\t1997\t7.599999904632571\t10.5\nAUT\t1998\t7.5\t10.2\nAUT\t1999\t5.900000095367429\t9.8\nAUT\t2000\t6.300000190734861\t9.8\nAUT\t2001\t6.0\t9.4\nAUT\t2002\t7.199999809265139\t9.7\nAUT\t2003\t7.5\t9.5\nAUT\t2004\t12.1000003814697\t9.7\nAUT\t2005\t11.0\t9.5\nAUT\t2006\t9.80000019073486\t9.4\nAUT\t2007\t9.39999961853027\t9.2\nAUT\t2008\t8.5\t9.3\nAUT\t2009\t10.6999998092651\t9.2\nAUT\t2010\t9.5\t9.4\nAUT\t2011\t8.89999961853027\t9.3\nAUT\t2012\t9.39999961853027\t9.4\nAUT\t2013\t9.69999980926514\t9.4\nAUT\t2014\t10.3000001907349\tnull\nDEU\t1991\t5.5\t10.4\nDEU\t1992\t6.0\t10.0\nDEU\t1993\t7.699999809265139\t9.8\nDEU\t1994\t9.0\t9.5\nDEU\t1995\t8.5\t9.4\nDEU\t1996\t9.60000038146973\t9.7\nDEU\t1997\t10.6999998092651\t9.9\nDEU\t1998\t9.80000019073486\t9.6\nDEU\t1999\t8.89999961853027\t9.4\nDEU\t2000\t8.5\t9.3\nDEU\t2001\t7.800000190734861\t8.9\nDEU\t2002\t9.30000019073486\t8.7\nDEU\t2003\t11.0\t8.6\nDEU\t2004\t13.0\t8.6\nDEU\t2005\t15.5\t8.3\nDEU\t2006\t13.8000001907349\t8.2\nDEU\t2007\t11.8999996185303\t8.3\nDEU\t2008\t10.6000003814697\t8.3\nDEU\t2009\t11.1999998092651\t8.1\nDEU\t2010\t9.89999961853027\t8.3\nDEU\t2011\t8.5\t8.1\nDEU\t2012\t8.0\t8.4\nDEU\t2013\t7.800000190734861\t8.5\nDEU\t2014\t7.699999809265139\tnull\nESP\t1991\t30.5\t10.2\nESP\t1992\t33.0999984741211\t10.2\nESP\t1993\t42.2000007629395\t9.8\nESP\t1994\t44.9000015258789\t9.4\nESP\t1995\t41.9000015258789\t9.2\nESP\t1996\t41.7999992370605\t9.2\nESP\t1997\t39.0999984741211\t9.3\nESP\t1998\t35.4000015258789\t9.2\nESP\t1999\t29.100000381469698\t9.5\nESP\t2000\t25.2999992370605\t9.9\nESP\t2001\t20.7000007629395\t9.9\nESP\t2002\t21.5\t10.1\nESP\t2003\t22.2999992370605\t10.4\nESP\t2004\t22.5\t10.6\nESP\t2005\t19.6000003814697\t10.6\nESP\t2006\t17.8999996185303\t10.8\nESP\t2007\t18.1000003814697\t10.9\nESP\t2008\t24.5\t11.3\nESP\t2009\t37.7000007629395\t10.6\nESP\t2010\t41.5\t10.4\nESP\t2011\t46.2000007629395\t10.1\nESP\t2012\t52.9000015258789\t9.7\nESP\t2013\t55.5\t9.1\nESP\t2014\t53.2000007629395\tnull\nFRA\t1991\t19.7999992370605\t13.2\nFRA\t1992\t21.7000007629395\t13.1\nFRA\t1993\t25.600000381469698\t13.0\nFRA\t1994\t28.7999992370605\t12.5\nFRA\t1995\t27.100000381469698\t12.8\nFRA\t1996\t27.600000381469698\t12.8\nFRA\t1997\t29.0\t12.7\nFRA\t1998\t26.2000007629395\t12.8\nFRA\t1999\t26.5\t12.9\nFRA\t2000\t20.6000003814697\t13.3\nFRA\t2001\t18.0\t13.1\nFRA\t2002\t18.8999996185303\t12.9\nFRA\t2003\t18.2999992370605\t12.8\nFRA\t2004\t19.7000007629395\t12.8\nFRA\t2005\t20.6000003814697\t12.8\nFRA\t2006\t21.600000381469698\t13.1\nFRA\t2007\t19.1000003814697\t12.8\nFRA\t2008\t18.6000003814697\t12.9\nFRA\t2009\t23.2000007629395\t12.8\nFRA\t2010\t22.899999618530302\t12.9\nFRA\t2011\t22.100000381469698\t12.7\nFRA\t2012\t23.899999618530302\t12.6\nFRA\t2013\t23.899999618530302\t12.3\nFRA\t2014\t23.2000007629395\tnull\nGBR\t1991\t13.8999996185303\t13.8\nGBR\t1992\t15.6999998092651\t13.6\nGBR\t1993\t17.5\t13.2\nGBR\t1994\t16.3999996185303\t13.0\nGBR\t1995\t15.5\t12.6\nGBR\t1996\t14.8999996185303\t12.6\nGBR\t1997\t13.6000003814697\t12.5\nGBR\t1998\t12.5\t12.3\nGBR\t1999\t12.3999996185303\t11.9\nGBR\t2000\t12.0\t11.5\nGBR\t2001\t10.3000001907349\t11.3\nGBR\t2002\t10.8999996185303\t11.3\nGBR\t2003\t11.3999996185303\t11.7\nGBR\t2004\t10.6999998092651\t11.9\nGBR\t2005\t12.8000001907349\t12.0\nGBR\t2006\t14.0\t12.3\nGBR\t2007\t14.3000001907349\t12.6\nGBR\t2008\t15.0\t12.9\nGBR\t2009\t19.1000003814697\t12.7\nGBR\t2010\t19.8999996185303\t12.9\nGBR\t2011\t21.2999992370605\t12.8\nGBR\t2012\t21.2000007629395\t12.8\nGBR\t2013\t20.7000007629395\t12.2\nGBR\t2014\t16.8999996185303\tnull\nGRC\t1991\t24.5\t10.0\nGRC\t1992\t25.0\t10.0\nGRC\t1993\t28.7999992370605\t9.7\nGRC\t1994\t27.7000007629395\t9.8\nGRC\t1995\t27.899999618530302\t9.5\nGRC\t1996\t31.2000007629395\t9.4\nGRC\t1997\t31.0\t9.5\nGRC\t1998\t29.7000007629395\t9.3\nGRC\t1999\t31.7000007629395\t9.2\nGRC\t2000\t29.5\t9.5\nGRC\t2001\t28.100000381469698\t9.3\nGRC\t2002\t26.7999992370605\t9.4\nGRC\t2003\t26.899999618530302\t9.5\nGRC\t2004\t26.899999618530302\t9.6\nGRC\t2005\t26.0\t9.7\nGRC\t2006\t25.2000007629395\t10.1\nGRC\t2007\t22.899999618530302\t10.0\nGRC\t2008\t22.100000381469698\t10.6\nGRC\t2009\t25.7999992370605\t10.5\nGRC\t2010\t32.9000015258789\t10.3\nGRC\t2011\t44.4000015258789\t9.6\nGRC\t2012\t55.2999992370605\t9.0\nGRC\t2013\t58.2999992370605\t8.5\nGRC\t2014\t52.4000015258789\tnull\nIRL\t1991\t23.100000381469698\t14.9\nIRL\t1992\t22.7000007629395\t14.4\nIRL\t1993\t25.0\t13.8\nIRL\t1994\t23.0\t13.4\nIRL\t1995\t19.0\t13.5\nIRL\t1996\t18.1000003814697\t13.9\nIRL\t1997\t15.8999996185303\t14.4\nIRL\t1998\t11.3999996185303\t14.5\nIRL\t1999\t8.60000038146973\t14.4\nIRL\t2000\t6.5\t14.4\nIRL\t2001\t6.199999809265139\t15.0\nIRL\t2002\t7.800000190734861\t15.4\nIRL\t2003\t8.10000038146973\t15.4\nIRL\t2004\t8.300000190734862\t15.2\nIRL\t2005\t8.60000038146973\t14.8\nIRL\t2006\t8.60000038146973\t15.3\nIRL\t2007\t9.10000038146973\t16.2\nIRL\t2008\t13.3000001907349\t16.7\nIRL\t2009\t24.0\t16.7\nIRL\t2010\t27.600000381469698\t16.5\nIRL\t2011\t29.100000381469698\t16.2\nIRL\t2012\t30.399999618530302\t15.7\nIRL\t2013\t26.7999992370605\t15.0\nIRL\t2014\t23.899999618530302\tnull\nITA\t1991\t28.100000381469698\t9.9\nITA\t1992\t28.2999992370605\t10.0\nITA\t1993\t30.2000007629395\t9.7\nITA\t1994\t31.7999992370605\t9.4\nITA\t1995\t33.5\t9.2\nITA\t1996\t34.7000007629395\t9.3\nITA\t1997\t34.5999984741211\t9.4\nITA\t1998\t33.7999992370605\t9.4\nITA\t1999\t33.0\t9.4\nITA\t2000\t31.5\t9.5\nITA\t2001\t27.7999992370605\t9.4\nITA\t2002\t27.100000381469698\t9.4\nITA\t2003\t26.7999992370605\t9.5\nITA\t2004\t24.399999618530302\t9.8\nITA\t2005\t24.100000381469698\t9.6\nITA\t2006\t21.7999992370605\t9.6\nITA\t2007\t20.3999996185303\t9.7\nITA\t2008\t21.2000007629395\t9.8\nITA\t2009\t25.2999992370605\t9.6\nITA\t2010\t27.899999618530302\t9.5\nITA\t2011\t29.2000007629395\t9.2\nITA\t2012\t35.2999992370605\t9.0\nITA\t2013\t40.0\t8.5\nITA\t2014\t42.7000007629395\tnull\nNLD\t1991\t11.1000003814697\t13.2\nNLD\t1992\t8.10000038146973\t13.0\nNLD\t1993\t10.3999996185303\t12.8\nNLD\t1994\t11.3000001907349\t12.7\nNLD\t1995\t12.1000003814697\t12.3\nNLD\t1996\t11.3999996185303\t12.2\nNLD\t1997\t9.69999980926514\t12.3\nNLD\t1998\t8.80000019073486\t12.7\nNLD\t1999\t7.400000095367429\t12.7\nNLD\t2000\t5.300000190734861\t13.0\nNLD\t2001\t4.40000009536743\t12.6\nNLD\t2002\t4.59999990463257\t12.5\nNLD\t2003\t6.599999904632571\t12.3\nNLD\t2004\t8.0\t11.9\nNLD\t2005\t8.199999809265138\t11.5\nNLD\t2006\t6.599999904632571\t11.3\nNLD\t2007\t5.900000095367429\t11.1\nNLD\t2008\t5.300000190734861\t11.2\nNLD\t2009\t6.599999904632571\t11.2\nNLD\t2010\t8.699999809265138\t11.1\nNLD\t2011\t7.599999904632571\t10.8\nNLD\t2012\t9.5\t10.5\nNLD\t2013\t11.0\t10.2\nNLD\t2014\t10.5\tnull\nPRT\t1991\t8.699999809265138\t11.7\nPRT\t1992\t9.69999980926514\t11.5\nPRT\t1993\t12.1000003814697\t11.4\nPRT\t1994\t14.5\t10.9\nPRT\t1995\t16.0\t10.7\nPRT\t1996\t17.0\t11.0\nPRT\t1997\t14.1000003814697\t11.2\nPRT\t1998\t9.39999961853027\t11.2\nPRT\t1999\t9.10000038146973\t11.4\nPRT\t2000\t8.199999809265138\t11.7\nPRT\t2001\t8.89999961853027\t10.9\nPRT\t2002\t10.5\t11.0\nPRT\t2003\t13.5\t10.8\nPRT\t2004\t14.1000003814697\t10.4\nPRT\t2005\t16.2000007629395\t10.4\nPRT\t2006\t16.5\t10.0\nPRT\t2007\t16.7000007629395\t9.7\nPRT\t2008\t16.7000007629395\t9.9\nPRT\t2009\t20.2999992370605\t9.4\nPRT\t2010\t22.7999992370605\t9.6\nPRT\t2011\t30.2999992370605\t9.2\nPRT\t2012\t37.9000015258789\t8.5\nPRT\t2013\t38.0999984741211\t7.9\nPRT\t2014\t34.7999992370605\tnull\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:02:09 PM",
-      "dateFinished": "Feb 22, 2016 7:02:11 PM",
+      "dateStarted": "Feb 22, 2016 7:32:35 PM",
+      "dateFinished": "Feb 22, 2016 7:32:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1446,7 +1446,7 @@
     },
     {
       "text": "%pyspark\n\nsqlContext.registerDataFrameAsTable(indicators_csv, \"Indicators\")",
-      "dateUpdated": "Feb 22, 2016 7:03:16 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:40 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1472,14 +1472,14 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:03:16 PM",
-      "dateFinished": "Feb 22, 2016 7:03:16 PM",
+      "dateStarted": "Feb 22, 2016 7:32:40 PM",
+      "dateFinished": "Feb 22, 2016 7:32:41 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n\nselect Year, CountryCode, max(SL) as UNEM, max(SP) as CBRT from\n  (select Year, CountryCode, \n          case IndicatorCode when \u0027SP.DYN.CBRT.IN\u0027  then max(Value) else NULL end as SP,\n          case IndicatorCode when \u0027SL.UEM.1524.NE.ZS\u0027 then max(Value) else NULL end as SL\n   from Indicators\n   where IndicatorCode in (\u0027SP.DYN.CBRT.IN\u0027, \u0027SL.UEM.1524.NE.ZS\u0027) \n     and CountryCode in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027) \n     and year \u003e 1990\n   group by Year, CountryCode, IndicatorCode\n   order by Year, CountryCode\n  ) Indicators2\ngroup by CountryCode, Year",
-      "dateUpdated": "Feb 22, 2016 7:03:18 PM",
+      "dateUpdated": "Feb 22, 2016 7:32:43 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -1544,8 +1544,8 @@
         "msg": "Year\tCountryCode\tUNEM\tCBRT\n1991\tAUT\t3.70000004768372\t12.2\n1991\tDEU\t5.5\t10.4\n1991\tESP\t30.5\t10.2\n1991\tFRA\t19.7999992370605\t13.2\n1991\tGBR\t13.8999996185303\t13.8\n1991\tGRC\t24.5\t10.0\n1991\tIRL\t23.100000381469698\t14.9\n1991\tITA\t28.100000381469698\t9.9\n1991\tNLD\t11.1000003814697\t13.2\n1991\tPRT\t8.699999809265138\t11.7\n1992\tAUT\t4.099999904632569\t12.2\n1992\tDEU\t6.0\t10.0\n1992\tESP\t33.0999984741211\t10.2\n1992\tFRA\t21.7000007629395\t13.1\n1992\tGBR\t15.6999998092651\t13.6\n1992\tGRC\t25.0\t10.0\n1992\tIRL\t22.7000007629395\t14.4\n1992\tITA\t28.2999992370605\t10.0\n1992\tNLD\t8.10000038146973\t13.0\n1992\tPRT\t9.69999980926514\t11.5\n1993\tAUT\t4.699999809265139\t12.0\n1993\tDEU\t7.699999809265139\t9.8\n1993\tESP\t42.2000007629395\t9.8\n1993\tFRA\t25.600000381469698\t13.0\n1993\tGBR\t17.5\t13.2\n1993\tGRC\t28.7999992370605\t9.7\n1993\tIRL\t25.0\t13.8\n1993\tITA\t30.2000007629395\t9.7\n1993\tNLD\t10.3999996185303\t12.8\n1993\tPRT\t12.1000003814697\t11.4\n1994\tAUT\t5.0\t11.6\n1994\tDEU\t9.0\t9.5\n1994\tESP\t44.9000015258789\t9.4\n1994\tFRA\t28.7999992370605\t12.5\n1994\tGBR\t16.3999996185303\t13.0\n1994\tGRC\t27.7000007629395\t9.8\n1994\tIRL\t23.0\t13.4\n1994\tITA\t31.7999992370605\t9.4\n1994\tNLD\t11.3000001907349\t12.7\n1994\tPRT\t14.5\t10.9\n1995\tAUT\t5.900000095367429\t11.2\n1995\tDEU\t8.5\t9.4\n1995\tESP\t41.9000015258789\t9.2\n1995\tFRA\t27.100000381469698\t12.8\n1995\tGBR\t15.5\t12.6\n1995\tGRC\t27.899999618530302\t9.5\n1995\tIRL\t19.0\t13.5\n1995\tITA\t33.5\t9.2\n1995\tNLD\t12.1000003814697\t12.3\n1995\tPRT\t16.0\t10.7\n1996\tAUT\t6.900000095367429\t11.2\n1996\tDEU\t9.60000038146973\t9.7\n1996\tESP\t41.7999992370605\t9.2\n1996\tFRA\t27.600000381469698\t12.8\n1996\tGBR\t14.8999996185303\t12.6\n1996\tGRC\t31.2000007629395\t9.4\n1996\tIRL\t18.1000003814697\t13.9\n1996\tITA\t34.7000007629395\t9.3\n1996\tNLD\t11.3999996185303\t12.2\n1996\tPRT\t17.0\t11.0\n1997\tAUT\t7.599999904632571\t10.5\n1997\tDEU\t10.6999998092651\t9.9\n1997\tESP\t39.0999984741211\t9.3\n1997\tFRA\t29.0\t12.7\n1997\tGBR\t13.6000003814697\t12.5\n1997\tGRC\t31.0\t9.5\n1997\tIRL\t15.8999996185303\t14.4\n1997\tITA\t34.5999984741211\t9.4\n1997\tNLD\t9.69999980926514\t12.3\n1997\tPRT\t14.1000003814697\t11.2\n1998\tAUT\t7.5\t10.2\n1998\tDEU\t9.80000019073486\t9.6\n1998\tESP\t35.4000015258789\t9.2\n1998\tFRA\t26.2000007629395\t12.8\n1998\tGBR\t12.5\t12.3\n1998\tGRC\t29.7000007629395\t9.3\n1998\tIRL\t11.3999996185303\t14.5\n1998\tITA\t33.7999992370605\t9.4\n1998\tNLD\t8.80000019073486\t12.7\n1998\tPRT\t9.39999961853027\t11.2\n1999\tAUT\t5.900000095367429\t9.8\n1999\tDEU\t8.89999961853027\t9.4\n1999\tESP\t29.100000381469698\t9.5\n1999\tFRA\t26.5\t12.9\n1999\tGBR\t12.3999996185303\t11.9\n1999\tGRC\t31.7000007629395\t9.2\n1999\tIRL\t8.60000038146973\t14.4\n1999\tITA\t33.0\t9.4\n1999\tNLD\t7.400000095367429\t12.7\n1999\tPRT\t9.10000038146973\t11.4\n2000\tAUT\t6.300000190734861\t9.8\n2000\tDEU\t8.5\t9.3\n2000\tESP\t25.2999992370605\t9.9\n2000\tFRA\t20.6000003814697\t13.3\n2000\tGBR\t12.0\t11.5\n2000\tGRC\t29.5\t9.5\n2000\tIRL\t6.5\t14.4\n2000\tITA\t31.5\t9.5\n2000\tNLD\t5.300000190734861\t13.0\n2000\tPRT\t8.199999809265138\t11.7\n2001\tAUT\t6.0\t9.4\n2001\tDEU\t7.800000190734861\t8.9\n2001\tESP\t20.7000007629395\t9.9\n2001\tFRA\t18.0\t13.1\n2001\tGBR\t10.3000001907349\t11.3\n2001\tGRC\t28.100000381469698\t9.3\n2001\tIRL\t6.199999809265139\t15.0\n2001\tITA\t27.7999992370605\t9.4\n2001\tNLD\t4.40000009536743\t12.6\n2001\tPRT\t8.89999961853027\t10.9\n2002\tAUT\t7.199999809265139\t9.7\n2002\tDEU\t9.30000019073486\t8.7\n2002\tESP\t21.5\t10.1\n2002\tFRA\t18.8999996185303\t12.9\n2002\tGBR\t10.8999996185303\t11.3\n2002\tGRC\t26.7999992370605\t9.4\n2002\tIRL\t7.800000190734861\t15.4\n2002\tITA\t27.100000381469698\t9.4\n2002\tNLD\t4.59999990463257\t12.5\n2002\tPRT\t10.5\t11.0\n2003\tAUT\t7.5\t9.5\n2003\tDEU\t11.0\t8.6\n2003\tESP\t22.2999992370605\t10.4\n2003\tFRA\t18.2999992370605\t12.8\n2003\tGBR\t11.3999996185303\t11.7\n2003\tGRC\t26.899999618530302\t9.5\n2003\tIRL\t8.10000038146973\t15.4\n2003\tITA\t26.7999992370605\t9.5\n2003\tNLD\t6.599999904632571\t12.3\n2003\tPRT\t13.5\t10.8\n2004\tAUT\t12.1000003814697\t9.7\n2004\tDEU\t13.0\t8.6\n2004\tESP\t22.5\t10.6\n2004\tFRA\t19.7000007629395\t12.8\n2004\tGBR\t10.6999998092651\t11.9\n2004\tGRC\t26.899999618530302\t9.6\n2004\tIRL\t8.300000190734862\t15.2\n2004\tITA\t24.399999618530302\t9.8\n2004\tNLD\t8.0\t11.9\n2004\tPRT\t14.1000003814697\t10.4\n2005\tAUT\t11.0\t9.5\n2005\tDEU\t15.5\t8.3\n2005\tESP\t19.6000003814697\t10.6\n2005\tFRA\t20.6000003814697\t12.8\n2005\tGBR\t12.8000001907349\t12.0\n2005\tGRC\t26.0\t9.7\n2005\tIRL\t8.60000038146973\t14.8\n2005\tITA\t24.100000381469698\t9.6\n2005\tNLD\t8.199999809265138\t11.5\n2005\tPRT\t16.2000007629395\t10.4\n2006\tAUT\t9.80000019073486\t9.4\n2006\tDEU\t13.8000001907349\t8.2\n2006\tESP\t17.8999996185303\t10.8\n2006\tFRA\t21.600000381469698\t13.1\n2006\tGBR\t14.0\t12.3\n2006\tGRC\t25.2000007629395\t10.1\n2006\tIRL\t8.60000038146973\t15.3\n2006\tITA\t21.7999992370605\t9.6\n2006\tNLD\t6.599999904632571\t11.3\n2006\tPRT\t16.5\t10.0\n2007\tAUT\t9.39999961853027\t9.2\n2007\tDEU\t11.8999996185303\t8.3\n2007\tESP\t18.1000003814697\t10.9\n2007\tFRA\t19.1000003814697\t12.8\n2007\tGBR\t14.3000001907349\t12.6\n2007\tGRC\t22.899999618530302\t10.0\n2007\tIRL\t9.10000038146973\t16.2\n2007\tITA\t20.3999996185303\t9.7\n2007\tNLD\t5.900000095367429\t11.1\n2007\tPRT\t16.7000007629395\t9.7\n2008\tAUT\t8.5\t9.3\n2008\tDEU\t10.6000003814697\t8.3\n2008\tESP\t24.5\t11.3\n2008\tFRA\t18.6000003814697\t12.9\n2008\tGBR\t15.0\t12.9\n2008\tGRC\t22.100000381469698\t10.6\n2008\tIRL\t13.3000001907349\t16.7\n2008\tITA\t21.2000007629395\t9.8\n2008\tNLD\t5.300000190734861\t11.2\n2008\tPRT\t16.7000007629395\t9.9\n2009\tAUT\t10.6999998092651\t9.2\n2009\tDEU\t11.1999998092651\t8.1\n2009\tESP\t37.7000007629395\t10.6\n2009\tFRA\t23.2000007629395\t12.8\n2009\tGBR\t19.1000003814697\t12.7\n2009\tGRC\t25.7999992370605\t10.5\n2009\tIRL\t24.0\t16.7\n2009\tITA\t25.2999992370605\t9.6\n2009\tNLD\t6.599999904632571\t11.2\n2009\tPRT\t20.2999992370605\t9.4\n2010\tAUT\t9.5\t9.4\n2010\tDEU\t9.89999961853027\t8.3\n2010\tESP\t41.5\t10.4\n2010\tFRA\t22.899999618530302\t12.9\n2010\tGBR\t19.8999996185303\t12.9\n2010\tGRC\t32.9000015258789\t10.3\n2010\tIRL\t27.600000381469698\t16.5\n2010\tITA\t27.899999618530302\t9.5\n2010\tNLD\t8.699999809265138\t11.1\n2010\tPRT\t22.7999992370605\t9.6\n2011\tAUT\t8.89999961853027\t9.3\n2011\tDEU\t8.5\t8.1\n2011\tESP\t46.2000007629395\t10.1\n2011\tFRA\t22.100000381469698\t12.7\n2011\tGBR\t21.2999992370605\t12.8\n2011\tGRC\t44.4000015258789\t9.6\n2011\tIRL\t29.100000381469698\t16.2\n2011\tITA\t29.2000007629395\t9.2\n2011\tNLD\t7.599999904632571\t10.8\n2011\tPRT\t30.2999992370605\t9.2\n2012\tAUT\t9.39999961853027\t9.4\n2012\tDEU\t8.0\t8.4\n2012\tESP\t52.9000015258789\t9.7\n2012\tFRA\t23.899999618530302\t12.6\n2012\tGBR\t21.2000007629395\t12.8\n2012\tGRC\t55.2999992370605\t9.0\n2012\tIRL\t30.399999618530302\t15.7\n2012\tITA\t35.2999992370605\t9.0\n2012\tNLD\t9.5\t10.5\n2012\tPRT\t37.9000015258789\t8.5\n2013\tAUT\t9.69999980926514\t9.4\n2013\tDEU\t7.800000190734861\t8.5\n2013\tESP\t55.5\t9.1\n2013\tFRA\t23.899999618530302\t12.3\n2013\tGBR\t20.7000007629395\t12.2\n2013\tGRC\t58.2999992370605\t8.5\n2013\tIRL\t26.7999992370605\t15.0\n2013\tITA\t40.0\t8.5\n2013\tNLD\t11.0\t10.2\n2013\tPRT\t38.0999984741211\t7.9\n2014\tAUT\t10.3000001907349\tnull\n2014\tDEU\t7.699999809265139\tnull\n2014\tESP\t53.2000007629395\tnull\n2014\tFRA\t23.2000007629395\tnull\n2014\tGBR\t16.8999996185303\tnull\n2014\tGRC\t52.4000015258789\tnull\n2014\tIRL\t23.899999618530302\tnull\n2014\tITA\t42.7000007629395\tnull\n2014\tNLD\t10.5\tnull\n2014\tPRT\t34.7999992370605\tnull\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:03:18 PM",
-      "dateFinished": "Feb 22, 2016 7:03:44 PM",
+      "dateStarted": "Feb 22, 2016 7:32:43 PM",
+      "dateFinished": "Feb 22, 2016 7:33:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1585,7 +1585,7 @@
     },
     {
       "text": "%pyspark\n\ndef cvtCodes(code):\n    return code.lower().replace(\".\", \"_\")\n    \n#euCodes \u003d [\n#    \"BEL\",\"GRC\",\"MLT\",\"SVK\",\"BUL\",\"IRL\",\"NLD\",\n#    \"SVN\",\"DNK\",\"ITA\",\"AUT\",\"ESP\",\"DEU\",\"HRV\",\n#    \"POL\",\"CZE\",\"EST\",\"LVA\",\"PRT\",\"HUN\",\"FIN\",\n#    \"LTU\",\"ROM\",\"GBR\",\"FRA\",\"LUX\",\"SWE\",\"CYP\"\n#]\n\nfeatures \u003d [\n    cvtCodes(c) for c in [\n        \"SL.UEM.1524.NE.ZS\",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n#        \"SL.UEM.TOTL.NE.ZS\",   # Unemployment, total (% of total labor force) (national estimate)\n        \"GC.BAL.CASH.GD.ZS\",   # Cash surplus/deficit (% of GDP)\n        \"FP.CPI.TOTL.ZG\"       # Inflation, consumer prices (annual %) \n    ]\n]\n\nyears \u003d [2007, 2008, 2009, 2010, 2011, 2012]\neu \u003d indicators_t[indicators_t.year.isin(years)]\\\n#                 [indicators_t.country.isin(euCodes)]\\\n                 .select([\"country\", \"year\"] + features)\n\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
-      "dateUpdated": "Feb 22, 2016 7:04:04 PM",
+      "dateUpdated": "Feb 22, 2016 7:33:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1611,8 +1611,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 19, 2016 12:27:56 PM",
-      "dateStarted": "Feb 22, 2016 7:04:04 PM",
-      "dateFinished": "Feb 22, 2016 7:04:08 PM",
+      "dateStarted": "Feb 22, 2016 7:33:19 PM",
+      "dateFinished": "Feb 22, 2016 7:33:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1653,7 +1653,7 @@
     },
     {
       "text": "%pyspark\n\nfrom pyspark.ml.feature import VectorAssembler\nfrom pyspark.ml.clustering import KMeans, KMeansModel\nfrom pyspark.ml import Pipeline\n\nassembler \u003d VectorAssembler(inputCols\u003dfeatures, outputCol\u003d\"features\")\n\nkmeans \u003d KMeans(k\u003d3, seed\u003d42)\n\npipeline \u003d Pipeline(stages\u003d[assembler, kmeans])\nmodel \u003d pipeline.fit(eu)\n\ntransformed \u003d model.transform(eu).select(\"country\", \"year\", \"prediction\").sort([\"country\", \"year\"])\nsqlContext.registerDataFrameAsTable(transformed, \"Classes\")\n",
-      "dateUpdated": "Feb 22, 2016 7:04:14 PM",
+      "dateUpdated": "Feb 22, 2016 7:33:27 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1679,8 +1679,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 20, 2016 8:04:31 AM",
-      "dateStarted": "Feb 22, 2016 7:04:14 PM",
-      "dateFinished": "Feb 22, 2016 7:04:23 PM",
+      "dateStarted": "Feb 22, 2016 7:33:27 PM",
+      "dateFinished": "Feb 22, 2016 7:33:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1720,7 +1720,7 @@
     },
     {
       "text": "%sql\n\nselect country, year,  prediction + 1 as class\nfrom Classes \norder by country, year\n",
-      "dateUpdated": "Feb 22, 2016 7:04:24 PM",
+      "dateUpdated": "Feb 22, 2016 7:33:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1780,8 +1780,8 @@
         "msg": "country\tyear\tclass\nAUT\t2007\t3\nAUT\t2008\t3\nAUT\t2009\t3\nAUT\t2010\t3\nAUT\t2011\t3\nAUT\t2012\t3\nBEL\t2007\t1\nBEL\t2008\t1\nBEL\t2009\t1\nBEL\t2010\t1\nBEL\t2011\t1\nBEL\t2012\t1\nCYP\t2007\t3\nCYP\t2008\t3\nCYP\t2009\t3\nCYP\t2010\t3\nCYP\t2011\t1\nCYP\t2012\t1\nCZE\t2007\t3\nCZE\t2008\t3\nCZE\t2009\t3\nCZE\t2010\t1\nCZE\t2011\t1\nCZE\t2012\t1\nDEU\t2007\t3\nDEU\t2008\t3\nDEU\t2009\t3\nDEU\t2010\t3\nDEU\t2011\t3\nDEU\t2012\t3\nDNK\t2007\t3\nDNK\t2008\t3\nDNK\t2009\t3\nDNK\t2010\t3\nDNK\t2011\t3\nDNK\t2012\t3\nESP\t2007\t3\nESP\t2008\t1\nESP\t2009\t2\nESP\t2010\t2\nESP\t2011\t2\nESP\t2012\t2\nEST\t2007\t3\nEST\t2008\t3\nEST\t2009\t1\nEST\t2010\t2\nEST\t2011\t1\nEST\t2012\t1\nFIN\t2007\t3\nFIN\t2008\t3\nFIN\t2009\t1\nFIN\t2010\t1\nFIN\t2011\t1\nFIN\t2012\t1\nFRA\t2007\t1\nFRA\t2008\t1\nFRA\t2009\t1\nFRA\t2010\t1\nFRA\t2011\t1\nFRA\t2012\t1\nGBR\t2007\t3\nGBR\t2008\t3\nGBR\t2009\t1\nGBR\t2010\t1\nGBR\t2011\t1\nGBR\t2012\t1\nGRC\t2007\t1\nGRC\t2008\t1\nGRC\t2009\t1\nGRC\t2010\t2\nGRC\t2011\t2\nGRC\t2012\t2\nHRV\t2007\t1\nHRV\t2008\t1\nHRV\t2009\t1\nHRV\t2010\t2\nHRV\t2011\t2\nHRV\t2012\t2\nHUN\t2007\t1\nHUN\t2008\t1\nHUN\t2009\t1\nHUN\t2010\t1\nHUN\t2011\t1\nHUN\t2012\t1\nIRL\t2007\t3\nIRL\t2008\t3\nIRL\t2009\t1\nIRL\t2010\t2\nIRL\t2011\t2\nIRL\t2012\t2\nITA\t2007\t1\nITA\t2008\t1\nITA\t2009\t1\nITA\t2010\t1\nITA\t2011\t1\nITA\t2012\t2\nLTU\t2007\t3\nLTU\t2008\t3\nLTU\t2009\t2\nLTU\t2010\t2\nLTU\t2011\t2\nLTU\t2012\t1\nLUX\t2007\t3\nLUX\t2008\t3\nLUX\t2009\t3\nLUX\t2010\t3\nLUX\t2011\t3\nLUX\t2012\t1\nLVA\t2007\t3\nLVA\t2008\t3\nLVA\t2009\t2\nLVA\t2010\t2\nLVA\t2011\t1\nLVA\t2012\t1\nMLT\t2007\t3\nMLT\t2008\t3\nMLT\t2009\t3\nMLT\t2010\t3\nMLT\t2011\t3\nMLT\t2012\t3\nNLD\t2007\t3\nNLD\t2008\t3\nNLD\t2009\t3\nNLD\t2010\t3\nNLD\t2011\t3\nNLD\t2012\t3\nPOL\t2007\t1\nPOL\t2008\t1\nPOL\t2009\t1\nPOL\t2010\t1\nPOL\t2011\t1\nPOL\t2012\t1\nPRT\t2007\t3\nPRT\t2008\t3\nPRT\t2009\t1\nPRT\t2010\t1\nPRT\t2011\t1\nPRT\t2012\t2\nROM\t2007\t1\nROM\t2008\t1\nROM\t2009\t1\nROM\t2010\t1\nROM\t2011\t1\nROM\t2012\t1\nSVK\t2007\t1\nSVK\t2008\t1\nSVK\t2009\t1\nSVK\t2010\t2\nSVK\t2011\t2\nSVK\t2012\t2\nSVN\t2007\t3\nSVN\t2008\t3\nSVN\t2009\t3\nSVN\t2010\t3\nSVN\t2011\t3\nSVN\t2012\t1\nSWE\t2007\t1\nSWE\t2008\t1\nSWE\t2009\t1\nSWE\t2010\t1\nSWE\t2011\t1\nSWE\t2012\t1\n"
       },
       "dateCreated": "Feb 19, 2016 12:43:40 PM",
-      "dateStarted": "Feb 22, 2016 7:04:24 PM",
-      "dateFinished": "Feb 22, 2016 7:04:28 PM",
+      "dateStarted": "Feb 22, 2016 7:33:40 PM",
+      "dateFinished": "Feb 22, 2016 7:33:43 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1821,7 +1821,7 @@
     },
     {
       "text": "%pyspark\n\ndef seq(u, v):\n    if u \u003d\u003d None: u \u003d []\n    u.append(v.country)\n    return u\n\ndef comb(u1, u2):\n    return u1 + u2\n\ndata \u003d transformed.select([\"year\", \"country\", \"prediction\"])\\\n                  .rdd\\\n                  .keyBy(lambda row: str(row.year) + \":\" + str(row.prediction))\\\n                  .aggregateByKey(None, seq, comb)\\\n                  .sortByKey()\\\n                  .map(lambda tuple: (tuple[0], \", \".join(sorted(tuple[1]))))\n\nyear \u003d \"\"\nfor c in data.collect():\n    y, cl \u003d c[0].split(\":\")\n    if y !\u003d year:\n        print \"\\nYear:\", y\n        year \u003d y\n    print cl, \"\u003d\", c[1]\n\n",
-      "dateUpdated": "Feb 22, 2016 7:04:32 PM",
+      "dateUpdated": "Feb 22, 2016 7:33:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1847,8 +1847,8 @@
         "msg": "\nYear: 2007\n0 \u003d BEL, FRA, GRC, HRV, HUN, ITA, POL, ROM, SVK, SWE\n2 \u003d AUT, CYP, CZE, DEU, DNK, ESP, EST, FIN, GBR, IRL, LTU, LUX, LVA, MLT, NLD, PRT, SVN\n\nYear: 2008\n0 \u003d BEL, ESP, FRA, GRC, HRV, HUN, ITA, POL, ROM, SVK, SWE\n2 \u003d AUT, CYP, CZE, DEU, DNK, EST, FIN, GBR, IRL, LTU, LUX, LVA, MLT, NLD, PRT, SVN\n\nYear: 2009\n0 \u003d BEL, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, POL, PRT, ROM, SVK, SWE\n1 \u003d ESP, LTU, LVA\n2 \u003d AUT, CYP, CZE, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2010\n0 \u003d BEL, CZE, FIN, FRA, GBR, HUN, ITA, POL, PRT, ROM, SWE\n1 \u003d ESP, EST, GRC, HRV, IRL, LTU, LVA, SVK\n2 \u003d AUT, CYP, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2011\n0 \u003d BEL, CYP, CZE, EST, FIN, FRA, GBR, HUN, ITA, LVA, POL, PRT, ROM, SWE\n1 \u003d ESP, GRC, HRV, IRL, LTU, SVK\n2 \u003d AUT, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2012\n0 \u003d BEL, CYP, CZE, EST, FIN, FRA, GBR, HUN, LTU, LUX, LVA, POL, ROM, SVN, SWE\n1 \u003d ESP, GRC, HRV, IRL, ITA, PRT, SVK\n2 \u003d AUT, DEU, DNK, MLT, NLD\n"
       },
       "dateCreated": "Feb 21, 2016 1:30:32 PM",
-      "dateStarted": "Feb 22, 2016 7:04:32 PM",
-      "dateFinished": "Feb 22, 2016 7:04:47 PM",
+      "dateStarted": "Feb 22, 2016 7:33:47 PM",
+      "dateFinished": "Feb 22, 2016 7:34:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1888,7 +1888,7 @@
     },
     {
       "text": "%sql\n\nselect distinct IndicatorCode, IndicatorName from IndicatorsRDD\nwhere indicatorName like \"%nflat%\"\norder by IndicatorCode",
-      "dateUpdated": "Feb 20, 2016 5:01:50 PM",
+      "dateUpdated": "Feb 22, 2016 7:34:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1937,8 +1937,8 @@
         "msg": "IndicatorCode\tIndicatorName\nFP.CPI.TOTL.ZG\tInflation, consumer prices (annual %)\nNY.GDP.DEFL.KD.ZG\tInflation, GDP deflator (annual %)\n"
       },
       "dateCreated": "Feb 20, 2016 10:14:51 AM",
-      "dateStarted": "Feb 20, 2016 5:01:50 PM",
-      "dateFinished": "Feb 20, 2016 5:01:53 PM",
+      "dateStarted": "Feb 22, 2016 7:34:08 PM",
+      "dateFinished": "Feb 22, 2016 7:34:10 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
