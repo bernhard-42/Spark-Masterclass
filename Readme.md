@@ -27,3 +27,8 @@
 		chown -R zeppelin:zeppelin "/opt/in cubator-zeppelin/notebook/2BB5HRGZ2"
 
 	and restart Apache Zeppelin
+
+
+## Code View without Zepopelin
+
+	Click on [Code.md](Code.md)

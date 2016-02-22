@@ -156,24 +156,21 @@ group by Class
 
 ## 4.1 Load World Development Indicators from HDFS as DataFrame
 
-FYI, source: https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip
+**Data source:** https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip
+
+**Changes:** Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE) 
 
 
 ```bash
 %sh
 
-hdfs dfs -ls /tmp/world-development-indicators
+hdfs dfs -ls /tmp/europe-indicators.csv
 ```
 
 
 ```python
 %pyspark
 from pyspark.sql.types import *
-
-def loadCsv(table, schema):
-    data = sqlContext.read.load('/tmp/world-development-indicators/' + table + '.csv', format='com.databricks.spark.csv', header='true', schema=schema).cache()
-    sqlContext.registerDataFrameAsTable(data, table+"RDD")
-    return data
 
 schema = StructType([ \
    StructField("CountryName",   StringType(),  True), \
@@ -183,7 +180,9 @@ schema = StructType([ \
    StructField("Year",          IntegerType(), True), \
    StructField("Value",         DoubleType(),  True)  \
 ])
-indicators_csv = loadCsv("Indicators", schema)
+
+indicators_csv = sqlContext.read.load('/tmp/europe-indicators.csv', format='com.databricks.spark.csv', header='true', schema=schema).cache()
+sqlContext.registerDataFrameAsTable(data, "IndicatorsRDD")
 
 print(indicators_csv.count())
 
@@ -263,9 +262,7 @@ Finally, transform RDD back to DataFrame and register a table with the hiveConte
 
 from pyspark.sql.types import *
 
-from pyspark.sql import HiveContext
-hiveContext = HiveContext(sc)
-hiveContext.setConf("spark.sql.orc.filterPushdown", "true")
+sqlContext.setConf("spark.sql.orc.filterPushdown", "true")
 
 fields = [StructField(ind, DoubleType(), True) for ind in columns ] + \
          [StructField("Year", IntegerType(), False), StructField("Country", StringType(), False)]
@@ -282,7 +279,7 @@ sqlContext.registerDataFrameAsTable(indicators, "Indicators")
 
 ```bash
 %sh
-hdfs dfs -rm -r /tmp/indicators_transformed_orc
+hdfs dfs -rm -r /tmp/europe-indicators_transformed_orc
 
 ```
 
@@ -290,7 +287,7 @@ hdfs dfs -rm -r /tmp/indicators_transformed_orc
 ```python
 %pyspark
 
-indicators.write.orc("/tmp/indicators_transformed_orc")
+indicators.write.orc("/tmp/europe-indicators_transformed_orc")
 
 ```
 
@@ -304,7 +301,7 @@ Load ORC data again to benefit from predicate pushdow, etc
 ```python
 %pyspark
 
-indicators_t = sqlContext.read.orc("/tmp/indicators_transformed_orc")
+indicators_t = sqlContext.read.orc("/tmp/europe-indicators_transformed_orc")
 sqlContext.registerDataFrameAsTable(indicators_t, "Indicators_t")
 sqlContext.cacheTable("Indicators_t")
 
@@ -322,7 +319,7 @@ Execute some queries
 select Country, Year, SP_DYN_CBRT_IN from Indicators_t
 where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') 
   and Year > 1990
-order by Year
+order by Country, Year
 
 ```
 
@@ -335,7 +332,7 @@ order by Year
 select Country, Year, SL_UEM_1524_NE_ZS from Indicators_t
 where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') 
   and Year > 1990
-order by year, country
+order by Country, Year
 
 
 ```
@@ -352,7 +349,7 @@ select Country, Year, SL_UEM_1524_NE_ZS, SP_DYN_CBRT_IN  from Indicators_t
 where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR')
   and Year > 1990
   and Year < 2015
-order by Year
+order by Country, Year
 
 ```
 
@@ -383,7 +380,7 @@ select Year, CountryCode, max(SL) as UNEM, max(SP) as CBRT from
    group by Year, CountryCode, IndicatorCode
    order by Year, CountryCode
   ) Indicators2
-group by Year, CountryCode
+group by CountryCode, Year
 ```
 
 
@@ -399,12 +396,12 @@ group by Year, CountryCode
 def cvtCodes(code):
     return code.lower().replace(".", "_")
     
-euCodes = [
-    "BEL","GRC","MLT","SVK","BUL","IRL","NLD",
-    "SVN","DNK","ITA","AUT","ESP","DEU","HRV",
-    "POL","CZE","EST","LVA","PRT","HUN","FIN",
-    "LTU","ROM","GBR","FRA","LUX","SWE","CYP"
-]
+#euCodes = [
+#    "BEL","GRC","MLT","SVK","BUL","IRL","NLD",
+#    "SVN","DNK","ITA","AUT","ESP","DEU","HRV",
+#    "POL","CZE","EST","LVA","PRT","HUN","FIN",
+#    "LTU","ROM","GBR","FRA","LUX","SWE","CYP"
+#]
 
 features = [
     cvtCodes(c) for c in [
@@ -417,7 +414,7 @@ features = [
 
 years = [2007, 2008, 2009, 2010, 2011, 2012]
 eu = indicators_t[indicators_t.year.isin(years)]\
-                 [indicators_t.country.isin(euCodes)]\
+#                 [indicators_t.country.isin(euCodes)]\
                  .select(["country", "year"] + features)
 
 sqlContext.registerDataFrameAsTable(eu, "eu")
