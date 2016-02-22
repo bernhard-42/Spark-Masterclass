@@ -67,6 +67,7 @@ print "total = ", s
 ## 2.2 Load the famous Iris data from HDFS and so some basic calculations
 
 Attribute Information:
+
     [0] sepal length in cm
     [1] sepal width in cm
     [2] petal length in cm
@@ -90,7 +91,7 @@ iris = file.filter(lambda row: len(row)>0)\
 
 print iris.count()
 print 
-pprint(iris.sample(False, fraction=0.1, seed=42).collect())
+pprint(iris.sample(False, fraction=0.1, seed=42).take(15))
 ```
 
 
@@ -266,22 +267,13 @@ from pyspark.sql import HiveContext
 hiveContext = HiveContext(sc)
 hiveContext.setConf("spark.sql.orc.filterPushdown", "true")
 
-fields = [StructField(ind, StringType(), True) for ind in columns ] + \
+fields = [StructField(ind, DoubleType(), True) for ind in columns ] + \
          [StructField("Year", IntegerType(), False), StructField("Country", StringType(), False)]
 sortedFields = sorted(fields, key=lambda x: x.name)
 sortedSchema = StructType(fields=sortedFields)
 
 indicators = sqlContext.createDataFrame(data, schema = sortedSchema)
 sqlContext.registerDataFrameAsTable(indicators, "Indicators")
-```
-
-
-```python
-%pyspark
-
-print indicators.first()
-
-
 ```
 
 
@@ -312,7 +304,7 @@ Load ORC data again to benefit from predicate pushdow, etc
 ```python
 %pyspark
 
-indicators_t = hiveContext.read.orc("/tmp/indicators_transformed_orc")
+indicators_t = sqlContext.read.orc("/tmp/indicators_transformed_orc")
 sqlContext.registerDataFrameAsTable(indicators_t, "Indicators_t")
 sqlContext.cacheTable("Indicators_t")
 
@@ -328,7 +320,9 @@ Execute some queries
 -- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)
 
 select Country, Year, SP_DYN_CBRT_IN from Indicators_t
-where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') and Year > 1990
+where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') 
+  and Year > 1990
+order by Year
 
 ```
 
@@ -339,7 +333,9 @@ where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP',
 -- SL.UEM.1524.NE.ZS: Unemployment, youth total (% of total labor force ages 15-24) (national estimate)
 
 select Country, Year, SL_UEM_1524_NE_ZS from Indicators_t
-where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') and Year > 1990
+where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') 
+  and Year > 1990
+order by year, country
 
 
 ```
@@ -353,7 +349,10 @@ where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP',
 -- SP.DYN.CBRT.IN: Birth rate, crude (per 1,000 people)
 
 select Country, Year, SL_UEM_1524_NE_ZS, SP_DYN_CBRT_IN  from Indicators_t
-where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR') and Year > 1990
+where Country in ('AUT', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'NLD', 'PRT', 'ESP', 'GBR')
+  and Year > 1990
+  and Year < 2015
+order by Year
 
 ```
 
@@ -385,5 +384,131 @@ select Year, CountryCode, max(SL) as UNEM, max(SP) as CBRT from
    order by Year, CountryCode
   ) Indicators2
 group by Year, CountryCode
+```
+
+
+# (Lab 5) Clustering with Spark ML
+
+## 5.1 Select relevant data
+
+
+
+```python
+%pyspark
+
+def cvtCodes(code):
+    return code.lower().replace(".", "_")
+    
+euCodes = [
+    "BEL","GRC","MLT","SVK","BUL","IRL","NLD",
+    "SVN","DNK","ITA","AUT","ESP","DEU","HRV",
+    "POL","CZE","EST","LVA","PRT","HUN","FIN",
+    "LTU","ROM","GBR","FRA","LUX","SWE","CYP"
+]
+
+features = [
+    cvtCodes(c) for c in [
+        "SL.UEM.1524.NE.ZS",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)
+#        "SL.UEM.TOTL.NE.ZS",   # Unemployment, total (% of total labor force) (national estimate)
+        "GC.BAL.CASH.GD.ZS",   # Cash surplus/deficit (% of GDP)
+        "FP.CPI.TOTL.ZG"       # Inflation, consumer prices (annual %) 
+    ]
+]
+
+years = [2007, 2008, 2009, 2010, 2011, 2012]
+eu = indicators_t[indicators_t.year.isin(years)]\
+                 [indicators_t.country.isin(euCodes)]\
+                 .select(["country", "year"] + features)
+
+sqlContext.registerDataFrameAsTable(eu, "eu")
+
+
+```
+
+
+## 5.2 Create KMeans Pipeline
+
+Note: Input columns (features) need to be in `Vector` format. `pyspark.ml.feature.VectorAssembler` allows to pipeline this
+
+
+```python
+%pyspark
+
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.clustering import KMeans, KMeansModel
+from pyspark.ml import Pipeline
+
+assembler = VectorAssembler(inputCols=features, outputCol="features")
+
+kmeans = KMeans(k=3, seed=42)
+
+pipeline = Pipeline(stages=[assembler, kmeans])
+model = pipeline.fit(eu)
+
+transformed = model.transform(eu).select("country", "year", "prediction").sort(["country", "year"])
+sqlContext.registerDataFrameAsTable(transformed, "Classes")
+
+```
+
+
+## 5.3 Visualize Countries in classes over years
+
+**Caveat**: The classes are **not** to interprete as an ordered list, they are complete random!
+
+
+```sql
+%sql
+
+select country, year,  prediction + 1 as class
+from Classes 
+order by country, year
+
+```
+
+
+## 5.4 Show countries per year and class as lists
+
+Note: There is no function for `GroupedData` to collect values as list. Hence, back to `RDD` and `aggregateByKey`
+
+
+```python
+%pyspark
+
+def seq(u, v):
+    if u == None: u = []
+    u.append(v.country)
+    return u
+
+def comb(u1, u2):
+    return u1 + u2
+
+data = transformed.select(["year", "country", "prediction"])\
+                  .rdd\
+                  .keyBy(lambda row: str(row.year) + ":" + str(row.prediction))\
+                  .aggregateByKey(None, seq, comb)\
+                  .sortByKey()\
+                  .map(lambda tuple: (tuple[0], ", ".join(sorted(tuple[1]))))
+
+year = ""
+for c in data.collect():
+    y, cl = c[0].split(":")
+    if y != year:
+        print "\nYear:", y
+        year = y
+    print cl, "=", c[1]
+
+
+```
+
+
+### Little helper for indicator codes
+
+
+```sql
+%sql
+
+select distinct IndicatorCode, IndicatorName from IndicatorsRDD
+where indicatorName like "%nflat%"
+order by IndicatorCode
 ```
 
