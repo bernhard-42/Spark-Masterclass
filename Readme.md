@@ -31,4 +31,4 @@
 
 ## Code View without Zepopelin
 
-	Click on [Code.md](Code.md)
+	Click on [Code.md](./Code.md)
