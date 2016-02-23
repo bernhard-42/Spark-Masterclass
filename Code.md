@@ -396,26 +396,16 @@ group by CountryCode, Year
 def cvtCodes(code):
     return code.lower().replace(".", "_")
     
-#euCodes = [
-#    "BEL","GRC","MLT","SVK","BUL","IRL","NLD",
-#    "SVN","DNK","ITA","AUT","ESP","DEU","HRV",
-#    "POL","CZE","EST","LVA","PRT","HUN","FIN",
-#    "LTU","ROM","GBR","FRA","LUX","SWE","CYP"
-#]
-
 features = [
     cvtCodes(c) for c in [
         "SL.UEM.1524.NE.ZS",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)
-#        "SL.UEM.TOTL.NE.ZS",   # Unemployment, total (% of total labor force) (national estimate)
         "GC.BAL.CASH.GD.ZS",   # Cash surplus/deficit (% of GDP)
         "FP.CPI.TOTL.ZG"       # Inflation, consumer prices (annual %) 
     ]
 ]
 
 years = [2007, 2008, 2009, 2010, 2011, 2012]
-eu = indicators_t[indicators_t.year.isin(years)]\
-#                 [indicators_t.country.isin(euCodes)]\
-                 .select(["country", "year"] + features)
+eu = indicators_t[indicators_t.year.isin(years)].select(["country", "year"] + features)
 
 sqlContext.registerDataFrameAsTable(eu, "eu")
 

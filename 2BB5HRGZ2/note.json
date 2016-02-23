@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md \n# (LAB 1) Preparation\n\n**Note:** Run this before any spark command in the notebook. Restart interpreter if necessary!\n",
-      "dateUpdated": "Feb 20, 2016 7:30:15 AM",
+      "dateUpdated": "Feb 23, 2016 5:09:04 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -29,8 +29,8 @@
         "msg": "\u003ch1\u003e(LAB 1) Preparation\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Run this before any spark command in the notebook. Restart interpreter if necessary!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:02:06 PM",
-      "dateStarted": "Feb 20, 2016 7:30:15 AM",
-      "dateFinished": "Feb 20, 2016 7:30:18 AM",
+      "dateStarted": "Feb 23, 2016 5:09:04 PM",
+      "dateFinished": "Feb 23, 2016 5:09:04 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -69,7 +69,7 @@
     },
     {
       "text": "%md\n\nCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \"yarn-client\"",
-      "dateUpdated": "Feb 22, 2016 12:02:25 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -96,8 +96,8 @@
         "msg": "\u003cp\u003eCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \u0026ldquo;yarn-client\u0026rdquo;\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:19:49 PM",
-      "dateStarted": "Feb 22, 2016 12:02:25 PM",
-      "dateFinished": "Feb 22, 2016 12:02:25 PM",
+      "dateStarted": "Feb 23, 2016 5:09:07 PM",
+      "dateFinished": "Feb 23, 2016 5:09:07 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -136,7 +136,7 @@
     },
     {
       "text": "%md\n\n# (LAB 2) Working with RDDs",
-      "dateUpdated": "Feb 22, 2016 12:02:48 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -163,8 +163,8 @@
         "msg": "\u003ch1\u003e(LAB 2) Working with RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:03:16 PM",
-      "dateStarted": "Feb 22, 2016 12:02:49 PM",
-      "dateFinished": "Feb 22, 2016 12:02:49 PM",
+      "dateStarted": "Feb 23, 2016 5:09:08 PM",
+      "dateFinished": "Feb 23, 2016 5:09:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -203,7 +203,7 @@
     },
     {
       "text": "%md\n## 2.1 Create a simple RDD and sum up rows ",
-      "dateUpdated": "Feb 22, 2016 12:03:19 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:10 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -230,8 +230,8 @@
         "msg": "\u003ch2\u003e2.1 Create a simple RDD and sum up rows\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:32:45 PM",
-      "dateStarted": "Feb 22, 2016 12:03:19 PM",
-      "dateFinished": "Feb 22, 2016 12:03:19 PM",
+      "dateStarted": "Feb 23, 2016 5:09:10 PM",
+      "dateFinished": "Feb 23, 2016 5:09:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -303,7 +303,7 @@
     },
     {
       "text": "%md\n\n## 2.2 Load the famous Iris data from HDFS and so some basic calculations\n\nAttribute Information:\n\n    [0] sepal length in cm\n    [1] sepal width in cm\n    [2] petal length in cm\n    [3] petal width in cm\n    [4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n",
-      "dateUpdated": "Feb 22, 2016 12:03:55 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:14 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -330,8 +330,8 @@
         "msg": "\u003ch2\u003e2.2 Load the famous Iris data from HDFS and so some basic calculations\u003c/h2\u003e\n\u003cp\u003eAttribute Information:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[0] sepal length in cm\n[1] sepal width in cm\n[2] petal length in cm\n[3] petal width in cm\n[4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:33:34 PM",
-      "dateStarted": "Feb 22, 2016 12:03:53 PM",
-      "dateFinished": "Feb 22, 2016 12:03:54 PM",
+      "dateStarted": "Feb 23, 2016 5:09:14 PM",
+      "dateFinished": "Feb 23, 2016 5:09:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -370,7 +370,7 @@
     },
     {
       "text": "%md\n\nCalculate average sepal length per class",
-      "dateUpdated": "Feb 22, 2016 12:04:49 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:18 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -397,8 +397,8 @@
         "msg": "\u003cp\u003eCalculate average sepal length per class\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:12:07 PM",
-      "dateStarted": "Feb 22, 2016 12:04:49 PM",
-      "dateFinished": "Feb 22, 2016 12:04:49 PM",
+      "dateStarted": "Feb 23, 2016 5:09:18 PM",
+      "dateFinished": "Feb 23, 2016 5:09:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -437,7 +437,7 @@
     },
     {
       "text": "%md\n\n# (LAB 3) Working with DataFrames converted from RDDs",
-      "dateUpdated": "Feb 22, 2016 12:04:55 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -464,14 +464,14 @@
         "msg": "\u003ch1\u003e(LAB 3) Working with DataFrames converted from RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:18:15 PM",
-      "dateStarted": "Feb 22, 2016 12:04:55 PM",
-      "dateFinished": "Feb 22, 2016 12:04:55 PM",
+      "dateStarted": "Feb 23, 2016 5:09:20 PM",
+      "dateFinished": "Feb 23, 2016 5:09:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 3.1 Transform Iris RDD to DataFrame",
-      "dateUpdated": "Feb 22, 2016 12:04:56 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -498,8 +498,8 @@
         "msg": "\u003ch2\u003e3.1 Transform Iris RDD to DataFrame\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:26:46 PM",
-      "dateStarted": "Feb 22, 2016 12:04:56 PM",
-      "dateFinished": "Feb 22, 2016 12:04:56 PM",
+      "dateStarted": "Feb 23, 2016 5:09:22 PM",
+      "dateFinished": "Feb 23, 2016 5:09:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -622,7 +622,7 @@
     },
     {
       "text": "%md \n\n# (LAB 4) Analyze World Development Indicators \n\n## 4.1 Load World Development Indicators from HDFS as DataFrame\n\n**Data source:** https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\n\n**Changes:** Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE) ",
-      "dateUpdated": "Feb 22, 2016 6:55:54 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:26 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -649,8 +649,8 @@
         "msg": "\u003ch1\u003e(LAB 4) Analyze World Development Indicators\u003c/h1\u003e\n\u003ch2\u003e4.1 Load World Development Indicators from HDFS as DataFrame\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eData source:\u003c/strong\u003e https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eChanges:\u003c/strong\u003e Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE)\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 6:55:45 PM",
-      "dateFinished": "Feb 22, 2016 6:55:46 PM",
+      "dateStarted": "Feb 23, 2016 5:09:26 PM",
+      "dateFinished": "Feb 23, 2016 5:09:27 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -722,7 +722,7 @@
     },
     {
       "text": "%md\nLet\u0027s look at the schema of the Indicators table",
-      "dateUpdated": "Feb 22, 2016 12:06:47 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:30 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -749,8 +749,8 @@
         "msg": "\u003cp\u003eLet\u0027s look at the schema of the Indicators table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:06:47 PM",
-      "dateFinished": "Feb 22, 2016 12:06:48 PM",
+      "dateStarted": "Feb 23, 2016 5:09:30 PM",
+      "dateFinished": "Feb 23, 2016 5:09:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -789,7 +789,7 @@
     },
     {
       "text": "%md\nCode/value encoding is not that optimal ... Let\u0027s transform the data set and store the result os ORC\n",
-      "dateUpdated": "Feb 22, 2016 12:06:55 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:33 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -816,14 +816,14 @@
         "msg": "\u003cp\u003eCode/value encoding is not that optimal \u0026hellip; Let\u0027s transform the data set and store the result os ORC\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:06:55 PM",
-      "dateFinished": "Feb 22, 2016 12:06:55 PM",
+      "dateStarted": "Feb 23, 2016 5:09:33 PM",
+      "dateFinished": "Feb 23, 2016 5:09:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 4.2 Transform Indicators table to Columns \n",
-      "dateUpdated": "Feb 22, 2016 12:06:56 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:35 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -850,14 +850,14 @@
         "msg": "\u003ch2\u003e4.2 Transform Indicators table to Columns\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:06:56 PM",
-      "dateFinished": "Feb 22, 2016 12:06:57 PM",
+      "dateStarted": "Feb 23, 2016 5:09:35 PM",
+      "dateFinished": "Feb 23, 2016 5:09:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nSpark 1.5 does not provide a `pivot` method for DataFrames, hence we need to write our own pivot via RDDs and `aggregateByKey`\n\nSome caveats for this step:\n- Return a row from `merge`, python dictionaries are deprecated\n- `**value` is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\n- Initialize with all indicators and set them to None\n- `.`are not allowed in column names, so replace with `_`",
-      "dateUpdated": "Feb 22, 2016 12:06:59 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:40 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -884,8 +884,8 @@
         "msg": "\u003cp\u003eSpark 1.5 does not provide a \u003ccode\u003epivot\u003c/code\u003e method for DataFrames, hence we need to write our own pivot via RDDs and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSome caveats for this step:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eReturn a row from \u003ccode\u003emerge\u003c/code\u003e, python dictionaries are deprecated\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e**value\u003c/code\u003e is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\u003c/li\u003e\n\u003cli\u003eInitialize with all indicators and set them to None\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e.\u003c/code\u003eare not allowed in column names, so replace with \u003ccode\u003e_\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:06:59 PM",
-      "dateFinished": "Feb 22, 2016 12:07:00 PM",
+      "dateStarted": "Feb 23, 2016 5:09:40 PM",
+      "dateFinished": "Feb 23, 2016 5:09:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -924,7 +924,7 @@
     },
     {
       "text": "%md\n\nFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\n\n**Notes:**\n\n- The StructType schema **has to be sorted!** Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\n- Also, due to the many null values, automatic schema inference will only work properly when \"samplingRatio\u003d100\" in createDataFrame. However, I wouldn\u0027t rely on it ...",
-      "dateUpdated": "Feb 22, 2016 12:07:50 PM",
+      "dateUpdated": "Feb 23, 2016 5:09:46 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -951,8 +951,8 @@
         "msg": "\u003cp\u003eFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNotes:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe StructType schema \u003cstrong\u003ehas to be sorted!\u003c/strong\u003e Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\u003c/li\u003e\n\u003cli\u003eAlso, due to the many null values, automatic schema inference will only work properly when \u0026ldquo;samplingRatio\u003d100\u0026rdquo; in createDataFrame. However, I wouldn\u0027t rely on it \u0026hellip;\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:07:50 PM",
-      "dateFinished": "Feb 22, 2016 12:07:51 PM",
+      "dateStarted": "Feb 23, 2016 5:09:46 PM",
+      "dateFinished": "Feb 23, 2016 5:09:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -991,7 +991,7 @@
     },
     {
       "text": "%md\n\n## 4.3 Save transformed table as ORC",
-      "dateUpdated": "Feb 20, 2016 7:35:12 AM",
+      "dateUpdated": "Feb 23, 2016 5:09:49 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1018,8 +1018,8 @@
         "msg": "\u003ch2\u003e4.3 Save transformed table as ORC\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 20, 2016 7:35:12 AM",
-      "dateFinished": "Feb 20, 2016 7:35:13 AM",
+      "dateStarted": "Feb 23, 2016 5:09:49 PM",
+      "dateFinished": "Feb 23, 2016 5:09:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1091,7 +1091,7 @@
     },
     {
       "text": "%md\n## 4.4 Some simple Queries",
-      "dateUpdated": "Feb 20, 2016 7:35:18 AM",
+      "dateUpdated": "Feb 23, 2016 5:09:52 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1118,14 +1118,14 @@
         "msg": "\u003ch2\u003e4.4 Some simple Queries\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 20, 2016 7:35:18 AM",
-      "dateFinished": "Feb 20, 2016 7:35:19 AM",
+      "dateStarted": "Feb 23, 2016 5:09:53 PM",
+      "dateFinished": "Feb 23, 2016 5:09:53 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nLoad ORC data again to benefit from predicate pushdow, etc",
-      "dateUpdated": "Feb 20, 2016 7:35:21 AM",
+      "dateUpdated": "Feb 23, 2016 5:09:54 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1152,8 +1152,8 @@
         "msg": "\u003cp\u003eLoad ORC data again to benefit from predicate pushdow, etc\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 20, 2016 7:35:21 AM",
-      "dateFinished": "Feb 20, 2016 7:35:22 AM",
+      "dateStarted": "Feb 23, 2016 5:09:54 PM",
+      "dateFinished": "Feb 23, 2016 5:09:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1412,7 +1412,7 @@
     },
     {
       "text": "%md\n## Optional: Pure SQL approach\n\nOf course, this result could have been calculated without pivoting the table",
-      "dateUpdated": "Feb 22, 2016 12:12:56 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:01 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1439,8 +1439,8 @@
         "msg": "\u003ch2\u003eOptional: Pure SQL approach\u003c/h2\u003e\n\u003cp\u003eOf course, this result could have been calculated without pivoting the table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 12:12:54 PM",
-      "dateFinished": "Feb 22, 2016 12:12:54 PM",
+      "dateStarted": "Feb 23, 2016 5:10:01 PM",
+      "dateFinished": "Feb 23, 2016 5:10:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1551,7 +1551,7 @@
     },
     {
       "text": "%md\n# (Lab 5) Clustering with Spark ML\n\n## 5.1 Select relevant data\n",
-      "dateUpdated": "Feb 22, 2016 12:14:17 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:05 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1578,14 +1578,14 @@
         "msg": "\u003ch1\u003e(Lab 5) Clustering with Spark ML\u003c/h1\u003e\n\u003ch2\u003e5.1 Select relevant data\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 12:14:17 PM",
-      "dateFinished": "Feb 22, 2016 12:14:17 PM",
+      "dateStarted": "Feb 23, 2016 5:10:05 PM",
+      "dateFinished": "Feb 23, 2016 5:10:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndef cvtCodes(code):\n    return code.lower().replace(\".\", \"_\")\n    \n#euCodes \u003d [\n#    \"BEL\",\"GRC\",\"MLT\",\"SVK\",\"BUL\",\"IRL\",\"NLD\",\n#    \"SVN\",\"DNK\",\"ITA\",\"AUT\",\"ESP\",\"DEU\",\"HRV\",\n#    \"POL\",\"CZE\",\"EST\",\"LVA\",\"PRT\",\"HUN\",\"FIN\",\n#    \"LTU\",\"ROM\",\"GBR\",\"FRA\",\"LUX\",\"SWE\",\"CYP\"\n#]\n\nfeatures \u003d [\n    cvtCodes(c) for c in [\n        \"SL.UEM.1524.NE.ZS\",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n#        \"SL.UEM.TOTL.NE.ZS\",   # Unemployment, total (% of total labor force) (national estimate)\n        \"GC.BAL.CASH.GD.ZS\",   # Cash surplus/deficit (% of GDP)\n        \"FP.CPI.TOTL.ZG\"       # Inflation, consumer prices (annual %) \n    ]\n]\n\nyears \u003d [2007, 2008, 2009, 2010, 2011, 2012]\neu \u003d indicators_t[indicators_t.year.isin(years)]\\\n#                 [indicators_t.country.isin(euCodes)]\\\n                 .select([\"country\", \"year\"] + features)\n\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
-      "dateUpdated": "Feb 22, 2016 7:33:19 PM",
+      "text": "%pyspark\n\ndef cvtCodes(code):\n    return code.lower().replace(\".\", \"_\")\n    \nfeatures \u003d [\n    cvtCodes(c) for c in [\n        \"SL.UEM.1524.NE.ZS\",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n        \"GC.BAL.CASH.GD.ZS\",   # Cash surplus/deficit (% of GDP)\n        \"FP.CPI.TOTL.ZG\"       # Inflation, consumer prices (annual %) \n    ]\n]\n\nyears \u003d [2007, 2008, 2009, 2010, 2011, 2012]\neu \u003d indicators_t[indicators_t.year.isin(years)].select([\"country\", \"year\"] + features)\n\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
+      "dateUpdated": "Feb 23, 2016 5:08:56 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1618,7 +1618,7 @@
     },
     {
       "text": "%md\n\n## 5.2 Create KMeans Pipeline\n\nNote: Input columns (features) need to be in `Vector` format. `pyspark.ml.feature.VectorAssembler` allows to pipeline this",
-      "dateUpdated": "Feb 21, 2016 10:10:49 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:09 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1646,8 +1646,8 @@
         "msg": "\u003ch2\u003e5.2 Create KMeans Pipeline\u003c/h2\u003e\n\u003cp\u003eNote: Input columns (features) need to be in \u003ccode\u003eVector\u003c/code\u003e format. \u003ccode\u003epyspark.ml.feature.VectorAssembler\u003c/code\u003e allows to pipeline this\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2016 10:36:42 AM",
-      "dateStarted": "Feb 21, 2016 10:10:45 PM",
-      "dateFinished": "Feb 21, 2016 10:10:46 PM",
+      "dateStarted": "Feb 23, 2016 5:10:09 PM",
+      "dateFinished": "Feb 23, 2016 5:10:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1686,7 +1686,7 @@
     },
     {
       "text": "%md\n\n## 5.3 Visualize Countries in classes over years\n\n**Caveat**: The classes are **not** to interprete as an ordered list, they are complete random!",
-      "dateUpdated": "Feb 21, 2016 10:08:08 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:11 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1713,8 +1713,8 @@
         "msg": "\u003ch2\u003e5.3 Visualize Countries in classes over years\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eCaveat\u003c/strong\u003e: The classes are \u003cstrong\u003enot\u003c/strong\u003e to interprete as an ordered list, they are complete random!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:06:39 PM",
-      "dateStarted": "Feb 21, 2016 10:07:56 PM",
-      "dateFinished": "Feb 21, 2016 10:07:56 PM",
+      "dateStarted": "Feb 23, 2016 5:10:11 PM",
+      "dateFinished": "Feb 23, 2016 5:10:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1787,7 +1787,7 @@
     },
     {
       "text": "%md\n\n## 5.4 Show countries per year and class as lists\n\nNote: There is no function for `GroupedData` to collect values as list. Hence, back to `RDD` and `aggregateByKey`",
-      "dateUpdated": "Feb 22, 2016 12:21:46 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:14 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1814,8 +1814,8 @@
         "msg": "\u003ch2\u003e5.4 Show countries per year and class as lists\u003c/h2\u003e\n\u003cp\u003eNote: There is no function for \u003ccode\u003eGroupedData\u003c/code\u003e to collect values as list. Hence, back to \u003ccode\u003eRDD\u003c/code\u003e and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:08:16 PM",
-      "dateStarted": "Feb 22, 2016 12:21:46 PM",
-      "dateFinished": "Feb 22, 2016 12:21:47 PM",
+      "dateStarted": "Feb 23, 2016 5:10:14 PM",
+      "dateFinished": "Feb 23, 2016 5:10:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1854,7 +1854,7 @@
     },
     {
       "text": "%md\n\n### Little helper for indicator codes",
-      "dateUpdated": "Feb 21, 2016 10:01:43 PM",
+      "dateUpdated": "Feb 23, 2016 5:10:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1881,8 +1881,8 @@
         "msg": "\u003ch3\u003eLittle helper for indicator codes\u003c/h3\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:01:07 PM",
-      "dateStarted": "Feb 21, 2016 10:01:40 PM",
-      "dateFinished": "Feb 21, 2016 10:01:41 PM",
+      "dateStarted": "Feb 23, 2016 5:10:19 PM",
+      "dateFinished": "Feb 23, 2016 5:10:19 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
