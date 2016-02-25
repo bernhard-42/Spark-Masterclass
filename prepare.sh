@@ -1,23 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-sudo yum install -y numpy
+export HOME=${HOME:-/root}
+export TERM=${TERM:-xterm}
 
-cd $HOME
+sudo yum install -y -q numpy
 
-git clone https://github.com/bernhard-42/Spark-Masterclass.git
+cd
 
-cd Spark-Masterclass/
+if ambari-server status; then
+    git clone https://github.com/bernhard-42/Spark-Masterclass.git
+    cd Spark-Masterclass/
 
-#
-# European Union indicator Data
-#
+    ## European Union indicator Data
+    gzip -d europe-indicators.csv.gz
+    hdfs dfs -put europe-indicators.csv /tmp
 
-gzip -d europe-indicators.csv.gz
-ambari-server status && hdfs dfs -put europe-indicators.csv /tmp
+    ## Iris.data
+    hdfs dfs -put iris.data /tmp
+else
+    echo "Data load to HDFS failed
+fi
 
 
-#
-# Iris.data
-#
-ambari-server status && hdfs dfs -put iris.data /tmp
 
