@@ -10,6 +10,7 @@
 z.reset()
 z.addRepo("Spark Packages Repo").url("http://dl.bintray.com/spark-packages/maven")
 z.load("com.databricks:spark-csv_2.10:1.3.0")
+z.load("org.apache.spark:spark-streaming-kafka_2.10:1.5.2")
 
 ```
 
@@ -27,12 +28,43 @@ print(sc.version)
 # (LAB 2) Working with RDDs
 
 
+A little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities
+
+
 ```python
 %pyspark
 
-def pprint(array):
-    for a in array:
-        print a
+def pprint(rdd, num=5, asTable=False, columns=None, sampleRatio=None, seed=42):
+
+    # if a sampleRatio is given, a random sample with given seed is selected
+    if sampleRatio:
+        data = rdd.sample(False, fraction=sampleRatio, seed=seed)
+    else: 
+        data = rdd
+    
+    # if num is -1 all records should be collected - avoid for big data ...
+    if num == -1:
+        data = data.collect() 
+    else: 
+        data = data.take(num)
+    
+    # if asTable is True, sql format with columns c0, c1, ... as output
+    # if columns is array of column names, sql format with given columns as output
+    if asTable or columns:
+        output = ""
+        l = 0
+        for d in data:
+            l = len(d)
+            output += "\t".join([str(x) for x in d]) + "\n"
+        if columns:
+            header = "\t".join([h for h in columns]) + "\n" 
+        else:
+            header = "\t".join(["c%0d" %i for i in range(l) ]) + "\n"
+        print "%table " + header + output
+    else:
+        for d in data:
+            print d
+
 ```
 
 
@@ -48,7 +80,7 @@ data = [ [random.randint(10,99) for col in range(4)] for row in range(10)]
 
 rdd = sc.parallelize(data, 4)
 
-pprint(rdd.collect())
+pprint(rdd, -1)
 ```
 
 
@@ -90,8 +122,15 @@ iris = file.filter(lambda row: len(row)>0)\
            .map(split)
 
 print iris.count()
-print 
-pprint(iris.sample(False, fraction=0.1, seed=42).take(15))
+
+```
+
+
+```python
+%pyspark
+
+pprint(iris, sampleRatio=0.1, num=-1, columns=["sepL", "sepW", "petL", "petW", "species"])
+
 ```
 
 
@@ -105,7 +144,7 @@ tuples = iris.map(lambda row: [row[4], row[0]])
 
 result = tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))
 
-pprint(result.collect())
+pprint(result)
 ```
 
 

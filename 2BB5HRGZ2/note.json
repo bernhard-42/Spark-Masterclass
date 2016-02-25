@@ -35,8 +35,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\n",
-      "dateUpdated": "Feb 22, 2016 12:02:01 PM",
+      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.5.2\")\n",
+      "dateUpdated": "Feb 25, 2016 6:20:42 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -59,11 +59,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@5b3a18f7\n"
+        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@2f5b869b\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 12:02:01 PM",
-      "dateFinished": "Feb 22, 2016 12:02:18 PM",
+      "dateStarted": "Feb 25, 2016 6:20:42 PM",
+      "dateFinished": "Feb 25, 2016 6:20:52 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -103,7 +103,7 @@
     },
     {
       "text": "%pyspark\n\nprint(sc.version)",
-      "dateUpdated": "Feb 22, 2016 12:02:27 PM",
+      "dateUpdated": "Feb 25, 2016 6:23:52 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -129,8 +129,8 @@
         "msg": "1.5.2\n"
       },
       "dateCreated": "Feb 17, 2016 7:19:56 PM",
-      "dateStarted": "Feb 22, 2016 12:02:27 PM",
-      "dateFinished": "Feb 22, 2016 12:03:21 PM",
+      "dateStarted": "Feb 25, 2016 6:23:52 PM",
+      "dateFinished": "Feb 25, 2016 6:23:53 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -169,8 +169,42 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndef pprint(array):\n    for a in array:\n        print a",
-      "dateUpdated": "Feb 22, 2016 12:03:16 PM",
+      "text": "%md\n\nA little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities",
+      "dateUpdated": "Feb 25, 2016 6:46:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1456420991436_1540964611",
+      "id": "20160225-182311_2086547517",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eA little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 25, 2016 6:23:11 PM",
+      "dateStarted": "Feb 25, 2016 6:46:18 PM",
+      "dateFinished": "Feb 25, 2016 6:46:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndef pprint(rdd, num\u003d5, asTable\u003dFalse, columns\u003dNone, sampleRatio\u003dNone, seed\u003d42):\n\n    # if a sampleRatio is given, a random sample with given seed is selected\n    if sampleRatio:\n        data \u003d rdd.sample(False, fraction\u003dsampleRatio, seed\u003dseed)\n    else: \n        data \u003d rdd\n    \n    # if num is -1 all records should be collected - avoid for big data ...\n    if num \u003d\u003d -1:\n        data \u003d data.collect() \n    else: \n        data \u003d data.take(num)\n    \n    # if asTable is True, sql format with columns c0, c1, ... as output\n    # if columns is array of column names, sql format with given columns as output\n    if asTable or columns:\n        output \u003d \"\"\n        l \u003d 0\n        for d in data:\n            l \u003d len(d)\n            output +\u003d \"\\t\".join([str(x) for x in d]) + \"\\n\"\n        if columns:\n            header \u003d \"\\t\".join([h for h in columns]) + \"\\n\" \n        else:\n            header \u003d \"\\t\".join([\"c%0d\" %i for i in range(l) ]) + \"\\n\"\n        print \"%table \" + header + output\n    else:\n        for d in data:\n            print d\n",
+      "dateUpdated": "Feb 25, 2016 6:46:52 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -196,8 +230,8 @@
         "msg": ""
       },
       "dateCreated": "Feb 17, 2016 6:42:08 PM",
-      "dateStarted": "Feb 22, 2016 12:03:16 PM",
-      "dateFinished": "Feb 22, 2016 12:03:21 PM",
+      "dateStarted": "Feb 25, 2016 6:40:34 PM",
+      "dateFinished": "Feb 25, 2016 6:40:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -236,18 +270,41 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd.collect())",
-      "dateUpdated": "Feb 22, 2016 12:03:24 PM",
+      "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd, -1)",
+      "dateUpdated": "Feb 25, 2016 6:31:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
           "optionOpen": false,
-          "keys": [],
-          "values": [],
+          "keys": [
+            {
+              "name": "c0",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "c1",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
           "groups": [],
-          "scatter": {}
+          "scatter": {
+            "xAxis": {
+              "name": "c0",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "c1",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
         },
         "editorMode": "ace/mode/scala"
       },
@@ -260,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "[54, 92, 83, 26]\n[45, 65, 43, 54]\n[69, 91, 31, 59]\n[65, 24, 70, 66]\n[83, 31, 58, 45]\n[68, 35, 82, 60]\n[40, 41, 74, 31]\n[93, 53, 12, 58]\n[48, 10, 66, 53]\n[53, 36, 85, 44]\n"
+        "msg": "[30, 18, 22, 32]\n[85, 80, 21, 70]\n[95, 74, 69, 54]\n[47, 62, 39, 91]\n[95, 66, 57, 19]\n[73, 37, 58, 38]\n[37, 56, 47, 85]\n[10, 11, 12, 80]\n[92, 93, 61, 49]\n[55, 72, 68, 52]\n"
       },
       "dateCreated": "Feb 17, 2016 6:04:45 PM",
-      "dateStarted": "Feb 22, 2016 12:03:24 PM",
-      "dateFinished": "Feb 22, 2016 12:03:31 PM",
+      "dateStarted": "Feb 25, 2016 6:31:02 PM",
+      "dateFinished": "Feb 25, 2016 6:31:04 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -336,18 +393,41 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndef split(row):\n    parts \u003d row.split(\",\")\n    return [float(v) for v in parts[:4]] + [parts[4]]\n    \nfile \u003d sc.textFile(\"/tmp/iris.data\")\n\n# remove empty lines and split each line\niris \u003d file.filter(lambda row: len(row)\u003e0)\\\n           .map(split)\n\nprint iris.count()\nprint \npprint(iris.sample(False, fraction\u003d0.1, seed\u003d42).take(15))",
-      "dateUpdated": "Feb 22, 2016 12:04:38 PM",
+      "text": "%pyspark\n\ndef split(row):\n    parts \u003d row.split(\",\")\n    return [float(v) for v in parts[:4]] + [parts[4]]\n    \nfile \u003d sc.textFile(\"/tmp/iris.data\")\n\n# remove empty lines and split each line\niris \u003d file.filter(lambda row: len(row)\u003e0)\\\n           .map(split)\n\nprint iris.count()\n",
+      "dateUpdated": "Feb 25, 2016 6:41:28 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
           "optionOpen": false,
-          "keys": [],
-          "values": [],
+          "keys": [
+            {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
           "groups": [],
-          "scatter": {}
+          "scatter": {
+            "xAxis": {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
         },
         "editorMode": "ace/mode/scala"
       },
@@ -360,11 +440,67 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "150\n\n[4.7, 3.2, 1.3, 0.2, u\u0027Iris-setosa\u0027]\n[4.9, 3.1, 1.5, 0.1, u\u0027Iris-setosa\u0027]\n[5.4, 3.9, 1.3, 0.4, u\u0027Iris-setosa\u0027]\n[5.1, 3.5, 1.4, 0.3, u\u0027Iris-setosa\u0027]\n[5.4, 3.4, 1.5, 0.4, u\u0027Iris-setosa\u0027]\n[4.9, 3.1, 1.5, 0.1, u\u0027Iris-setosa\u0027]\n[4.9, 2.4, 3.3, 1.0, u\u0027Iris-versicolor\u0027]\n[6.3, 2.3, 4.4, 1.3, u\u0027Iris-versicolor\u0027]\n[5.7, 3.0, 4.2, 1.2, u\u0027Iris-versicolor\u0027]\n[5.7, 2.9, 4.2, 1.3, u\u0027Iris-versicolor\u0027]\n[7.3, 2.9, 6.3, 1.8, u\u0027Iris-virginica\u0027]\n[7.7, 3.8, 6.7, 2.2, u\u0027Iris-virginica\u0027]\n[7.2, 3.0, 5.8, 1.6, u\u0027Iris-virginica\u0027]\n[6.4, 2.8, 5.6, 2.2, u\u0027Iris-virginica\u0027]\n[6.1, 2.6, 5.6, 1.4, u\u0027Iris-virginica\u0027]\n"
+        "msg": "150\n"
       },
       "dateCreated": "Feb 17, 2016 6:33:30 PM",
-      "dateStarted": "Feb 22, 2016 12:04:38 PM",
-      "dateFinished": "Feb 22, 2016 12:04:46 PM",
+      "dateStarted": "Feb 25, 2016 6:41:28 PM",
+      "dateFinished": "Feb 25, 2016 6:41:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\npprint(iris, sampleRatio\u003d0.1, num\u003d-1, columns\u003d[\"sepL\", \"sepW\", \"petL\", \"petW\", \"species\"])\n",
+      "dateUpdated": "Feb 25, 2016 6:42:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1456422059549_477238407",
+      "id": "20160225-184059_236051655",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sepL\tsepW\tpetL\tpetW\tspecies\n4.7\t3.2\t1.3\t0.2\tIris-setosa\n4.9\t3.1\t1.5\t0.1\tIris-setosa\n5.4\t3.9\t1.3\t0.4\tIris-setosa\n5.1\t3.5\t1.4\t0.3\tIris-setosa\n5.4\t3.4\t1.5\t0.4\tIris-setosa\n4.9\t3.1\t1.5\t0.1\tIris-setosa\n4.9\t2.4\t3.3\t1.0\tIris-versicolor\n6.3\t2.3\t4.4\t1.3\tIris-versicolor\n5.7\t3.0\t4.2\t1.2\tIris-versicolor\n5.7\t2.9\t4.2\t1.3\tIris-versicolor\n7.3\t2.9\t6.3\t1.8\tIris-virginica\n7.7\t3.8\t6.7\t2.2\tIris-virginica\n7.2\t3.0\t5.8\t1.6\tIris-virginica\n6.4\t2.8\t5.6\t2.2\tIris-virginica\n6.1\t2.6\t5.6\t1.4\tIris-virginica\n6.9\t3.1\t5.1\t2.3\tIris-virginica\n5.8\t2.7\t5.1\t1.9\tIris-virginica\n\n"
+      },
+      "dateCreated": "Feb 25, 2016 6:40:59 PM",
+      "dateStarted": "Feb 25, 2016 6:42:19 PM",
+      "dateFinished": "Feb 25, 2016 6:42:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -403,8 +539,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ntuples \u003d iris.map(lambda row: [row[4], row[0]]) \n\nresult \u003d tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\npprint(result.collect())",
-      "dateUpdated": "Feb 22, 2016 12:04:51 PM",
+      "text": "%pyspark\n\ntuples \u003d iris.map(lambda row: [row[4], row[0]]) \n\nresult \u003d tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\npprint(result)",
+      "dateUpdated": "Feb 25, 2016 6:42:59 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -430,8 +566,8 @@
         "msg": "(u\u0027Iris-virginica\u0027, 6.587999999999998)\n(u\u0027Iris-setosa\u0027, 5.005999999999999)\n(u\u0027Iris-versicolor\u0027, 5.936)\n"
       },
       "dateCreated": "Feb 17, 2016 6:44:13 PM",
-      "dateStarted": "Feb 22, 2016 12:04:51 PM",
-      "dateFinished": "Feb 22, 2016 12:04:52 PM",
+      "dateStarted": "Feb 25, 2016 6:42:59 PM",
+      "dateFinished": "Feb 25, 2016 6:43:00 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1948,9 +2084,9 @@
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1455986193074_-103007332",
-      "id": "20160220-173633_1210392382",
-      "dateCreated": "Feb 20, 2016 5:36:33 PM",
+      "jobName": "paragraph_1456419869822_549878804",
+      "id": "20160225-180429_862537375",
+      "dateCreated": "Feb 25, 2016 6:04:29 PM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
@@ -1958,9 +2094,10 @@
   "name": "Spark Masterclass",
   "id": "2BB5HRGZ2",
   "angularObjects": {
-    "2BCGDSGJS": [],
-    "2BC9YMRZX": [],
-    "2BDMRZZ3T": []
+    "2BBTUECXQ": [],
+    "2BEVNBGSX": [],
+    "2BE17W31H": [],
+    "2BC4V38PV": []
   },
   "config": {},
   "info": {}
