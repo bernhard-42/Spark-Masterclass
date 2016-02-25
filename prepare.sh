@@ -13,11 +13,11 @@ cd Spark-Masterclass/
 #
 
 gzip -d europe-indicators.csv.gz
-hdfs dfs -put europe-indicators.csv /tmp
+ambari-server status && hdfs dfs -put europe-indicators.csv /tmp
 
 
 #
 # Iris.data
 #
-hdfs dfs -put iris.data /tmp
+ambari-server status && hdfs dfs -put iris.data /tmp
 
