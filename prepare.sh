@@ -18,6 +18,6 @@ if ambari-server status; then
     ## Iris.data
     hdfs dfs -put iris.data /tmp
 else
-    echo "Data load to HDFS failed"
+    echo "ambari-srver is so not executing these commands"
 fi
 
