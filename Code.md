@@ -28,32 +28,33 @@ print(sc.version)
 # (LAB 2) Working with RDDs
 
 
-A little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities
+A little convenience function to 
+
+- collect random samples of RDDs and DataFrames
+- print RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities
 
 
 ```python
 %pyspark
 
-def pprint(rdd, num=5, asTable=False, columns=None, sampleRatio=None, seed=42):
+def pprint(data, num=8, asTable=False, columns=None, sampleRatio=None, seed=42):
 
-    # if a sampleRatio is given, a random sample with given seed is selected
-    if sampleRatio:
-        data = rdd.sample(False, fraction=sampleRatio, seed=seed)
-    else: 
-        data = rdd
+    # If a sampleRatio is given, a random sample with given seed is selected
+    subset = data.sample(False, fraction=sampleRatio, seed=seed) if sampleRatio else data
+
+    # If it is a DataFrame, convert rows to arras and extract headers
+    if "rdd" in dir(data): 
+        columns = subset.columns
+        subset = subset.map(lambda row: row.asDict().values())
+        
+    # If num is -1 all records should be collected - avoid for big data ...
+    array = subset.collect() if num == -1 else subset.take(num)
     
-    # if num is -1 all records should be collected - avoid for big data ...
-    if num == -1:
-        data = data.collect() 
-    else: 
-        data = data.take(num)
-    
-    # if asTable is True, sql format with columns c0, c1, ... as output
-    # if columns is array of column names, sql format with given columns as output
+    # If asTable is True, sql format with columns c0, c1, ... as output
+    # If columns is array of column names, sql format with given columns as output
     if asTable or columns:
         output = ""
-        l = 0
-        for d in data:
+        for d in array:
             l = len(d)
             output += "\t".join([str(x) for x in d]) + "\n"
         if columns:
@@ -62,7 +63,7 @@ def pprint(rdd, num=5, asTable=False, columns=None, sampleRatio=None, seed=42):
             header = "\t".join(["c%0d" %i for i in range(l) ]) + "\n"
         print "%table " + header + output
     else:
-        for d in data:
+        for d in array:
             print d
 
 ```
@@ -235,7 +236,7 @@ Let's look at the schema of the Indicators table
 ```python
 %pyspark
 indicators_csv.printSchema()
-indicators_csv.show()
+indicators_csv.sample(False, 0.1).show()
 ```
 
 
@@ -534,7 +535,22 @@ for c in data.collect():
 %sql
 
 select distinct IndicatorCode, IndicatorName from IndicatorsRDD
-where indicatorName like "%nflat%"
+where indicatorName like "%unem%"
 order by IndicatorCode
 ```
+
+
+# (Lab 6) Spark Streaming
+
+## 6.1 Streaming from terminal 
+
+Steps:
+- Open an ssh terminal to your cluster
+- Get the python code
+
+    ```bash
+    wget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py
+    ```
+
+- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming) and follow Steps 2 and 3
 

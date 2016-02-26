@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md \n# (LAB 1) Preparation\n\n**Note:** Run this before any spark command in the notebook. Restart interpreter if necessary!\n",
-      "dateUpdated": "Feb 23, 2016 5:09:04 PM",
+      "dateUpdated": "Feb 26, 2016 12:03:56 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -29,14 +29,14 @@
         "msg": "\u003ch1\u003e(LAB 1) Preparation\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Run this before any spark command in the notebook. Restart interpreter if necessary!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:02:06 PM",
-      "dateStarted": "Feb 23, 2016 5:09:04 PM",
-      "dateFinished": "Feb 23, 2016 5:09:04 PM",
+      "dateStarted": "Feb 26, 2016 12:03:56 PM",
+      "dateFinished": "Feb 26, 2016 12:03:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.5.2\")\n",
-      "dateUpdated": "Feb 25, 2016 6:20:42 PM",
+      "dateUpdated": "Feb 26, 2016 8:12:57 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -56,20 +56,16 @@
       },
       "jobName": "paragraph_1455721677993_-632325202",
       "id": "20160217-160757_1663731196",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@2f5b869b\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 25, 2016 6:20:42 PM",
-      "dateFinished": "Feb 25, 2016 6:20:52 PM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 26, 2016 8:12:57 AM",
+      "dateFinished": "Feb 26, 2016 8:12:57 AM",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \"yarn-client\"",
-      "dateUpdated": "Feb 23, 2016 5:09:06 PM",
+      "dateUpdated": "Feb 26, 2016 12:03:59 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -96,14 +92,14 @@
         "msg": "\u003cp\u003eCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \u0026ldquo;yarn-client\u0026rdquo;\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:19:49 PM",
-      "dateStarted": "Feb 23, 2016 5:09:07 PM",
-      "dateFinished": "Feb 23, 2016 5:09:07 PM",
+      "dateStarted": "Feb 26, 2016 12:03:59 PM",
+      "dateFinished": "Feb 26, 2016 12:03:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nprint(sc.version)",
-      "dateUpdated": "Feb 25, 2016 6:23:52 PM",
+      "dateUpdated": "Feb 26, 2016 8:13:01 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -123,20 +119,16 @@
       },
       "jobName": "paragraph_1455733196253_1519121284",
       "id": "20160217-191956_841399617",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "1.5.2\n"
-      },
       "dateCreated": "Feb 17, 2016 7:19:56 PM",
-      "dateStarted": "Feb 25, 2016 6:23:52 PM",
-      "dateFinished": "Feb 25, 2016 6:23:53 PM",
+      "dateStarted": "Feb 26, 2016 8:13:01 AM",
+      "dateFinished": "Feb 26, 2016 8:13:01 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n# (LAB 2) Working with RDDs",
-      "dateUpdated": "Feb 23, 2016 5:09:08 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -163,14 +155,14 @@
         "msg": "\u003ch1\u003e(LAB 2) Working with RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:03:16 PM",
-      "dateStarted": "Feb 23, 2016 5:09:08 PM",
-      "dateFinished": "Feb 23, 2016 5:09:09 PM",
+      "dateStarted": "Feb 26, 2016 12:04:01 PM",
+      "dateFinished": "Feb 26, 2016 12:04:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nA little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities",
-      "dateUpdated": "Feb 25, 2016 6:46:22 PM",
+      "text": "%md\n\nA little convenience function to \n\n- collect random samples of RDDs and DataFrames\n- print RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities",
+      "dateUpdated": "Feb 26, 2016 10:25:56 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -183,7 +175,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -191,20 +183,16 @@
       },
       "jobName": "paragraph_1456420991436_1540964611",
       "id": "20160225-182311_2086547517",
-      "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cp\u003eA little convenience function to print RDDs like DataFrames without creating a DataFrame by leveraging Zeppelin Display capabilities\u003c/p\u003e\n"
-      },
       "dateCreated": "Feb 25, 2016 6:23:11 PM",
-      "dateStarted": "Feb 25, 2016 6:46:18 PM",
-      "dateFinished": "Feb 25, 2016 6:46:19 PM",
+      "dateStarted": "Feb 26, 2016 10:25:56 AM",
+      "dateFinished": "Feb 26, 2016 10:25:56 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndef pprint(rdd, num\u003d5, asTable\u003dFalse, columns\u003dNone, sampleRatio\u003dNone, seed\u003d42):\n\n    # if a sampleRatio is given, a random sample with given seed is selected\n    if sampleRatio:\n        data \u003d rdd.sample(False, fraction\u003dsampleRatio, seed\u003dseed)\n    else: \n        data \u003d rdd\n    \n    # if num is -1 all records should be collected - avoid for big data ...\n    if num \u003d\u003d -1:\n        data \u003d data.collect() \n    else: \n        data \u003d data.take(num)\n    \n    # if asTable is True, sql format with columns c0, c1, ... as output\n    # if columns is array of column names, sql format with given columns as output\n    if asTable or columns:\n        output \u003d \"\"\n        l \u003d 0\n        for d in data:\n            l \u003d len(d)\n            output +\u003d \"\\t\".join([str(x) for x in d]) + \"\\n\"\n        if columns:\n            header \u003d \"\\t\".join([h for h in columns]) + \"\\n\" \n        else:\n            header \u003d \"\\t\".join([\"c%0d\" %i for i in range(l) ]) + \"\\n\"\n        print \"%table \" + header + output\n    else:\n        for d in data:\n            print d\n",
-      "dateUpdated": "Feb 25, 2016 6:46:52 PM",
+      "text": "%pyspark\n\ndef pprint(data, num\u003d8, asTable\u003dFalse, columns\u003dNone, sampleRatio\u003dNone, seed\u003d42):\n\n    # If a sampleRatio is given, a random sample with given seed is selected\n    subset \u003d data.sample(False, fraction\u003dsampleRatio, seed\u003dseed) if sampleRatio else data\n\n    # If it is a DataFrame, convert rows to arras and extract headers\n    if \"rdd\" in dir(data): \n        columns \u003d subset.columns\n        subset \u003d subset.map(lambda row: row.asDict().values())\n        \n    # If num is -1 all records should be collected - avoid for big data ...\n    array \u003d subset.collect() if num \u003d\u003d -1 else subset.take(num)\n    \n    # If asTable is True, sql format with columns c0, c1, ... as output\n    # If columns is array of column names, sql format with given columns as output\n    if asTable or columns:\n        output \u003d \"\"\n        for d in array:\n            l \u003d len(d)\n            output +\u003d \"\\t\".join([str(x) for x in d]) + \"\\n\"\n        if columns:\n            header \u003d \"\\t\".join([h for h in columns]) + \"\\n\" \n        else:\n            header \u003d \"\\t\".join([\"c%0d\" %i for i in range(l) ]) + \"\\n\"\n        print \"%table \" + header + output\n    else:\n        for d in array:\n            print d\n",
+      "dateUpdated": "Feb 26, 2016 10:29:51 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -216,7 +204,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": false
       },
       "settings": {
         "params": {},
@@ -224,20 +213,16 @@
       },
       "jobName": "paragraph_1455730928852_1180141655",
       "id": "20160217-184208_572421563",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 6:42:08 PM",
-      "dateStarted": "Feb 25, 2016 6:40:34 PM",
-      "dateFinished": "Feb 25, 2016 6:40:34 PM",
+      "dateStarted": "Feb 26, 2016 10:29:14 AM",
+      "dateFinished": "Feb 26, 2016 10:29:14 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## 2.1 Create a simple RDD and sum up rows ",
-      "dateUpdated": "Feb 23, 2016 5:09:10 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -264,14 +249,14 @@
         "msg": "\u003ch2\u003e2.1 Create a simple RDD and sum up rows\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:32:45 PM",
-      "dateStarted": "Feb 23, 2016 5:09:10 PM",
-      "dateFinished": "Feb 23, 2016 5:09:11 PM",
+      "dateStarted": "Feb 26, 2016 12:04:06 PM",
+      "dateFinished": "Feb 26, 2016 12:04:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd, -1)",
-      "dateUpdated": "Feb 25, 2016 6:31:02 PM",
+      "dateUpdated": "Feb 26, 2016 8:11:37 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -314,15 +299,11 @@
       },
       "jobName": "paragraph_1455728685323_1785116355",
       "id": "20160217-180445_1950689137",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "[30, 18, 22, 32]\n[85, 80, 21, 70]\n[95, 74, 69, 54]\n[47, 62, 39, 91]\n[95, 66, 57, 19]\n[73, 37, 58, 38]\n[37, 56, 47, 85]\n[10, 11, 12, 80]\n[92, 93, 61, 49]\n[55, 72, 68, 52]\n"
-      },
       "dateCreated": "Feb 17, 2016 6:04:45 PM",
-      "dateStarted": "Feb 25, 2016 6:31:02 PM",
-      "dateFinished": "Feb 25, 2016 6:31:04 PM",
+      "dateStarted": "Feb 26, 2016 8:11:37 AM",
+      "dateFinished": "Feb 26, 2016 8:11:38 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -347,20 +328,16 @@
       },
       "jobName": "paragraph_1455729974344_1711270805",
       "id": "20160217-182614_514005626",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "[255, 207, 250, 225, 217, 245, 186, 216, 177, 218]\ntotal \u003d  2196\n"
-      },
       "dateCreated": "Feb 17, 2016 6:26:14 PM",
       "dateStarted": "Feb 22, 2016 12:03:34 PM",
       "dateFinished": "Feb 22, 2016 12:03:40 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 2.2 Load the famous Iris data from HDFS and so some basic calculations\n\nAttribute Information:\n\n    [0] sepal length in cm\n    [1] sepal width in cm\n    [2] petal length in cm\n    [3] petal width in cm\n    [4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n",
-      "dateUpdated": "Feb 23, 2016 5:09:14 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:09 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -387,14 +364,14 @@
         "msg": "\u003ch2\u003e2.2 Load the famous Iris data from HDFS and so some basic calculations\u003c/h2\u003e\n\u003cp\u003eAttribute Information:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[0] sepal length in cm\n[1] sepal width in cm\n[2] petal length in cm\n[3] petal width in cm\n[4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:33:34 PM",
-      "dateStarted": "Feb 23, 2016 5:09:14 PM",
-      "dateFinished": "Feb 23, 2016 5:09:15 PM",
+      "dateStarted": "Feb 26, 2016 12:04:09 PM",
+      "dateFinished": "Feb 26, 2016 12:04:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ndef split(row):\n    parts \u003d row.split(\",\")\n    return [float(v) for v in parts[:4]] + [parts[4]]\n    \nfile \u003d sc.textFile(\"/tmp/iris.data\")\n\n# remove empty lines and split each line\niris \u003d file.filter(lambda row: len(row)\u003e0)\\\n           .map(split)\n\nprint iris.count()\n",
-      "dateUpdated": "Feb 25, 2016 6:41:28 PM",
+      "dateUpdated": "Feb 26, 2016 10:00:06 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -437,20 +414,16 @@
       },
       "jobName": "paragraph_1455730410574_1910262607",
       "id": "20160217-183330_850886049",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "150\n"
-      },
       "dateCreated": "Feb 17, 2016 6:33:30 PM",
-      "dateStarted": "Feb 25, 2016 6:41:28 PM",
-      "dateFinished": "Feb 25, 2016 6:41:29 PM",
+      "dateStarted": "Feb 26, 2016 10:00:06 AM",
+      "dateFinished": "Feb 26, 2016 10:00:13 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\npprint(iris, sampleRatio\u003d0.1, num\u003d-1, columns\u003d[\"sepL\", \"sepW\", \"petL\", \"petW\", \"species\"])\n",
-      "dateUpdated": "Feb 25, 2016 6:42:19 PM",
+      "dateUpdated": "Feb 26, 2016 10:00:41 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -493,20 +466,16 @@
       },
       "jobName": "paragraph_1456422059549_477238407",
       "id": "20160225-184059_236051655",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "sepL\tsepW\tpetL\tpetW\tspecies\n4.7\t3.2\t1.3\t0.2\tIris-setosa\n4.9\t3.1\t1.5\t0.1\tIris-setosa\n5.4\t3.9\t1.3\t0.4\tIris-setosa\n5.1\t3.5\t1.4\t0.3\tIris-setosa\n5.4\t3.4\t1.5\t0.4\tIris-setosa\n4.9\t3.1\t1.5\t0.1\tIris-setosa\n4.9\t2.4\t3.3\t1.0\tIris-versicolor\n6.3\t2.3\t4.4\t1.3\tIris-versicolor\n5.7\t3.0\t4.2\t1.2\tIris-versicolor\n5.7\t2.9\t4.2\t1.3\tIris-versicolor\n7.3\t2.9\t6.3\t1.8\tIris-virginica\n7.7\t3.8\t6.7\t2.2\tIris-virginica\n7.2\t3.0\t5.8\t1.6\tIris-virginica\n6.4\t2.8\t5.6\t2.2\tIris-virginica\n6.1\t2.6\t5.6\t1.4\tIris-virginica\n6.9\t3.1\t5.1\t2.3\tIris-virginica\n5.8\t2.7\t5.1\t1.9\tIris-virginica\n\n"
-      },
       "dateCreated": "Feb 25, 2016 6:40:59 PM",
-      "dateStarted": "Feb 25, 2016 6:42:19 PM",
-      "dateFinished": "Feb 25, 2016 6:42:20 PM",
+      "dateStarted": "Feb 26, 2016 10:00:41 AM",
+      "dateFinished": "Feb 26, 2016 10:00:46 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nCalculate average sepal length per class",
-      "dateUpdated": "Feb 23, 2016 5:09:18 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:13 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -533,14 +502,14 @@
         "msg": "\u003cp\u003eCalculate average sepal length per class\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:12:07 PM",
-      "dateStarted": "Feb 23, 2016 5:09:18 PM",
-      "dateFinished": "Feb 23, 2016 5:09:18 PM",
+      "dateStarted": "Feb 26, 2016 12:04:13 PM",
+      "dateFinished": "Feb 26, 2016 12:04:13 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ntuples \u003d iris.map(lambda row: [row[4], row[0]]) \n\nresult \u003d tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\npprint(result)",
-      "dateUpdated": "Feb 25, 2016 6:42:59 PM",
+      "dateUpdated": "Feb 26, 2016 10:00:56 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -560,20 +529,16 @@
       },
       "jobName": "paragraph_1455731053446_174159554",
       "id": "20160217-184413_920390523",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "(u\u0027Iris-virginica\u0027, 6.587999999999998)\n(u\u0027Iris-setosa\u0027, 5.005999999999999)\n(u\u0027Iris-versicolor\u0027, 5.936)\n"
-      },
       "dateCreated": "Feb 17, 2016 6:44:13 PM",
-      "dateStarted": "Feb 25, 2016 6:42:59 PM",
-      "dateFinished": "Feb 25, 2016 6:43:00 PM",
+      "dateStarted": "Feb 26, 2016 10:00:56 AM",
+      "dateFinished": "Feb 26, 2016 10:00:59 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n# (LAB 3) Working with DataFrames converted from RDDs",
-      "dateUpdated": "Feb 23, 2016 5:09:20 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:16 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -600,14 +565,14 @@
         "msg": "\u003ch1\u003e(LAB 3) Working with DataFrames converted from RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:18:15 PM",
-      "dateStarted": "Feb 23, 2016 5:09:20 PM",
-      "dateFinished": "Feb 23, 2016 5:09:20 PM",
+      "dateStarted": "Feb 26, 2016 12:04:16 PM",
+      "dateFinished": "Feb 26, 2016 12:04:16 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 3.1 Transform Iris RDD to DataFrame",
-      "dateUpdated": "Feb 23, 2016 5:09:22 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:18 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -634,14 +599,14 @@
         "msg": "\u003ch2\u003e3.1 Transform Iris RDD to DataFrame\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:26:46 PM",
-      "dateStarted": "Feb 23, 2016 5:09:22 PM",
-      "dateFinished": "Feb 23, 2016 5:09:22 PM",
+      "dateStarted": "Feb 26, 2016 12:04:18 PM",
+      "dateFinished": "Feb 26, 2016 12:04:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"sepalLength\", DoubleType(),  True), \\\n   StructField(\"sepalWidth\",  DoubleType(),  True), \\\n   StructField(\"PetalLength\", DoubleType(),  True), \\\n   StructField(\"PetalWidth\",  DoubleType(),  True), \\\n   StructField(\"Class\",       StringType(),  True)\n])\n\nirisDf \u003d sqlContext.createDataFrame(iris, schema\u003dschema)\n\nsqlContext.registerDataFrameAsTable(irisDf, \"Iris\")\n\nirisDf.show()",
-      "dateUpdated": "Feb 22, 2016 12:04:57 PM",
+      "dateUpdated": "Feb 26, 2016 10:01:02 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -661,15 +626,11 @@
       },
       "jobName": "paragraph_1455733137494_-827370313",
       "id": "20160217-191857_674202811",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "+-----------+----------+-----------+----------+-----------+\n|sepalLength|sepalWidth|PetalLength|PetalWidth|      Class|\n+-----------+----------+-----------+----------+-----------+\n|        5.1|       3.5|        1.4|       0.2|Iris-setosa|\n|        4.9|       3.0|        1.4|       0.2|Iris-setosa|\n|        4.7|       3.2|        1.3|       0.2|Iris-setosa|\n|        4.6|       3.1|        1.5|       0.2|Iris-setosa|\n|        5.0|       3.6|        1.4|       0.2|Iris-setosa|\n|        5.4|       3.9|        1.7|       0.4|Iris-setosa|\n|        4.6|       3.4|        1.4|       0.3|Iris-setosa|\n|        5.0|       3.4|        1.5|       0.2|Iris-setosa|\n|        4.4|       2.9|        1.4|       0.2|Iris-setosa|\n|        4.9|       3.1|        1.5|       0.1|Iris-setosa|\n|        5.4|       3.7|        1.5|       0.2|Iris-setosa|\n|        4.8|       3.4|        1.6|       0.2|Iris-setosa|\n|        4.8|       3.0|        1.4|       0.1|Iris-setosa|\n|        4.3|       3.0|        1.1|       0.1|Iris-setosa|\n|        5.8|       4.0|        1.2|       0.2|Iris-setosa|\n|        5.7|       4.4|        1.5|       0.4|Iris-setosa|\n|        5.4|       3.9|        1.3|       0.4|Iris-setosa|\n|        5.1|       3.5|        1.4|       0.3|Iris-setosa|\n|        5.7|       3.8|        1.7|       0.3|Iris-setosa|\n|        5.1|       3.8|        1.5|       0.3|Iris-setosa|\n+-----------+----------+-----------+----------+-----------+\nonly showing top 20 rows\n\n"
-      },
       "dateCreated": "Feb 17, 2016 7:18:57 PM",
-      "dateStarted": "Feb 22, 2016 12:04:57 PM",
-      "dateFinished": "Feb 22, 2016 12:05:01 PM",
+      "dateStarted": "Feb 26, 2016 10:01:02 AM",
+      "dateFinished": "Feb 26, 2016 10:01:06 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -694,15 +655,11 @@
       },
       "jobName": "paragraph_1455733142141_535025542",
       "id": "20160217-191902_1601893514",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "+---------------+-----------------+\n|          Class| avg(sepalLength)|\n+---------------+-----------------+\n|    Iris-setosa|5.005999999999999|\n| Iris-virginica|6.587999999999998|\n|Iris-versicolor|            5.936|\n+---------------+-----------------+\n\n"
-      },
       "dateCreated": "Feb 17, 2016 7:19:02 PM",
       "dateStarted": "Feb 22, 2016 12:05:05 PM",
       "dateFinished": "Feb 22, 2016 12:05:19 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -745,20 +702,16 @@
       },
       "jobName": "paragraph_1455734701542_-4767895",
       "id": "20160217-194501_913187085",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "Class\tavgSL\nIris-setosa\t5.005999999999999\nIris-virginica\t6.587999999999998\nIris-versicolor\t5.936\n"
-      },
       "dateCreated": "Feb 17, 2016 7:45:01 PM",
       "dateStarted": "Feb 22, 2016 12:05:21 PM",
       "dateFinished": "Feb 22, 2016 12:05:30 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n# (LAB 4) Analyze World Development Indicators \n\n## 4.1 Load World Development Indicators from HDFS as DataFrame\n\n**Data source:** https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\n\n**Changes:** Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE) ",
-      "dateUpdated": "Feb 23, 2016 5:09:26 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:21 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -785,8 +738,8 @@
         "msg": "\u003ch1\u003e(LAB 4) Analyze World Development Indicators\u003c/h1\u003e\n\u003ch2\u003e4.1 Load World Development Indicators from HDFS as DataFrame\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eData source:\u003c/strong\u003e https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eChanges:\u003c/strong\u003e Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE)\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:26 PM",
-      "dateFinished": "Feb 23, 2016 5:09:27 PM",
+      "dateStarted": "Feb 26, 2016 12:04:21 PM",
+      "dateFinished": "Feb 26, 2016 12:04:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -812,20 +765,16 @@
       },
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_474000621",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "-rw-r--r--   3 root hdfs   61626644 2016-02-22 18:54 /tmp/europe-indicators.csv\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
       "dateStarted": "Feb 22, 2016 7:30:33 PM",
       "dateFinished": "Feb 22, 2016 7:30:42 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\nindicators_csv \u003d sqlContext.read.load(\u0027/tmp/europe-indicators.csv\u0027, format\u003d\u0027com.databricks.spark.csv\u0027, header\u003d\u0027true\u0027, schema\u003dschema).cache()\nsqlContext.registerDataFrameAsTable(indicators_csv, \"IndicatorsRDD\")\n\nprint(indicators_csv.count())\n\n",
-      "dateUpdated": "Feb 22, 2016 7:31:01 PM",
+      "dateUpdated": "Feb 26, 2016 8:13:39 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -845,20 +794,16 @@
       },
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_227211711",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "618067\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:31:01 PM",
-      "dateFinished": "Feb 22, 2016 7:31:12 PM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 26, 2016 8:13:39 AM",
+      "dateFinished": "Feb 26, 2016 8:13:39 AM",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nLet\u0027s look at the schema of the Indicators table",
-      "dateUpdated": "Feb 23, 2016 5:09:30 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:24 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -885,14 +830,14 @@
         "msg": "\u003cp\u003eLet\u0027s look at the schema of the Indicators table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:30 PM",
-      "dateFinished": "Feb 23, 2016 5:09:31 PM",
+      "dateStarted": "Feb 26, 2016 12:04:24 PM",
+      "dateFinished": "Feb 26, 2016 12:04:24 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nindicators_csv.printSchema()\nindicators_csv.show()",
-      "dateUpdated": "Feb 22, 2016 7:31:16 PM",
+      "text": "%pyspark\nindicators_csv.printSchema()\nindicators_csv.sample(False, 0.1).show()",
+      "dateUpdated": "Feb 26, 2016 8:12:43 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -912,20 +857,16 @@
       },
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_785447344",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "root\n |-- CountryName: string (nullable \u003d true)\n |-- CountryCode: string (nullable \u003d true)\n |-- IndicatorName: string (nullable \u003d true)\n |-- IndicatorCode: string (nullable \u003d true)\n |-- Year: integer (nullable \u003d true)\n |-- Value: double (nullable \u003d true)\n\n+-----------+-----------+--------------------+-----------------+----+------------------+\n|CountryName|CountryCode|       IndicatorName|    IndicatorCode|Year|             Value|\n+-----------+-----------+--------------------+-----------------+----+------------------+\n|    Austria|        AUT|Adolescent fertil...|      SP.ADO.TFRT|1960|           48.3914|\n|    Austria|        AUT|Age dependency ra...|      SP.POP.DPND|1960|52.348170383459205|\n|    Austria|        AUT|Age dependency ra...|   SP.POP.DPND.OL|1960|  18.4951086719202|\n|    Austria|        AUT|Age dependency ra...|   SP.POP.DPND.YG|1960|   33.853061711539|\n|    Austria|        AUT|Alternative and n...|EG.USE.COMM.CL.ZS|1960|  8.96433606078842|\n|    Austria|        AUT|Arms imports (SIP...|   MS.MIL.MPRT.KD|1960|         7000000.0|\n|    Austria|        AUT|Birth rate, crude...|   SP.DYN.CBRT.IN|1960|              17.9|\n|    Austria|        AUT|CO2 emissions (kg...|EN.ATM.CO2E.KD.GD|1960| 0.388626120450145|\n|    Austria|        AUT|  CO2 emissions (kt)|   EN.ATM.CO2E.KT|1960|         30821.135|\n|    Austria|        AUT|CO2 emissions (me...|   EN.ATM.CO2E.PC|1960|  4.37331882803344|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.ETOT.ZS|1960|    17.62554040572|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.GF.ZS|1960|   9.4824509220702|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.GF.KT|1960|          2922.599|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.LF.ZS|1960|  27.3289708506841|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.LF.KT|1960|          8423.099|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.MANF.ZS|1960|40.438975723312296|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.OTHX.ZS|1960|0.0332557366145661|\n|    Austria|        AUT|CO2 emissions fro...|   EN.CO2.BLDG.ZS|1960|23.378782840039896|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.SF.ZS|1960|58.607971445568104|\n|    Austria|        AUT|CO2 emissions fro...|EN.ATM.CO2E.SF.KT|1960|         18063.642|\n+-----------+-----------+--------------------+-----------------+----+------------------+\nonly showing top 20 rows\n\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:31:16 PM",
-      "dateFinished": "Feb 22, 2016 7:31:16 PM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 26, 2016 8:12:43 AM",
+      "dateFinished": "Feb 26, 2016 8:12:44 AM",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nCode/value encoding is not that optimal ... Let\u0027s transform the data set and store the result os ORC\n",
-      "dateUpdated": "Feb 23, 2016 5:09:33 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:26 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -952,14 +893,14 @@
         "msg": "\u003cp\u003eCode/value encoding is not that optimal \u0026hellip; Let\u0027s transform the data set and store the result os ORC\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:33 PM",
-      "dateFinished": "Feb 23, 2016 5:09:34 PM",
+      "dateStarted": "Feb 26, 2016 12:04:26 PM",
+      "dateFinished": "Feb 26, 2016 12:04:26 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 4.2 Transform Indicators table to Columns \n",
-      "dateUpdated": "Feb 23, 2016 5:09:35 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:27 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -986,14 +927,14 @@
         "msg": "\u003ch2\u003e4.2 Transform Indicators table to Columns\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:35 PM",
-      "dateFinished": "Feb 23, 2016 5:09:37 PM",
+      "dateStarted": "Feb 26, 2016 12:04:27 PM",
+      "dateFinished": "Feb 26, 2016 12:04:28 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nSpark 1.5 does not provide a `pivot` method for DataFrames, hence we need to write our own pivot via RDDs and `aggregateByKey`\n\nSome caveats for this step:\n- Return a row from `merge`, python dictionaries are deprecated\n- `**value` is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\n- Initialize with all indicators and set them to None\n- `.`are not allowed in column names, so replace with `_`",
-      "dateUpdated": "Feb 23, 2016 5:09:40 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:30 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1020,8 +961,8 @@
         "msg": "\u003cp\u003eSpark 1.5 does not provide a \u003ccode\u003epivot\u003c/code\u003e method for DataFrames, hence we need to write our own pivot via RDDs and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSome caveats for this step:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eReturn a row from \u003ccode\u003emerge\u003c/code\u003e, python dictionaries are deprecated\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e**value\u003c/code\u003e is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\u003c/li\u003e\n\u003cli\u003eInitialize with all indicators and set them to None\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e.\u003c/code\u003eare not allowed in column names, so replace with \u003ccode\u003e_\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:40 PM",
-      "dateFinished": "Feb 23, 2016 5:09:40 PM",
+      "dateStarted": "Feb 26, 2016 12:04:30 PM",
+      "dateFinished": "Feb 26, 2016 12:04:30 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1047,20 +988,16 @@
       },
       "jobName": "paragraph_1455721677995_-631555704",
       "id": "20160217-160757_1769713575",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
       "dateStarted": "Feb 22, 2016 7:31:21 PM",
       "dateFinished": "Feb 22, 2016 7:31:31 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\n\n**Notes:**\n\n- The StructType schema **has to be sorted!** Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\n- Also, due to the many null values, automatic schema inference will only work properly when \"samplingRatio\u003d100\" in createDataFrame. However, I wouldn\u0027t rely on it ...",
-      "dateUpdated": "Feb 23, 2016 5:09:46 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:37 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1087,8 +1024,8 @@
         "msg": "\u003cp\u003eFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNotes:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe StructType schema \u003cstrong\u003ehas to be sorted!\u003c/strong\u003e Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\u003c/li\u003e\n\u003cli\u003eAlso, due to the many null values, automatic schema inference will only work properly when \u0026ldquo;samplingRatio\u003d100\u0026rdquo; in createDataFrame. However, I wouldn\u0027t rely on it \u0026hellip;\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:46 PM",
-      "dateFinished": "Feb 23, 2016 5:09:46 PM",
+      "dateStarted": "Feb 26, 2016 12:04:37 PM",
+      "dateFinished": "Feb 26, 2016 12:04:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1114,20 +1051,16 @@
       },
       "jobName": "paragraph_1455721677995_-631555704",
       "id": "20160217-160757_1498734662",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
       "dateStarted": "Feb 22, 2016 7:31:35 PM",
       "dateFinished": "Feb 22, 2016 7:31:55 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 4.3 Save transformed table as ORC",
-      "dateUpdated": "Feb 23, 2016 5:09:49 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:40 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1154,8 +1087,8 @@
         "msg": "\u003ch2\u003e4.3 Save transformed table as ORC\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 23, 2016 5:09:49 PM",
-      "dateFinished": "Feb 23, 2016 5:09:50 PM",
+      "dateStarted": "Feb 26, 2016 12:04:40 PM",
+      "dateFinished": "Feb 26, 2016 12:04:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1181,15 +1114,11 @@
       },
       "jobName": "paragraph_1455721677999_-633094700",
       "id": "20160217-160757_1122870613",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "16/02/22 19:32:01 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval \u003d 360 minutes, Emptier interval \u003d 0 minutes.\nMoved: \u0027hdfs://beebox01.localdomain:8020/tmp/europe-indicators_transformed_orc\u0027 to trash at: hdfs://beebox01.localdomain:8020/user/zeppelin/.Trash/Current\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
       "dateStarted": "Feb 22, 2016 7:31:56 PM",
       "dateFinished": "Feb 22, 2016 7:32:02 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1214,20 +1143,16 @@
       },
       "jobName": "paragraph_1455721678000_-622706479",
       "id": "20160217-160758_1399156780",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:06 PM",
       "dateFinished": "Feb 22, 2016 7:32:14 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## 4.4 Some simple Queries",
-      "dateUpdated": "Feb 23, 2016 5:09:52 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:43 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1254,14 +1179,14 @@
         "msg": "\u003ch2\u003e4.4 Some simple Queries\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 23, 2016 5:09:53 PM",
-      "dateFinished": "Feb 23, 2016 5:09:53 PM",
+      "dateStarted": "Feb 26, 2016 12:04:43 PM",
+      "dateFinished": "Feb 26, 2016 12:04:44 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nLoad ORC data again to benefit from predicate pushdow, etc",
-      "dateUpdated": "Feb 23, 2016 5:09:54 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:46 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1288,8 +1213,8 @@
         "msg": "\u003cp\u003eLoad ORC data again to benefit from predicate pushdow, etc\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 23, 2016 5:09:54 PM",
-      "dateFinished": "Feb 23, 2016 5:09:55 PM",
+      "dateStarted": "Feb 26, 2016 12:04:46 PM",
+      "dateFinished": "Feb 26, 2016 12:04:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1315,20 +1240,16 @@
       },
       "jobName": "paragraph_1455721678000_-622706479",
       "id": "20160217-160758_546796282",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:15 PM",
       "dateFinished": "Feb 22, 2016 7:32:16 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nExecute some queries",
-      "dateUpdated": "Feb 22, 2016 12:09:32 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1355,8 +1276,8 @@
         "msg": "\u003cp\u003eExecute some queries\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:50:06 PM",
-      "dateStarted": "Feb 22, 2016 12:09:32 PM",
-      "dateFinished": "Feb 22, 2016 12:09:32 PM",
+      "dateStarted": "Feb 26, 2016 12:04:48 PM",
+      "dateFinished": "Feb 26, 2016 12:04:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1409,15 +1330,11 @@
       },
       "jobName": "paragraph_1455721678001_-623091228",
       "id": "20160217-160758_635379121",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "Country\tYear\tSP_DYN_CBRT_IN\nAUT\t1991\t12.2\nAUT\t1992\t12.2\nAUT\t1993\t12.0\nAUT\t1994\t11.6\nAUT\t1995\t11.2\nAUT\t1996\t11.2\nAUT\t1997\t10.5\nAUT\t1998\t10.2\nAUT\t1999\t9.8\nAUT\t2000\t9.8\nAUT\t2001\t9.4\nAUT\t2002\t9.7\nAUT\t2003\t9.5\nAUT\t2004\t9.7\nAUT\t2005\t9.5\nAUT\t2006\t9.4\nAUT\t2007\t9.2\nAUT\t2008\t9.3\nAUT\t2009\t9.2\nAUT\t2010\t9.4\nAUT\t2011\t9.3\nAUT\t2012\t9.4\nAUT\t2013\t9.4\nAUT\t2014\tnull\nAUT\t2015\tnull\nDEU\t1991\t10.4\nDEU\t1992\t10.0\nDEU\t1993\t9.8\nDEU\t1994\t9.5\nDEU\t1995\t9.4\nDEU\t1996\t9.7\nDEU\t1997\t9.9\nDEU\t1998\t9.6\nDEU\t1999\t9.4\nDEU\t2000\t9.3\nDEU\t2001\t8.9\nDEU\t2002\t8.7\nDEU\t2003\t8.6\nDEU\t2004\t8.6\nDEU\t2005\t8.3\nDEU\t2006\t8.2\nDEU\t2007\t8.3\nDEU\t2008\t8.3\nDEU\t2009\t8.1\nDEU\t2010\t8.3\nDEU\t2011\t8.1\nDEU\t2012\t8.4\nDEU\t2013\t8.5\nDEU\t2014\tnull\nDEU\t2015\tnull\nESP\t1991\t10.2\nESP\t1992\t10.2\nESP\t1993\t9.8\nESP\t1994\t9.4\nESP\t1995\t9.2\nESP\t1996\t9.2\nESP\t1997\t9.3\nESP\t1998\t9.2\nESP\t1999\t9.5\nESP\t2000\t9.9\nESP\t2001\t9.9\nESP\t2002\t10.1\nESP\t2003\t10.4\nESP\t2004\t10.6\nESP\t2005\t10.6\nESP\t2006\t10.8\nESP\t2007\t10.9\nESP\t2008\t11.3\nESP\t2009\t10.6\nESP\t2010\t10.4\nESP\t2011\t10.1\nESP\t2012\t9.7\nESP\t2013\t9.1\nESP\t2014\tnull\nESP\t2015\tnull\nFRA\t1991\t13.2\nFRA\t1992\t13.1\nFRA\t1993\t13.0\nFRA\t1994\t12.5\nFRA\t1995\t12.8\nFRA\t1996\t12.8\nFRA\t1997\t12.7\nFRA\t1998\t12.8\nFRA\t1999\t12.9\nFRA\t2000\t13.3\nFRA\t2001\t13.1\nFRA\t2002\t12.9\nFRA\t2003\t12.8\nFRA\t2004\t12.8\nFRA\t2005\t12.8\nFRA\t2006\t13.1\nFRA\t2007\t12.8\nFRA\t2008\t12.9\nFRA\t2009\t12.8\nFRA\t2010\t12.9\nFRA\t2011\t12.7\nFRA\t2012\t12.6\nFRA\t2013\t12.3\nFRA\t2014\tnull\nFRA\t2015\tnull\nGBR\t1991\t13.8\nGBR\t1992\t13.6\nGBR\t1993\t13.2\nGBR\t1994\t13.0\nGBR\t1995\t12.6\nGBR\t1996\t12.6\nGBR\t1997\t12.5\nGBR\t1998\t12.3\nGBR\t1999\t11.9\nGBR\t2000\t11.5\nGBR\t2001\t11.3\nGBR\t2002\t11.3\nGBR\t2003\t11.7\nGBR\t2004\t11.9\nGBR\t2005\t12.0\nGBR\t2006\t12.3\nGBR\t2007\t12.6\nGBR\t2008\t12.9\nGBR\t2009\t12.7\nGBR\t2010\t12.9\nGBR\t2011\t12.8\nGBR\t2012\t12.8\nGBR\t2013\t12.2\nGBR\t2014\tnull\nGBR\t2015\tnull\nGRC\t1991\t10.0\nGRC\t1992\t10.0\nGRC\t1993\t9.7\nGRC\t1994\t9.8\nGRC\t1995\t9.5\nGRC\t1996\t9.4\nGRC\t1997\t9.5\nGRC\t1998\t9.3\nGRC\t1999\t9.2\nGRC\t2000\t9.5\nGRC\t2001\t9.3\nGRC\t2002\t9.4\nGRC\t2003\t9.5\nGRC\t2004\t9.6\nGRC\t2005\t9.7\nGRC\t2006\t10.1\nGRC\t2007\t10.0\nGRC\t2008\t10.6\nGRC\t2009\t10.5\nGRC\t2010\t10.3\nGRC\t2011\t9.6\nGRC\t2012\t9.0\nGRC\t2013\t8.5\nGRC\t2014\tnull\nGRC\t2015\tnull\nIRL\t1991\t14.9\nIRL\t1992\t14.4\nIRL\t1993\t13.8\nIRL\t1994\t13.4\nIRL\t1995\t13.5\nIRL\t1996\t13.9\nIRL\t1997\t14.4\nIRL\t1998\t14.5\nIRL\t1999\t14.4\nIRL\t2000\t14.4\nIRL\t2001\t15.0\nIRL\t2002\t15.4\nIRL\t2003\t15.4\nIRL\t2004\t15.2\nIRL\t2005\t14.8\nIRL\t2006\t15.3\nIRL\t2007\t16.2\nIRL\t2008\t16.7\nIRL\t2009\t16.7\nIRL\t2010\t16.5\nIRL\t2011\t16.2\nIRL\t2012\t15.7\nIRL\t2013\t15.0\nIRL\t2014\tnull\nIRL\t2015\tnull\nITA\t1991\t9.9\nITA\t1992\t10.0\nITA\t1993\t9.7\nITA\t1994\t9.4\nITA\t1995\t9.2\nITA\t1996\t9.3\nITA\t1997\t9.4\nITA\t1998\t9.4\nITA\t1999\t9.4\nITA\t2000\t9.5\nITA\t2001\t9.4\nITA\t2002\t9.4\nITA\t2003\t9.5\nITA\t2004\t9.8\nITA\t2005\t9.6\nITA\t2006\t9.6\nITA\t2007\t9.7\nITA\t2008\t9.8\nITA\t2009\t9.6\nITA\t2010\t9.5\nITA\t2011\t9.2\nITA\t2012\t9.0\nITA\t2013\t8.5\nITA\t2014\tnull\nITA\t2015\tnull\nNLD\t1991\t13.2\nNLD\t1992\t13.0\nNLD\t1993\t12.8\nNLD\t1994\t12.7\nNLD\t1995\t12.3\nNLD\t1996\t12.2\nNLD\t1997\t12.3\nNLD\t1998\t12.7\nNLD\t1999\t12.7\nNLD\t2000\t13.0\nNLD\t2001\t12.6\nNLD\t2002\t12.5\nNLD\t2003\t12.3\nNLD\t2004\t11.9\nNLD\t2005\t11.5\nNLD\t2006\t11.3\nNLD\t2007\t11.1\nNLD\t2008\t11.2\nNLD\t2009\t11.2\nNLD\t2010\t11.1\nNLD\t2011\t10.8\nNLD\t2012\t10.5\nNLD\t2013\t10.2\nNLD\t2014\tnull\nNLD\t2015\tnull\nPRT\t1991\t11.7\nPRT\t1992\t11.5\nPRT\t1993\t11.4\nPRT\t1994\t10.9\nPRT\t1995\t10.7\nPRT\t1996\t11.0\nPRT\t1997\t11.2\nPRT\t1998\t11.2\nPRT\t1999\t11.4\nPRT\t2000\t11.7\nPRT\t2001\t10.9\nPRT\t2002\t11.0\nPRT\t2003\t10.8\nPRT\t2004\t10.4\nPRT\t2005\t10.4\nPRT\t2006\t10.0\nPRT\t2007\t9.7\nPRT\t2008\t9.9\nPRT\t2009\t9.4\nPRT\t2010\t9.6\nPRT\t2011\t9.2\nPRT\t2012\t8.5\nPRT\t2013\t7.9\nPRT\t2014\tnull\nPRT\t2015\tnull\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:20 PM",
       "dateFinished": "Feb 22, 2016 7:32:22 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1469,15 +1386,11 @@
       },
       "jobName": "paragraph_1455721678001_-623091228",
       "id": "20160217-160758_557730296",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\nAUT\t1991\t3.70000004768372\nAUT\t1992\t4.099999904632569\nAUT\t1993\t4.699999809265139\nAUT\t1994\t5.0\nAUT\t1995\t5.900000095367429\nAUT\t1996\t6.900000095367429\nAUT\t1997\t7.599999904632571\nAUT\t1998\t7.5\nAUT\t1999\t5.900000095367429\nAUT\t2000\t6.300000190734861\nAUT\t2001\t6.0\nAUT\t2002\t7.199999809265139\nAUT\t2003\t7.5\nAUT\t2004\t12.1000003814697\nAUT\t2005\t11.0\nAUT\t2006\t9.80000019073486\nAUT\t2007\t9.39999961853027\nAUT\t2008\t8.5\nAUT\t2009\t10.6999998092651\nAUT\t2010\t9.5\nAUT\t2011\t8.89999961853027\nAUT\t2012\t9.39999961853027\nAUT\t2013\t9.69999980926514\nAUT\t2014\t10.3000001907349\nAUT\t2015\tnull\nDEU\t1991\t5.5\nDEU\t1992\t6.0\nDEU\t1993\t7.699999809265139\nDEU\t1994\t9.0\nDEU\t1995\t8.5\nDEU\t1996\t9.60000038146973\nDEU\t1997\t10.6999998092651\nDEU\t1998\t9.80000019073486\nDEU\t1999\t8.89999961853027\nDEU\t2000\t8.5\nDEU\t2001\t7.800000190734861\nDEU\t2002\t9.30000019073486\nDEU\t2003\t11.0\nDEU\t2004\t13.0\nDEU\t2005\t15.5\nDEU\t2006\t13.8000001907349\nDEU\t2007\t11.8999996185303\nDEU\t2008\t10.6000003814697\nDEU\t2009\t11.1999998092651\nDEU\t2010\t9.89999961853027\nDEU\t2011\t8.5\nDEU\t2012\t8.0\nDEU\t2013\t7.800000190734861\nDEU\t2014\t7.699999809265139\nDEU\t2015\tnull\nESP\t1991\t30.5\nESP\t1992\t33.0999984741211\nESP\t1993\t42.2000007629395\nESP\t1994\t44.9000015258789\nESP\t1995\t41.9000015258789\nESP\t1996\t41.7999992370605\nESP\t1997\t39.0999984741211\nESP\t1998\t35.4000015258789\nESP\t1999\t29.100000381469698\nESP\t2000\t25.2999992370605\nESP\t2001\t20.7000007629395\nESP\t2002\t21.5\nESP\t2003\t22.2999992370605\nESP\t2004\t22.5\nESP\t2005\t19.6000003814697\nESP\t2006\t17.8999996185303\nESP\t2007\t18.1000003814697\nESP\t2008\t24.5\nESP\t2009\t37.7000007629395\nESP\t2010\t41.5\nESP\t2011\t46.2000007629395\nESP\t2012\t52.9000015258789\nESP\t2013\t55.5\nESP\t2014\t53.2000007629395\nESP\t2015\tnull\nFRA\t1991\t19.7999992370605\nFRA\t1992\t21.7000007629395\nFRA\t1993\t25.600000381469698\nFRA\t1994\t28.7999992370605\nFRA\t1995\t27.100000381469698\nFRA\t1996\t27.600000381469698\nFRA\t1997\t29.0\nFRA\t1998\t26.2000007629395\nFRA\t1999\t26.5\nFRA\t2000\t20.6000003814697\nFRA\t2001\t18.0\nFRA\t2002\t18.8999996185303\nFRA\t2003\t18.2999992370605\nFRA\t2004\t19.7000007629395\nFRA\t2005\t20.6000003814697\nFRA\t2006\t21.600000381469698\nFRA\t2007\t19.1000003814697\nFRA\t2008\t18.6000003814697\nFRA\t2009\t23.2000007629395\nFRA\t2010\t22.899999618530302\nFRA\t2011\t22.100000381469698\nFRA\t2012\t23.899999618530302\nFRA\t2013\t23.899999618530302\nFRA\t2014\t23.2000007629395\nFRA\t2015\tnull\nGBR\t1991\t13.8999996185303\nGBR\t1992\t15.6999998092651\nGBR\t1993\t17.5\nGBR\t1994\t16.3999996185303\nGBR\t1995\t15.5\nGBR\t1996\t14.8999996185303\nGBR\t1997\t13.6000003814697\nGBR\t1998\t12.5\nGBR\t1999\t12.3999996185303\nGBR\t2000\t12.0\nGBR\t2001\t10.3000001907349\nGBR\t2002\t10.8999996185303\nGBR\t2003\t11.3999996185303\nGBR\t2004\t10.6999998092651\nGBR\t2005\t12.8000001907349\nGBR\t2006\t14.0\nGBR\t2007\t14.3000001907349\nGBR\t2008\t15.0\nGBR\t2009\t19.1000003814697\nGBR\t2010\t19.8999996185303\nGBR\t2011\t21.2999992370605\nGBR\t2012\t21.2000007629395\nGBR\t2013\t20.7000007629395\nGBR\t2014\t16.8999996185303\nGBR\t2015\tnull\nGRC\t1991\t24.5\nGRC\t1992\t25.0\nGRC\t1993\t28.7999992370605\nGRC\t1994\t27.7000007629395\nGRC\t1995\t27.899999618530302\nGRC\t1996\t31.2000007629395\nGRC\t1997\t31.0\nGRC\t1998\t29.7000007629395\nGRC\t1999\t31.7000007629395\nGRC\t2000\t29.5\nGRC\t2001\t28.100000381469698\nGRC\t2002\t26.7999992370605\nGRC\t2003\t26.899999618530302\nGRC\t2004\t26.899999618530302\nGRC\t2005\t26.0\nGRC\t2006\t25.2000007629395\nGRC\t2007\t22.899999618530302\nGRC\t2008\t22.100000381469698\nGRC\t2009\t25.7999992370605\nGRC\t2010\t32.9000015258789\nGRC\t2011\t44.4000015258789\nGRC\t2012\t55.2999992370605\nGRC\t2013\t58.2999992370605\nGRC\t2014\t52.4000015258789\nGRC\t2015\tnull\nIRL\t1991\t23.100000381469698\nIRL\t1992\t22.7000007629395\nIRL\t1993\t25.0\nIRL\t1994\t23.0\nIRL\t1995\t19.0\nIRL\t1996\t18.1000003814697\nIRL\t1997\t15.8999996185303\nIRL\t1998\t11.3999996185303\nIRL\t1999\t8.60000038146973\nIRL\t2000\t6.5\nIRL\t2001\t6.199999809265139\nIRL\t2002\t7.800000190734861\nIRL\t2003\t8.10000038146973\nIRL\t2004\t8.300000190734862\nIRL\t2005\t8.60000038146973\nIRL\t2006\t8.60000038146973\nIRL\t2007\t9.10000038146973\nIRL\t2008\t13.3000001907349\nIRL\t2009\t24.0\nIRL\t2010\t27.600000381469698\nIRL\t2011\t29.100000381469698\nIRL\t2012\t30.399999618530302\nIRL\t2013\t26.7999992370605\nIRL\t2014\t23.899999618530302\nIRL\t2015\tnull\nITA\t1991\t28.100000381469698\nITA\t1992\t28.2999992370605\nITA\t1993\t30.2000007629395\nITA\t1994\t31.7999992370605\nITA\t1995\t33.5\nITA\t1996\t34.7000007629395\nITA\t1997\t34.5999984741211\nITA\t1998\t33.7999992370605\nITA\t1999\t33.0\nITA\t2000\t31.5\nITA\t2001\t27.7999992370605\nITA\t2002\t27.100000381469698\nITA\t2003\t26.7999992370605\nITA\t2004\t24.399999618530302\nITA\t2005\t24.100000381469698\nITA\t2006\t21.7999992370605\nITA\t2007\t20.3999996185303\nITA\t2008\t21.2000007629395\nITA\t2009\t25.2999992370605\nITA\t2010\t27.899999618530302\nITA\t2011\t29.2000007629395\nITA\t2012\t35.2999992370605\nITA\t2013\t40.0\nITA\t2014\t42.7000007629395\nITA\t2015\tnull\nNLD\t1991\t11.1000003814697\nNLD\t1992\t8.10000038146973\nNLD\t1993\t10.3999996185303\nNLD\t1994\t11.3000001907349\nNLD\t1995\t12.1000003814697\nNLD\t1996\t11.3999996185303\nNLD\t1997\t9.69999980926514\nNLD\t1998\t8.80000019073486\nNLD\t1999\t7.400000095367429\nNLD\t2000\t5.300000190734861\nNLD\t2001\t4.40000009536743\nNLD\t2002\t4.59999990463257\nNLD\t2003\t6.599999904632571\nNLD\t2004\t8.0\nNLD\t2005\t8.199999809265138\nNLD\t2006\t6.599999904632571\nNLD\t2007\t5.900000095367429\nNLD\t2008\t5.300000190734861\nNLD\t2009\t6.599999904632571\nNLD\t2010\t8.699999809265138\nNLD\t2011\t7.599999904632571\nNLD\t2012\t9.5\nNLD\t2013\t11.0\nNLD\t2014\t10.5\nNLD\t2015\tnull\nPRT\t1991\t8.699999809265138\nPRT\t1992\t9.69999980926514\nPRT\t1993\t12.1000003814697\nPRT\t1994\t14.5\nPRT\t1995\t16.0\nPRT\t1996\t17.0\nPRT\t1997\t14.1000003814697\nPRT\t1998\t9.39999961853027\nPRT\t1999\t9.10000038146973\nPRT\t2000\t8.199999809265138\nPRT\t2001\t8.89999961853027\nPRT\t2002\t10.5\nPRT\t2003\t13.5\nPRT\t2004\t14.1000003814697\nPRT\t2005\t16.2000007629395\nPRT\t2006\t16.5\nPRT\t2007\t16.7000007629395\nPRT\t2008\t16.7000007629395\nPRT\t2009\t20.2999992370605\nPRT\t2010\t22.7999992370605\nPRT\t2011\t30.2999992370605\nPRT\t2012\t37.9000015258789\nPRT\t2013\t38.0999984741211\nPRT\t2014\t34.7999992370605\nPRT\t2015\tnull\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:28 PM",
       "dateFinished": "Feb 22, 2016 7:32:31 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1535,20 +1448,16 @@
       },
       "jobName": "paragraph_1455721678002_-621936982",
       "id": "20160217-160758_983953287",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "Country\tYear\tSL_UEM_1524_NE_ZS\tSP_DYN_CBRT_IN\nAUT\t1991\t3.70000004768372\t12.2\nAUT\t1992\t4.099999904632569\t12.2\nAUT\t1993\t4.699999809265139\t12.0\nAUT\t1994\t5.0\t11.6\nAUT\t1995\t5.900000095367429\t11.2\nAUT\t1996\t6.900000095367429\t11.2\nAUT\t1997\t7.599999904632571\t10.5\nAUT\t1998\t7.5\t10.2\nAUT\t1999\t5.900000095367429\t9.8\nAUT\t2000\t6.300000190734861\t9.8\nAUT\t2001\t6.0\t9.4\nAUT\t2002\t7.199999809265139\t9.7\nAUT\t2003\t7.5\t9.5\nAUT\t2004\t12.1000003814697\t9.7\nAUT\t2005\t11.0\t9.5\nAUT\t2006\t9.80000019073486\t9.4\nAUT\t2007\t9.39999961853027\t9.2\nAUT\t2008\t8.5\t9.3\nAUT\t2009\t10.6999998092651\t9.2\nAUT\t2010\t9.5\t9.4\nAUT\t2011\t8.89999961853027\t9.3\nAUT\t2012\t9.39999961853027\t9.4\nAUT\t2013\t9.69999980926514\t9.4\nAUT\t2014\t10.3000001907349\tnull\nDEU\t1991\t5.5\t10.4\nDEU\t1992\t6.0\t10.0\nDEU\t1993\t7.699999809265139\t9.8\nDEU\t1994\t9.0\t9.5\nDEU\t1995\t8.5\t9.4\nDEU\t1996\t9.60000038146973\t9.7\nDEU\t1997\t10.6999998092651\t9.9\nDEU\t1998\t9.80000019073486\t9.6\nDEU\t1999\t8.89999961853027\t9.4\nDEU\t2000\t8.5\t9.3\nDEU\t2001\t7.800000190734861\t8.9\nDEU\t2002\t9.30000019073486\t8.7\nDEU\t2003\t11.0\t8.6\nDEU\t2004\t13.0\t8.6\nDEU\t2005\t15.5\t8.3\nDEU\t2006\t13.8000001907349\t8.2\nDEU\t2007\t11.8999996185303\t8.3\nDEU\t2008\t10.6000003814697\t8.3\nDEU\t2009\t11.1999998092651\t8.1\nDEU\t2010\t9.89999961853027\t8.3\nDEU\t2011\t8.5\t8.1\nDEU\t2012\t8.0\t8.4\nDEU\t2013\t7.800000190734861\t8.5\nDEU\t2014\t7.699999809265139\tnull\nESP\t1991\t30.5\t10.2\nESP\t1992\t33.0999984741211\t10.2\nESP\t1993\t42.2000007629395\t9.8\nESP\t1994\t44.9000015258789\t9.4\nESP\t1995\t41.9000015258789\t9.2\nESP\t1996\t41.7999992370605\t9.2\nESP\t1997\t39.0999984741211\t9.3\nESP\t1998\t35.4000015258789\t9.2\nESP\t1999\t29.100000381469698\t9.5\nESP\t2000\t25.2999992370605\t9.9\nESP\t2001\t20.7000007629395\t9.9\nESP\t2002\t21.5\t10.1\nESP\t2003\t22.2999992370605\t10.4\nESP\t2004\t22.5\t10.6\nESP\t2005\t19.6000003814697\t10.6\nESP\t2006\t17.8999996185303\t10.8\nESP\t2007\t18.1000003814697\t10.9\nESP\t2008\t24.5\t11.3\nESP\t2009\t37.7000007629395\t10.6\nESP\t2010\t41.5\t10.4\nESP\t2011\t46.2000007629395\t10.1\nESP\t2012\t52.9000015258789\t9.7\nESP\t2013\t55.5\t9.1\nESP\t2014\t53.2000007629395\tnull\nFRA\t1991\t19.7999992370605\t13.2\nFRA\t1992\t21.7000007629395\t13.1\nFRA\t1993\t25.600000381469698\t13.0\nFRA\t1994\t28.7999992370605\t12.5\nFRA\t1995\t27.100000381469698\t12.8\nFRA\t1996\t27.600000381469698\t12.8\nFRA\t1997\t29.0\t12.7\nFRA\t1998\t26.2000007629395\t12.8\nFRA\t1999\t26.5\t12.9\nFRA\t2000\t20.6000003814697\t13.3\nFRA\t2001\t18.0\t13.1\nFRA\t2002\t18.8999996185303\t12.9\nFRA\t2003\t18.2999992370605\t12.8\nFRA\t2004\t19.7000007629395\t12.8\nFRA\t2005\t20.6000003814697\t12.8\nFRA\t2006\t21.600000381469698\t13.1\nFRA\t2007\t19.1000003814697\t12.8\nFRA\t2008\t18.6000003814697\t12.9\nFRA\t2009\t23.2000007629395\t12.8\nFRA\t2010\t22.899999618530302\t12.9\nFRA\t2011\t22.100000381469698\t12.7\nFRA\t2012\t23.899999618530302\t12.6\nFRA\t2013\t23.899999618530302\t12.3\nFRA\t2014\t23.2000007629395\tnull\nGBR\t1991\t13.8999996185303\t13.8\nGBR\t1992\t15.6999998092651\t13.6\nGBR\t1993\t17.5\t13.2\nGBR\t1994\t16.3999996185303\t13.0\nGBR\t1995\t15.5\t12.6\nGBR\t1996\t14.8999996185303\t12.6\nGBR\t1997\t13.6000003814697\t12.5\nGBR\t1998\t12.5\t12.3\nGBR\t1999\t12.3999996185303\t11.9\nGBR\t2000\t12.0\t11.5\nGBR\t2001\t10.3000001907349\t11.3\nGBR\t2002\t10.8999996185303\t11.3\nGBR\t2003\t11.3999996185303\t11.7\nGBR\t2004\t10.6999998092651\t11.9\nGBR\t2005\t12.8000001907349\t12.0\nGBR\t2006\t14.0\t12.3\nGBR\t2007\t14.3000001907349\t12.6\nGBR\t2008\t15.0\t12.9\nGBR\t2009\t19.1000003814697\t12.7\nGBR\t2010\t19.8999996185303\t12.9\nGBR\t2011\t21.2999992370605\t12.8\nGBR\t2012\t21.2000007629395\t12.8\nGBR\t2013\t20.7000007629395\t12.2\nGBR\t2014\t16.8999996185303\tnull\nGRC\t1991\t24.5\t10.0\nGRC\t1992\t25.0\t10.0\nGRC\t1993\t28.7999992370605\t9.7\nGRC\t1994\t27.7000007629395\t9.8\nGRC\t1995\t27.899999618530302\t9.5\nGRC\t1996\t31.2000007629395\t9.4\nGRC\t1997\t31.0\t9.5\nGRC\t1998\t29.7000007629395\t9.3\nGRC\t1999\t31.7000007629395\t9.2\nGRC\t2000\t29.5\t9.5\nGRC\t2001\t28.100000381469698\t9.3\nGRC\t2002\t26.7999992370605\t9.4\nGRC\t2003\t26.899999618530302\t9.5\nGRC\t2004\t26.899999618530302\t9.6\nGRC\t2005\t26.0\t9.7\nGRC\t2006\t25.2000007629395\t10.1\nGRC\t2007\t22.899999618530302\t10.0\nGRC\t2008\t22.100000381469698\t10.6\nGRC\t2009\t25.7999992370605\t10.5\nGRC\t2010\t32.9000015258789\t10.3\nGRC\t2011\t44.4000015258789\t9.6\nGRC\t2012\t55.2999992370605\t9.0\nGRC\t2013\t58.2999992370605\t8.5\nGRC\t2014\t52.4000015258789\tnull\nIRL\t1991\t23.100000381469698\t14.9\nIRL\t1992\t22.7000007629395\t14.4\nIRL\t1993\t25.0\t13.8\nIRL\t1994\t23.0\t13.4\nIRL\t1995\t19.0\t13.5\nIRL\t1996\t18.1000003814697\t13.9\nIRL\t1997\t15.8999996185303\t14.4\nIRL\t1998\t11.3999996185303\t14.5\nIRL\t1999\t8.60000038146973\t14.4\nIRL\t2000\t6.5\t14.4\nIRL\t2001\t6.199999809265139\t15.0\nIRL\t2002\t7.800000190734861\t15.4\nIRL\t2003\t8.10000038146973\t15.4\nIRL\t2004\t8.300000190734862\t15.2\nIRL\t2005\t8.60000038146973\t14.8\nIRL\t2006\t8.60000038146973\t15.3\nIRL\t2007\t9.10000038146973\t16.2\nIRL\t2008\t13.3000001907349\t16.7\nIRL\t2009\t24.0\t16.7\nIRL\t2010\t27.600000381469698\t16.5\nIRL\t2011\t29.100000381469698\t16.2\nIRL\t2012\t30.399999618530302\t15.7\nIRL\t2013\t26.7999992370605\t15.0\nIRL\t2014\t23.899999618530302\tnull\nITA\t1991\t28.100000381469698\t9.9\nITA\t1992\t28.2999992370605\t10.0\nITA\t1993\t30.2000007629395\t9.7\nITA\t1994\t31.7999992370605\t9.4\nITA\t1995\t33.5\t9.2\nITA\t1996\t34.7000007629395\t9.3\nITA\t1997\t34.5999984741211\t9.4\nITA\t1998\t33.7999992370605\t9.4\nITA\t1999\t33.0\t9.4\nITA\t2000\t31.5\t9.5\nITA\t2001\t27.7999992370605\t9.4\nITA\t2002\t27.100000381469698\t9.4\nITA\t2003\t26.7999992370605\t9.5\nITA\t2004\t24.399999618530302\t9.8\nITA\t2005\t24.100000381469698\t9.6\nITA\t2006\t21.7999992370605\t9.6\nITA\t2007\t20.3999996185303\t9.7\nITA\t2008\t21.2000007629395\t9.8\nITA\t2009\t25.2999992370605\t9.6\nITA\t2010\t27.899999618530302\t9.5\nITA\t2011\t29.2000007629395\t9.2\nITA\t2012\t35.2999992370605\t9.0\nITA\t2013\t40.0\t8.5\nITA\t2014\t42.7000007629395\tnull\nNLD\t1991\t11.1000003814697\t13.2\nNLD\t1992\t8.10000038146973\t13.0\nNLD\t1993\t10.3999996185303\t12.8\nNLD\t1994\t11.3000001907349\t12.7\nNLD\t1995\t12.1000003814697\t12.3\nNLD\t1996\t11.3999996185303\t12.2\nNLD\t1997\t9.69999980926514\t12.3\nNLD\t1998\t8.80000019073486\t12.7\nNLD\t1999\t7.400000095367429\t12.7\nNLD\t2000\t5.300000190734861\t13.0\nNLD\t2001\t4.40000009536743\t12.6\nNLD\t2002\t4.59999990463257\t12.5\nNLD\t2003\t6.599999904632571\t12.3\nNLD\t2004\t8.0\t11.9\nNLD\t2005\t8.199999809265138\t11.5\nNLD\t2006\t6.599999904632571\t11.3\nNLD\t2007\t5.900000095367429\t11.1\nNLD\t2008\t5.300000190734861\t11.2\nNLD\t2009\t6.599999904632571\t11.2\nNLD\t2010\t8.699999809265138\t11.1\nNLD\t2011\t7.599999904632571\t10.8\nNLD\t2012\t9.5\t10.5\nNLD\t2013\t11.0\t10.2\nNLD\t2014\t10.5\tnull\nPRT\t1991\t8.699999809265138\t11.7\nPRT\t1992\t9.69999980926514\t11.5\nPRT\t1993\t12.1000003814697\t11.4\nPRT\t1994\t14.5\t10.9\nPRT\t1995\t16.0\t10.7\nPRT\t1996\t17.0\t11.0\nPRT\t1997\t14.1000003814697\t11.2\nPRT\t1998\t9.39999961853027\t11.2\nPRT\t1999\t9.10000038146973\t11.4\nPRT\t2000\t8.199999809265138\t11.7\nPRT\t2001\t8.89999961853027\t10.9\nPRT\t2002\t10.5\t11.0\nPRT\t2003\t13.5\t10.8\nPRT\t2004\t14.1000003814697\t10.4\nPRT\t2005\t16.2000007629395\t10.4\nPRT\t2006\t16.5\t10.0\nPRT\t2007\t16.7000007629395\t9.7\nPRT\t2008\t16.7000007629395\t9.9\nPRT\t2009\t20.2999992370605\t9.4\nPRT\t2010\t22.7999992370605\t9.6\nPRT\t2011\t30.2999992370605\t9.2\nPRT\t2012\t37.9000015258789\t8.5\nPRT\t2013\t38.0999984741211\t7.9\nPRT\t2014\t34.7999992370605\tnull\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:35 PM",
       "dateFinished": "Feb 22, 2016 7:32:37 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Optional: Pure SQL approach\n\nOf course, this result could have been calculated without pivoting the table",
-      "dateUpdated": "Feb 23, 2016 5:10:01 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:52 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1575,8 +1484,8 @@
         "msg": "\u003ch2\u003eOptional: Pure SQL approach\u003c/h2\u003e\n\u003cp\u003eOf course, this result could have been calculated without pivoting the table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 23, 2016 5:10:01 PM",
-      "dateFinished": "Feb 23, 2016 5:10:01 PM",
+      "dateStarted": "Feb 26, 2016 12:04:52 PM",
+      "dateFinished": "Feb 26, 2016 12:04:52 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1602,15 +1511,11 @@
       },
       "jobName": "paragraph_1455721678003_-622321730",
       "id": "20160217-160758_2082947123",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:40 PM",
       "dateFinished": "Feb 22, 2016 7:32:41 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1674,20 +1579,16 @@
       },
       "jobName": "paragraph_1455721678003_-622321730",
       "id": "20160217-160758_797292486",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "Year\tCountryCode\tUNEM\tCBRT\n1991\tAUT\t3.70000004768372\t12.2\n1991\tDEU\t5.5\t10.4\n1991\tESP\t30.5\t10.2\n1991\tFRA\t19.7999992370605\t13.2\n1991\tGBR\t13.8999996185303\t13.8\n1991\tGRC\t24.5\t10.0\n1991\tIRL\t23.100000381469698\t14.9\n1991\tITA\t28.100000381469698\t9.9\n1991\tNLD\t11.1000003814697\t13.2\n1991\tPRT\t8.699999809265138\t11.7\n1992\tAUT\t4.099999904632569\t12.2\n1992\tDEU\t6.0\t10.0\n1992\tESP\t33.0999984741211\t10.2\n1992\tFRA\t21.7000007629395\t13.1\n1992\tGBR\t15.6999998092651\t13.6\n1992\tGRC\t25.0\t10.0\n1992\tIRL\t22.7000007629395\t14.4\n1992\tITA\t28.2999992370605\t10.0\n1992\tNLD\t8.10000038146973\t13.0\n1992\tPRT\t9.69999980926514\t11.5\n1993\tAUT\t4.699999809265139\t12.0\n1993\tDEU\t7.699999809265139\t9.8\n1993\tESP\t42.2000007629395\t9.8\n1993\tFRA\t25.600000381469698\t13.0\n1993\tGBR\t17.5\t13.2\n1993\tGRC\t28.7999992370605\t9.7\n1993\tIRL\t25.0\t13.8\n1993\tITA\t30.2000007629395\t9.7\n1993\tNLD\t10.3999996185303\t12.8\n1993\tPRT\t12.1000003814697\t11.4\n1994\tAUT\t5.0\t11.6\n1994\tDEU\t9.0\t9.5\n1994\tESP\t44.9000015258789\t9.4\n1994\tFRA\t28.7999992370605\t12.5\n1994\tGBR\t16.3999996185303\t13.0\n1994\tGRC\t27.7000007629395\t9.8\n1994\tIRL\t23.0\t13.4\n1994\tITA\t31.7999992370605\t9.4\n1994\tNLD\t11.3000001907349\t12.7\n1994\tPRT\t14.5\t10.9\n1995\tAUT\t5.900000095367429\t11.2\n1995\tDEU\t8.5\t9.4\n1995\tESP\t41.9000015258789\t9.2\n1995\tFRA\t27.100000381469698\t12.8\n1995\tGBR\t15.5\t12.6\n1995\tGRC\t27.899999618530302\t9.5\n1995\tIRL\t19.0\t13.5\n1995\tITA\t33.5\t9.2\n1995\tNLD\t12.1000003814697\t12.3\n1995\tPRT\t16.0\t10.7\n1996\tAUT\t6.900000095367429\t11.2\n1996\tDEU\t9.60000038146973\t9.7\n1996\tESP\t41.7999992370605\t9.2\n1996\tFRA\t27.600000381469698\t12.8\n1996\tGBR\t14.8999996185303\t12.6\n1996\tGRC\t31.2000007629395\t9.4\n1996\tIRL\t18.1000003814697\t13.9\n1996\tITA\t34.7000007629395\t9.3\n1996\tNLD\t11.3999996185303\t12.2\n1996\tPRT\t17.0\t11.0\n1997\tAUT\t7.599999904632571\t10.5\n1997\tDEU\t10.6999998092651\t9.9\n1997\tESP\t39.0999984741211\t9.3\n1997\tFRA\t29.0\t12.7\n1997\tGBR\t13.6000003814697\t12.5\n1997\tGRC\t31.0\t9.5\n1997\tIRL\t15.8999996185303\t14.4\n1997\tITA\t34.5999984741211\t9.4\n1997\tNLD\t9.69999980926514\t12.3\n1997\tPRT\t14.1000003814697\t11.2\n1998\tAUT\t7.5\t10.2\n1998\tDEU\t9.80000019073486\t9.6\n1998\tESP\t35.4000015258789\t9.2\n1998\tFRA\t26.2000007629395\t12.8\n1998\tGBR\t12.5\t12.3\n1998\tGRC\t29.7000007629395\t9.3\n1998\tIRL\t11.3999996185303\t14.5\n1998\tITA\t33.7999992370605\t9.4\n1998\tNLD\t8.80000019073486\t12.7\n1998\tPRT\t9.39999961853027\t11.2\n1999\tAUT\t5.900000095367429\t9.8\n1999\tDEU\t8.89999961853027\t9.4\n1999\tESP\t29.100000381469698\t9.5\n1999\tFRA\t26.5\t12.9\n1999\tGBR\t12.3999996185303\t11.9\n1999\tGRC\t31.7000007629395\t9.2\n1999\tIRL\t8.60000038146973\t14.4\n1999\tITA\t33.0\t9.4\n1999\tNLD\t7.400000095367429\t12.7\n1999\tPRT\t9.10000038146973\t11.4\n2000\tAUT\t6.300000190734861\t9.8\n2000\tDEU\t8.5\t9.3\n2000\tESP\t25.2999992370605\t9.9\n2000\tFRA\t20.6000003814697\t13.3\n2000\tGBR\t12.0\t11.5\n2000\tGRC\t29.5\t9.5\n2000\tIRL\t6.5\t14.4\n2000\tITA\t31.5\t9.5\n2000\tNLD\t5.300000190734861\t13.0\n2000\tPRT\t8.199999809265138\t11.7\n2001\tAUT\t6.0\t9.4\n2001\tDEU\t7.800000190734861\t8.9\n2001\tESP\t20.7000007629395\t9.9\n2001\tFRA\t18.0\t13.1\n2001\tGBR\t10.3000001907349\t11.3\n2001\tGRC\t28.100000381469698\t9.3\n2001\tIRL\t6.199999809265139\t15.0\n2001\tITA\t27.7999992370605\t9.4\n2001\tNLD\t4.40000009536743\t12.6\n2001\tPRT\t8.89999961853027\t10.9\n2002\tAUT\t7.199999809265139\t9.7\n2002\tDEU\t9.30000019073486\t8.7\n2002\tESP\t21.5\t10.1\n2002\tFRA\t18.8999996185303\t12.9\n2002\tGBR\t10.8999996185303\t11.3\n2002\tGRC\t26.7999992370605\t9.4\n2002\tIRL\t7.800000190734861\t15.4\n2002\tITA\t27.100000381469698\t9.4\n2002\tNLD\t4.59999990463257\t12.5\n2002\tPRT\t10.5\t11.0\n2003\tAUT\t7.5\t9.5\n2003\tDEU\t11.0\t8.6\n2003\tESP\t22.2999992370605\t10.4\n2003\tFRA\t18.2999992370605\t12.8\n2003\tGBR\t11.3999996185303\t11.7\n2003\tGRC\t26.899999618530302\t9.5\n2003\tIRL\t8.10000038146973\t15.4\n2003\tITA\t26.7999992370605\t9.5\n2003\tNLD\t6.599999904632571\t12.3\n2003\tPRT\t13.5\t10.8\n2004\tAUT\t12.1000003814697\t9.7\n2004\tDEU\t13.0\t8.6\n2004\tESP\t22.5\t10.6\n2004\tFRA\t19.7000007629395\t12.8\n2004\tGBR\t10.6999998092651\t11.9\n2004\tGRC\t26.899999618530302\t9.6\n2004\tIRL\t8.300000190734862\t15.2\n2004\tITA\t24.399999618530302\t9.8\n2004\tNLD\t8.0\t11.9\n2004\tPRT\t14.1000003814697\t10.4\n2005\tAUT\t11.0\t9.5\n2005\tDEU\t15.5\t8.3\n2005\tESP\t19.6000003814697\t10.6\n2005\tFRA\t20.6000003814697\t12.8\n2005\tGBR\t12.8000001907349\t12.0\n2005\tGRC\t26.0\t9.7\n2005\tIRL\t8.60000038146973\t14.8\n2005\tITA\t24.100000381469698\t9.6\n2005\tNLD\t8.199999809265138\t11.5\n2005\tPRT\t16.2000007629395\t10.4\n2006\tAUT\t9.80000019073486\t9.4\n2006\tDEU\t13.8000001907349\t8.2\n2006\tESP\t17.8999996185303\t10.8\n2006\tFRA\t21.600000381469698\t13.1\n2006\tGBR\t14.0\t12.3\n2006\tGRC\t25.2000007629395\t10.1\n2006\tIRL\t8.60000038146973\t15.3\n2006\tITA\t21.7999992370605\t9.6\n2006\tNLD\t6.599999904632571\t11.3\n2006\tPRT\t16.5\t10.0\n2007\tAUT\t9.39999961853027\t9.2\n2007\tDEU\t11.8999996185303\t8.3\n2007\tESP\t18.1000003814697\t10.9\n2007\tFRA\t19.1000003814697\t12.8\n2007\tGBR\t14.3000001907349\t12.6\n2007\tGRC\t22.899999618530302\t10.0\n2007\tIRL\t9.10000038146973\t16.2\n2007\tITA\t20.3999996185303\t9.7\n2007\tNLD\t5.900000095367429\t11.1\n2007\tPRT\t16.7000007629395\t9.7\n2008\tAUT\t8.5\t9.3\n2008\tDEU\t10.6000003814697\t8.3\n2008\tESP\t24.5\t11.3\n2008\tFRA\t18.6000003814697\t12.9\n2008\tGBR\t15.0\t12.9\n2008\tGRC\t22.100000381469698\t10.6\n2008\tIRL\t13.3000001907349\t16.7\n2008\tITA\t21.2000007629395\t9.8\n2008\tNLD\t5.300000190734861\t11.2\n2008\tPRT\t16.7000007629395\t9.9\n2009\tAUT\t10.6999998092651\t9.2\n2009\tDEU\t11.1999998092651\t8.1\n2009\tESP\t37.7000007629395\t10.6\n2009\tFRA\t23.2000007629395\t12.8\n2009\tGBR\t19.1000003814697\t12.7\n2009\tGRC\t25.7999992370605\t10.5\n2009\tIRL\t24.0\t16.7\n2009\tITA\t25.2999992370605\t9.6\n2009\tNLD\t6.599999904632571\t11.2\n2009\tPRT\t20.2999992370605\t9.4\n2010\tAUT\t9.5\t9.4\n2010\tDEU\t9.89999961853027\t8.3\n2010\tESP\t41.5\t10.4\n2010\tFRA\t22.899999618530302\t12.9\n2010\tGBR\t19.8999996185303\t12.9\n2010\tGRC\t32.9000015258789\t10.3\n2010\tIRL\t27.600000381469698\t16.5\n2010\tITA\t27.899999618530302\t9.5\n2010\tNLD\t8.699999809265138\t11.1\n2010\tPRT\t22.7999992370605\t9.6\n2011\tAUT\t8.89999961853027\t9.3\n2011\tDEU\t8.5\t8.1\n2011\tESP\t46.2000007629395\t10.1\n2011\tFRA\t22.100000381469698\t12.7\n2011\tGBR\t21.2999992370605\t12.8\n2011\tGRC\t44.4000015258789\t9.6\n2011\tIRL\t29.100000381469698\t16.2\n2011\tITA\t29.2000007629395\t9.2\n2011\tNLD\t7.599999904632571\t10.8\n2011\tPRT\t30.2999992370605\t9.2\n2012\tAUT\t9.39999961853027\t9.4\n2012\tDEU\t8.0\t8.4\n2012\tESP\t52.9000015258789\t9.7\n2012\tFRA\t23.899999618530302\t12.6\n2012\tGBR\t21.2000007629395\t12.8\n2012\tGRC\t55.2999992370605\t9.0\n2012\tIRL\t30.399999618530302\t15.7\n2012\tITA\t35.2999992370605\t9.0\n2012\tNLD\t9.5\t10.5\n2012\tPRT\t37.9000015258789\t8.5\n2013\tAUT\t9.69999980926514\t9.4\n2013\tDEU\t7.800000190734861\t8.5\n2013\tESP\t55.5\t9.1\n2013\tFRA\t23.899999618530302\t12.3\n2013\tGBR\t20.7000007629395\t12.2\n2013\tGRC\t58.2999992370605\t8.5\n2013\tIRL\t26.7999992370605\t15.0\n2013\tITA\t40.0\t8.5\n2013\tNLD\t11.0\t10.2\n2013\tPRT\t38.0999984741211\t7.9\n2014\tAUT\t10.3000001907349\tnull\n2014\tDEU\t7.699999809265139\tnull\n2014\tESP\t53.2000007629395\tnull\n2014\tFRA\t23.2000007629395\tnull\n2014\tGBR\t16.8999996185303\tnull\n2014\tGRC\t52.4000015258789\tnull\n2014\tIRL\t23.899999618530302\tnull\n2014\tITA\t42.7000007629395\tnull\n2014\tNLD\t10.5\tnull\n2014\tPRT\t34.7999992370605\tnull\n"
-      },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
       "dateStarted": "Feb 22, 2016 7:32:43 PM",
       "dateFinished": "Feb 22, 2016 7:33:05 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n# (Lab 5) Clustering with Spark ML\n\n## 5.1 Select relevant data\n",
-      "dateUpdated": "Feb 23, 2016 5:10:05 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1714,8 +1615,8 @@
         "msg": "\u003ch1\u003e(Lab 5) Clustering with Spark ML\u003c/h1\u003e\n\u003ch2\u003e5.1 Select relevant data\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 23, 2016 5:10:05 PM",
-      "dateFinished": "Feb 23, 2016 5:10:06 PM",
+      "dateStarted": "Feb 26, 2016 12:04:55 PM",
+      "dateFinished": "Feb 26, 2016 12:04:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1741,20 +1642,16 @@
       },
       "jobName": "paragraph_1455881276661_1801178350",
       "id": "20160219-122756_1968678957",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 19, 2016 12:27:56 PM",
       "dateStarted": "Feb 22, 2016 7:33:19 PM",
       "dateFinished": "Feb 22, 2016 7:33:25 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 5.2 Create KMeans Pipeline\n\nNote: Input columns (features) need to be in `Vector` format. `pyspark.ml.feature.VectorAssembler` allows to pipeline this",
-      "dateUpdated": "Feb 23, 2016 5:10:09 PM",
+      "dateUpdated": "Feb 26, 2016 12:04:57 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1782,8 +1679,8 @@
         "msg": "\u003ch2\u003e5.2 Create KMeans Pipeline\u003c/h2\u003e\n\u003cp\u003eNote: Input columns (features) need to be in \u003ccode\u003eVector\u003c/code\u003e format. \u003ccode\u003epyspark.ml.feature.VectorAssembler\u003c/code\u003e allows to pipeline this\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2016 10:36:42 AM",
-      "dateStarted": "Feb 23, 2016 5:10:09 PM",
-      "dateFinished": "Feb 23, 2016 5:10:09 PM",
+      "dateStarted": "Feb 26, 2016 12:04:57 PM",
+      "dateFinished": "Feb 26, 2016 12:04:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1809,20 +1706,16 @@
       },
       "jobName": "paragraph_1455951871065_-873260058",
       "id": "20160220-080431_669137345",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
       "dateCreated": "Feb 20, 2016 8:04:31 AM",
       "dateStarted": "Feb 22, 2016 7:33:27 PM",
       "dateFinished": "Feb 22, 2016 7:33:37 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 5.3 Visualize Countries in classes over years\n\n**Caveat**: The classes are **not** to interprete as an ordered list, they are complete random!",
-      "dateUpdated": "Feb 23, 2016 5:10:11 PM",
+      "dateUpdated": "Feb 26, 2016 12:05:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1849,8 +1742,8 @@
         "msg": "\u003ch2\u003e5.3 Visualize Countries in classes over years\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eCaveat\u003c/strong\u003e: The classes are \u003cstrong\u003enot\u003c/strong\u003e to interprete as an ordered list, they are complete random!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:06:39 PM",
-      "dateStarted": "Feb 23, 2016 5:10:11 PM",
-      "dateFinished": "Feb 23, 2016 5:10:11 PM",
+      "dateStarted": "Feb 26, 2016 12:05:01 PM",
+      "dateFinished": "Feb 26, 2016 12:05:02 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1910,20 +1803,16 @@
       },
       "jobName": "paragraph_1455882220304_-1609273651",
       "id": "20160219-124340_227831581",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "country\tyear\tclass\nAUT\t2007\t3\nAUT\t2008\t3\nAUT\t2009\t3\nAUT\t2010\t3\nAUT\t2011\t3\nAUT\t2012\t3\nBEL\t2007\t1\nBEL\t2008\t1\nBEL\t2009\t1\nBEL\t2010\t1\nBEL\t2011\t1\nBEL\t2012\t1\nCYP\t2007\t3\nCYP\t2008\t3\nCYP\t2009\t3\nCYP\t2010\t3\nCYP\t2011\t1\nCYP\t2012\t1\nCZE\t2007\t3\nCZE\t2008\t3\nCZE\t2009\t3\nCZE\t2010\t1\nCZE\t2011\t1\nCZE\t2012\t1\nDEU\t2007\t3\nDEU\t2008\t3\nDEU\t2009\t3\nDEU\t2010\t3\nDEU\t2011\t3\nDEU\t2012\t3\nDNK\t2007\t3\nDNK\t2008\t3\nDNK\t2009\t3\nDNK\t2010\t3\nDNK\t2011\t3\nDNK\t2012\t3\nESP\t2007\t3\nESP\t2008\t1\nESP\t2009\t2\nESP\t2010\t2\nESP\t2011\t2\nESP\t2012\t2\nEST\t2007\t3\nEST\t2008\t3\nEST\t2009\t1\nEST\t2010\t2\nEST\t2011\t1\nEST\t2012\t1\nFIN\t2007\t3\nFIN\t2008\t3\nFIN\t2009\t1\nFIN\t2010\t1\nFIN\t2011\t1\nFIN\t2012\t1\nFRA\t2007\t1\nFRA\t2008\t1\nFRA\t2009\t1\nFRA\t2010\t1\nFRA\t2011\t1\nFRA\t2012\t1\nGBR\t2007\t3\nGBR\t2008\t3\nGBR\t2009\t1\nGBR\t2010\t1\nGBR\t2011\t1\nGBR\t2012\t1\nGRC\t2007\t1\nGRC\t2008\t1\nGRC\t2009\t1\nGRC\t2010\t2\nGRC\t2011\t2\nGRC\t2012\t2\nHRV\t2007\t1\nHRV\t2008\t1\nHRV\t2009\t1\nHRV\t2010\t2\nHRV\t2011\t2\nHRV\t2012\t2\nHUN\t2007\t1\nHUN\t2008\t1\nHUN\t2009\t1\nHUN\t2010\t1\nHUN\t2011\t1\nHUN\t2012\t1\nIRL\t2007\t3\nIRL\t2008\t3\nIRL\t2009\t1\nIRL\t2010\t2\nIRL\t2011\t2\nIRL\t2012\t2\nITA\t2007\t1\nITA\t2008\t1\nITA\t2009\t1\nITA\t2010\t1\nITA\t2011\t1\nITA\t2012\t2\nLTU\t2007\t3\nLTU\t2008\t3\nLTU\t2009\t2\nLTU\t2010\t2\nLTU\t2011\t2\nLTU\t2012\t1\nLUX\t2007\t3\nLUX\t2008\t3\nLUX\t2009\t3\nLUX\t2010\t3\nLUX\t2011\t3\nLUX\t2012\t1\nLVA\t2007\t3\nLVA\t2008\t3\nLVA\t2009\t2\nLVA\t2010\t2\nLVA\t2011\t1\nLVA\t2012\t1\nMLT\t2007\t3\nMLT\t2008\t3\nMLT\t2009\t3\nMLT\t2010\t3\nMLT\t2011\t3\nMLT\t2012\t3\nNLD\t2007\t3\nNLD\t2008\t3\nNLD\t2009\t3\nNLD\t2010\t3\nNLD\t2011\t3\nNLD\t2012\t3\nPOL\t2007\t1\nPOL\t2008\t1\nPOL\t2009\t1\nPOL\t2010\t1\nPOL\t2011\t1\nPOL\t2012\t1\nPRT\t2007\t3\nPRT\t2008\t3\nPRT\t2009\t1\nPRT\t2010\t1\nPRT\t2011\t1\nPRT\t2012\t2\nROM\t2007\t1\nROM\t2008\t1\nROM\t2009\t1\nROM\t2010\t1\nROM\t2011\t1\nROM\t2012\t1\nSVK\t2007\t1\nSVK\t2008\t1\nSVK\t2009\t1\nSVK\t2010\t2\nSVK\t2011\t2\nSVK\t2012\t2\nSVN\t2007\t3\nSVN\t2008\t3\nSVN\t2009\t3\nSVN\t2010\t3\nSVN\t2011\t3\nSVN\t2012\t1\nSWE\t2007\t1\nSWE\t2008\t1\nSWE\t2009\t1\nSWE\t2010\t1\nSWE\t2011\t1\nSWE\t2012\t1\n"
-      },
       "dateCreated": "Feb 19, 2016 12:43:40 PM",
       "dateStarted": "Feb 22, 2016 7:33:40 PM",
       "dateFinished": "Feb 22, 2016 7:33:43 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 5.4 Show countries per year and class as lists\n\nNote: There is no function for `GroupedData` to collect values as list. Hence, back to `RDD` and `aggregateByKey`",
-      "dateUpdated": "Feb 23, 2016 5:10:14 PM",
+      "dateUpdated": "Feb 26, 2016 12:05:03 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1950,8 +1839,8 @@
         "msg": "\u003ch2\u003e5.4 Show countries per year and class as lists\u003c/h2\u003e\n\u003cp\u003eNote: There is no function for \u003ccode\u003eGroupedData\u003c/code\u003e to collect values as list. Hence, back to \u003ccode\u003eRDD\u003c/code\u003e and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:08:16 PM",
-      "dateStarted": "Feb 23, 2016 5:10:14 PM",
-      "dateFinished": "Feb 23, 2016 5:10:15 PM",
+      "dateStarted": "Feb 26, 2016 12:05:03 PM",
+      "dateFinished": "Feb 26, 2016 12:05:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1977,20 +1866,16 @@
       },
       "jobName": "paragraph_1456057832372_-24834143",
       "id": "20160221-133032_407492549",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\nYear: 2007\n0 \u003d BEL, FRA, GRC, HRV, HUN, ITA, POL, ROM, SVK, SWE\n2 \u003d AUT, CYP, CZE, DEU, DNK, ESP, EST, FIN, GBR, IRL, LTU, LUX, LVA, MLT, NLD, PRT, SVN\n\nYear: 2008\n0 \u003d BEL, ESP, FRA, GRC, HRV, HUN, ITA, POL, ROM, SVK, SWE\n2 \u003d AUT, CYP, CZE, DEU, DNK, EST, FIN, GBR, IRL, LTU, LUX, LVA, MLT, NLD, PRT, SVN\n\nYear: 2009\n0 \u003d BEL, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, POL, PRT, ROM, SVK, SWE\n1 \u003d ESP, LTU, LVA\n2 \u003d AUT, CYP, CZE, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2010\n0 \u003d BEL, CZE, FIN, FRA, GBR, HUN, ITA, POL, PRT, ROM, SWE\n1 \u003d ESP, EST, GRC, HRV, IRL, LTU, LVA, SVK\n2 \u003d AUT, CYP, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2011\n0 \u003d BEL, CYP, CZE, EST, FIN, FRA, GBR, HUN, ITA, LVA, POL, PRT, ROM, SWE\n1 \u003d ESP, GRC, HRV, IRL, LTU, SVK\n2 \u003d AUT, DEU, DNK, LUX, MLT, NLD, SVN\n\nYear: 2012\n0 \u003d BEL, CYP, CZE, EST, FIN, FRA, GBR, HUN, LTU, LUX, LVA, POL, ROM, SVN, SWE\n1 \u003d ESP, GRC, HRV, IRL, ITA, PRT, SVK\n2 \u003d AUT, DEU, DNK, MLT, NLD\n"
-      },
       "dateCreated": "Feb 21, 2016 1:30:32 PM",
       "dateStarted": "Feb 22, 2016 7:33:47 PM",
       "dateFinished": "Feb 22, 2016 7:34:01 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### Little helper for indicator codes",
-      "dateUpdated": "Feb 23, 2016 5:10:19 PM",
+      "dateUpdated": "Feb 26, 2016 12:05:07 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -2017,14 +1902,14 @@
         "msg": "\u003ch3\u003eLittle helper for indicator codes\u003c/h3\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:01:07 PM",
-      "dateStarted": "Feb 23, 2016 5:10:19 PM",
-      "dateFinished": "Feb 23, 2016 5:10:19 PM",
+      "dateStarted": "Feb 26, 2016 12:05:07 PM",
+      "dateFinished": "Feb 26, 2016 12:05:07 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql\n\nselect distinct IndicatorCode, IndicatorName from IndicatorsRDD\nwhere indicatorName like \"%nflat%\"\norder by IndicatorCode",
-      "dateUpdated": "Feb 22, 2016 7:34:08 PM",
+      "text": "%sql\n\nselect distinct IndicatorCode, IndicatorName from IndicatorsRDD\nwhere indicatorName like \"%unem%\"\norder by IndicatorCode",
+      "dateUpdated": "Feb 26, 2016 12:03:49 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -2067,14 +1952,44 @@
       },
       "jobName": "paragraph_1455959691059_-678808695",
       "id": "20160220-101451_1095007117",
+      "dateCreated": "Feb 20, 2016 10:14:51 AM",
+      "dateStarted": "Feb 26, 2016 12:03:32 PM",
+      "dateFinished": "Feb 26, 2016 12:03:35 PM",
+      "status": "ERROR",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n# (Lab 6) Spark Streaming\n\n## 6.1 Streaming from terminal \n\nSteps:\n- Open an ssh terminal to your cluster\n- Get the python code\n\n    ```bash\n    wget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py\n    ```\n\n- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming) and follow Steps 2 and 3",
+      "dateUpdated": "Feb 26, 2016 12:05:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1456470716626_1613381438",
+      "id": "20160226-081156_1574950523",
       "result": {
         "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "IndicatorCode\tIndicatorName\nFP.CPI.TOTL.ZG\tInflation, consumer prices (annual %)\nNY.GDP.DEFL.KD.ZG\tInflation, GDP deflator (annual %)\n"
+        "type": "HTML",
+        "msg": "\u003ch1\u003e(Lab 6) Spark Streaming\u003c/h1\u003e\n\u003ch2\u003e6.1 Streaming from terminal\u003c/h2\u003e\n\u003cp\u003eSteps:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eOpen an ssh terminal to your cluster\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eGet the python code\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"bash\"\u003ewget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eLook at \u003ca href\u003d\"https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming\"\u003eSimpleKafkaStreaming\u003c/a\u003e and follow Steps 2 and 3\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
-      "dateCreated": "Feb 20, 2016 10:14:51 AM",
-      "dateStarted": "Feb 22, 2016 7:34:08 PM",
-      "dateFinished": "Feb 22, 2016 7:34:10 PM",
+      "dateCreated": "Feb 26, 2016 8:11:56 AM",
+      "dateStarted": "Feb 26, 2016 12:05:09 PM",
+      "dateFinished": "Feb 26, 2016 12:05:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2084,10 +1999,11 @@
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1456419869822_549878804",
-      "id": "20160225-180429_862537375",
-      "dateCreated": "Feb 25, 2016 6:04:29 PM",
+      "jobName": "paragraph_1456481502522_-251613920",
+      "id": "20160226-111142_591931088",
+      "dateCreated": "Feb 26, 2016 11:11:42 AM",
       "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
