@@ -552,5 +552,5 @@ Steps:
     wget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py
     ```
 
-- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming) and follow Steps 2 and 3
+- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/blob/master/SimpleKafkaStreaming/Masterclass_Lab.md) and follow Steps 2 and 3
 
