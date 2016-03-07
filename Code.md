@@ -10,7 +10,7 @@
 z.reset()
 z.addRepo("Spark Packages Repo").url("http://dl.bintray.com/spark-packages/maven")
 z.load("com.databricks:spark-csv_2.10:1.3.0")
-z.load("org.apache.spark:spark-streaming-kafka_2.10:1.5.2")
+z.load("org.apache.spark:spark-streaming-kafka_2.10:1.6.0")
 
 ```
 
@@ -445,7 +445,7 @@ features = [
 ]
 
 years = [2007, 2008, 2009, 2010, 2011, 2012]
-eu = indicators_t[indicators_t.year.isin(years)].select(["country", "year"] + features)
+eu = indicators_t[indicators_t.Year.isin(years)].select(["country", "year"] + features)
 
 sqlContext.registerDataFrameAsTable(eu, "eu")
 
@@ -552,5 +552,5 @@ Steps:
     wget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py
     ```
 
-- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/blob/master/SimpleKafkaStreaming/Masterclass_Lab.md) and follow Steps 2 and 3
+- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming) and follow Steps 2 and 3
 

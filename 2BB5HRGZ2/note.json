@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md \n# (LAB 1) Preparation\n\n**Note:** Run this before any spark command in the notebook. Restart interpreter if necessary!\n",
-      "dateUpdated": "Feb 26, 2016 12:03:56 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -15,7 +15,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -29,14 +30,14 @@
         "msg": "\u003ch1\u003e(LAB 1) Preparation\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Run this before any spark command in the notebook. Restart interpreter if necessary!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:02:06 PM",
-      "dateStarted": "Feb 26, 2016 12:03:56 PM",
-      "dateFinished": "Feb 26, 2016 12:03:56 PM",
+      "dateStarted": "Mar 7, 2016 9:14:40 PM",
+      "dateFinished": "Mar 7, 2016 9:14:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.5.2\")\n",
-      "dateUpdated": "Feb 26, 2016 8:12:57 AM",
+      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.6.0\")\n",
+      "dateUpdated": "Mar 7, 2016 9:04:17 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -48,7 +49,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -57,15 +59,15 @@
       "jobName": "paragraph_1455721677993_-632325202",
       "id": "20160217-160757_1663731196",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 8:12:57 AM",
-      "dateFinished": "Feb 26, 2016 8:12:57 AM",
-      "status": "ERROR",
+      "dateStarted": "Mar 7, 2016 9:04:17 PM",
+      "dateFinished": "Mar 7, 2016 9:04:23 PM",
+      "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \"yarn-client\"",
-      "dateUpdated": "Feb 26, 2016 12:03:59 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:43 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -78,7 +80,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -92,14 +95,14 @@
         "msg": "\u003cp\u003eCalling sc will initialize the executors (org.apache.spark.executor.CoarseGrainedExecutorBackend) via yarn, if Zeppelin is configured as \u0026ldquo;yarn-client\u0026rdquo;\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:19:49 PM",
-      "dateStarted": "Feb 26, 2016 12:03:59 PM",
-      "dateFinished": "Feb 26, 2016 12:03:59 PM",
+      "dateStarted": "Mar 7, 2016 9:14:43 PM",
+      "dateFinished": "Mar 7, 2016 9:14:43 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nprint(sc.version)",
-      "dateUpdated": "Feb 26, 2016 8:13:01 AM",
+      "dateUpdated": "Mar 7, 2016 9:06:31 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -111,7 +114,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -120,15 +124,15 @@
       "jobName": "paragraph_1455733196253_1519121284",
       "id": "20160217-191956_841399617",
       "dateCreated": "Feb 17, 2016 7:19:56 PM",
-      "dateStarted": "Feb 26, 2016 8:13:01 AM",
-      "dateFinished": "Feb 26, 2016 8:13:01 AM",
+      "dateStarted": "Mar 7, 2016 9:06:31 PM",
+      "dateFinished": "Mar 7, 2016 9:06:31 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n# (LAB 2) Working with RDDs",
-      "dateUpdated": "Feb 26, 2016 12:04:01 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:45 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -141,7 +145,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -155,14 +160,14 @@
         "msg": "\u003ch1\u003e(LAB 2) Working with RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:03:16 PM",
-      "dateStarted": "Feb 26, 2016 12:04:01 PM",
-      "dateFinished": "Feb 26, 2016 12:04:01 PM",
+      "dateStarted": "Mar 7, 2016 9:14:45 PM",
+      "dateFinished": "Mar 7, 2016 9:14:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nA little convenience function to \n\n- collect random samples of RDDs and DataFrames\n- print RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities",
-      "dateUpdated": "Feb 26, 2016 10:25:56 AM",
+      "dateUpdated": "Mar 7, 2016 9:14:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -175,7 +180,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": false
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -183,16 +189,20 @@
       },
       "jobName": "paragraph_1456420991436_1540964611",
       "id": "20160225-182311_2086547517",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eA little convenience function to\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ecollect random samples of RDDs and DataFrames\u003c/li\u003e\n\u003cli\u003eprint RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
       "dateCreated": "Feb 25, 2016 6:23:11 PM",
-      "dateStarted": "Feb 26, 2016 10:25:56 AM",
-      "dateFinished": "Feb 26, 2016 10:25:56 AM",
+      "dateStarted": "Mar 7, 2016 9:14:47 PM",
+      "dateFinished": "Mar 7, 2016 9:14:47 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ndef pprint(data, num\u003d8, asTable\u003dFalse, columns\u003dNone, sampleRatio\u003dNone, seed\u003d42):\n\n    # If a sampleRatio is given, a random sample with given seed is selected\n    subset \u003d data.sample(False, fraction\u003dsampleRatio, seed\u003dseed) if sampleRatio else data\n\n    # If it is a DataFrame, convert rows to arras and extract headers\n    if \"rdd\" in dir(data): \n        columns \u003d subset.columns\n        subset \u003d subset.map(lambda row: row.asDict().values())\n        \n    # If num is -1 all records should be collected - avoid for big data ...\n    array \u003d subset.collect() if num \u003d\u003d -1 else subset.take(num)\n    \n    # If asTable is True, sql format with columns c0, c1, ... as output\n    # If columns is array of column names, sql format with given columns as output\n    if asTable or columns:\n        output \u003d \"\"\n        for d in array:\n            l \u003d len(d)\n            output +\u003d \"\\t\".join([str(x) for x in d]) + \"\\n\"\n        if columns:\n            header \u003d \"\\t\".join([h for h in columns]) + \"\\n\" \n        else:\n            header \u003d \"\\t\".join([\"c%0d\" %i for i in range(l) ]) + \"\\n\"\n        print \"%table \" + header + output\n    else:\n        for d in array:\n            print d\n",
-      "dateUpdated": "Feb 26, 2016 10:29:51 AM",
+      "dateUpdated": "Mar 7, 2016 9:06:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -205,7 +215,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "lineNumbers": false
+        "lineNumbers": false,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -214,15 +225,15 @@
       "jobName": "paragraph_1455730928852_1180141655",
       "id": "20160217-184208_572421563",
       "dateCreated": "Feb 17, 2016 6:42:08 PM",
-      "dateStarted": "Feb 26, 2016 10:29:14 AM",
-      "dateFinished": "Feb 26, 2016 10:29:14 AM",
+      "dateStarted": "Mar 7, 2016 9:06:48 PM",
+      "dateFinished": "Mar 7, 2016 9:06:48 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## 2.1 Create a simple RDD and sum up rows ",
-      "dateUpdated": "Feb 26, 2016 12:04:06 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:51 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -235,7 +246,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -249,14 +261,14 @@
         "msg": "\u003ch2\u003e2.1 Create a simple RDD and sum up rows\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:32:45 PM",
-      "dateStarted": "Feb 26, 2016 12:04:06 PM",
-      "dateFinished": "Feb 26, 2016 12:04:06 PM",
+      "dateStarted": "Mar 7, 2016 9:14:51 PM",
+      "dateFinished": "Mar 7, 2016 9:14:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd, -1)",
-      "dateUpdated": "Feb 26, 2016 8:11:37 AM",
+      "dateUpdated": "Mar 7, 2016 9:06:53 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -291,7 +303,8 @@
             }
           }
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -300,15 +313,15 @@
       "jobName": "paragraph_1455728685323_1785116355",
       "id": "20160217-180445_1950689137",
       "dateCreated": "Feb 17, 2016 6:04:45 PM",
-      "dateStarted": "Feb 26, 2016 8:11:37 AM",
-      "dateFinished": "Feb 26, 2016 8:11:38 AM",
+      "dateStarted": "Mar 7, 2016 9:06:53 PM",
+      "dateFinished": "Mar 7, 2016 9:06:55 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nm \u003d rdd.map(lambda x: sum(x))\nprint(m.collect())\n\ns \u003d m.reduce(lambda x,y: x + y)\nprint \"total \u003d \", s\n",
-      "dateUpdated": "Feb 22, 2016 12:03:34 PM",
+      "dateUpdated": "Mar 7, 2016 9:06:57 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -320,7 +333,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -329,15 +343,15 @@
       "jobName": "paragraph_1455729974344_1711270805",
       "id": "20160217-182614_514005626",
       "dateCreated": "Feb 17, 2016 6:26:14 PM",
-      "dateStarted": "Feb 22, 2016 12:03:34 PM",
-      "dateFinished": "Feb 22, 2016 12:03:40 PM",
+      "dateStarted": "Mar 7, 2016 9:06:57 PM",
+      "dateFinished": "Mar 7, 2016 9:06:59 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 2.2 Load the famous Iris data from HDFS and so some basic calculations\n\nAttribute Information:\n\n    [0] sepal length in cm\n    [1] sepal width in cm\n    [2] petal length in cm\n    [3] petal width in cm\n    [4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n",
-      "dateUpdated": "Feb 26, 2016 12:04:09 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:53 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -350,7 +364,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -364,14 +379,14 @@
         "msg": "\u003ch2\u003e2.2 Load the famous Iris data from HDFS and so some basic calculations\u003c/h2\u003e\n\u003cp\u003eAttribute Information:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[0] sepal length in cm\n[1] sepal width in cm\n[2] petal length in cm\n[3] petal width in cm\n[4] class: Iris Setosa, Iris Versicolour, Iris Virginica\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 6:33:34 PM",
-      "dateStarted": "Feb 26, 2016 12:04:09 PM",
-      "dateFinished": "Feb 26, 2016 12:04:09 PM",
+      "dateStarted": "Mar 7, 2016 9:14:53 PM",
+      "dateFinished": "Mar 7, 2016 9:14:53 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ndef split(row):\n    parts \u003d row.split(\",\")\n    return [float(v) for v in parts[:4]] + [parts[4]]\n    \nfile \u003d sc.textFile(\"/tmp/iris.data\")\n\n# remove empty lines and split each line\niris \u003d file.filter(lambda row: len(row)\u003e0)\\\n           .map(split)\n\nprint iris.count()\n",
-      "dateUpdated": "Feb 26, 2016 10:00:06 AM",
+      "dateUpdated": "Mar 7, 2016 9:07:04 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -406,7 +421,8 @@
             }
           }
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -415,15 +431,15 @@
       "jobName": "paragraph_1455730410574_1910262607",
       "id": "20160217-183330_850886049",
       "dateCreated": "Feb 17, 2016 6:33:30 PM",
-      "dateStarted": "Feb 26, 2016 10:00:06 AM",
-      "dateFinished": "Feb 26, 2016 10:00:13 AM",
+      "dateStarted": "Mar 7, 2016 9:07:04 PM",
+      "dateFinished": "Mar 7, 2016 9:07:04 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\npprint(iris, sampleRatio\u003d0.1, num\u003d-1, columns\u003d[\"sepL\", \"sepW\", \"petL\", \"petW\", \"species\"])\n",
-      "dateUpdated": "Feb 26, 2016 10:00:41 AM",
+      "dateUpdated": "Mar 7, 2016 9:07:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -458,7 +474,8 @@
             }
           }
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -467,15 +484,15 @@
       "jobName": "paragraph_1456422059549_477238407",
       "id": "20160225-184059_236051655",
       "dateCreated": "Feb 25, 2016 6:40:59 PM",
-      "dateStarted": "Feb 26, 2016 10:00:41 AM",
-      "dateFinished": "Feb 26, 2016 10:00:46 AM",
+      "dateStarted": "Mar 7, 2016 9:07:06 PM",
+      "dateFinished": "Mar 7, 2016 9:07:06 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nCalculate average sepal length per class",
-      "dateUpdated": "Feb 26, 2016 12:04:13 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:56 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -488,7 +505,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -502,14 +520,14 @@
         "msg": "\u003cp\u003eCalculate average sepal length per class\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:12:07 PM",
-      "dateStarted": "Feb 26, 2016 12:04:13 PM",
-      "dateFinished": "Feb 26, 2016 12:04:13 PM",
+      "dateStarted": "Mar 7, 2016 9:14:56 PM",
+      "dateFinished": "Mar 7, 2016 9:14:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ntuples \u003d iris.map(lambda row: [row[4], row[0]]) \n\nresult \u003d tuples.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\npprint(result)",
-      "dateUpdated": "Feb 26, 2016 10:00:56 AM",
+      "dateUpdated": "Mar 7, 2016 9:07:11 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -521,7 +539,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -530,15 +549,15 @@
       "jobName": "paragraph_1455731053446_174159554",
       "id": "20160217-184413_920390523",
       "dateCreated": "Feb 17, 2016 6:44:13 PM",
-      "dateStarted": "Feb 26, 2016 10:00:56 AM",
-      "dateFinished": "Feb 26, 2016 10:00:59 AM",
+      "dateStarted": "Mar 7, 2016 9:07:11 PM",
+      "dateFinished": "Mar 7, 2016 9:07:11 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n# (LAB 3) Working with DataFrames converted from RDDs",
-      "dateUpdated": "Feb 26, 2016 12:04:16 PM",
+      "dateUpdated": "Mar 7, 2016 9:14:58 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -551,7 +570,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -565,14 +585,14 @@
         "msg": "\u003ch1\u003e(LAB 3) Working with DataFrames converted from RDDs\u003c/h1\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:18:15 PM",
-      "dateStarted": "Feb 26, 2016 12:04:16 PM",
-      "dateFinished": "Feb 26, 2016 12:04:16 PM",
+      "dateStarted": "Mar 7, 2016 9:14:58 PM",
+      "dateFinished": "Mar 7, 2016 9:14:58 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 3.1 Transform Iris RDD to DataFrame",
-      "dateUpdated": "Feb 26, 2016 12:04:18 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:00 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -585,7 +605,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -599,14 +620,14 @@
         "msg": "\u003ch2\u003e3.1 Transform Iris RDD to DataFrame\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:26:46 PM",
-      "dateStarted": "Feb 26, 2016 12:04:18 PM",
-      "dateFinished": "Feb 26, 2016 12:04:18 PM",
+      "dateStarted": "Mar 7, 2016 9:15:00 PM",
+      "dateFinished": "Mar 7, 2016 9:15:00 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"sepalLength\", DoubleType(),  True), \\\n   StructField(\"sepalWidth\",  DoubleType(),  True), \\\n   StructField(\"PetalLength\", DoubleType(),  True), \\\n   StructField(\"PetalWidth\",  DoubleType(),  True), \\\n   StructField(\"Class\",       StringType(),  True)\n])\n\nirisDf \u003d sqlContext.createDataFrame(iris, schema\u003dschema)\n\nsqlContext.registerDataFrameAsTable(irisDf, \"Iris\")\n\nirisDf.show()",
-      "dateUpdated": "Feb 26, 2016 10:01:02 AM",
+      "dateUpdated": "Mar 7, 2016 9:07:15 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -618,7 +639,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -627,15 +649,15 @@
       "jobName": "paragraph_1455733137494_-827370313",
       "id": "20160217-191857_674202811",
       "dateCreated": "Feb 17, 2016 7:18:57 PM",
-      "dateStarted": "Feb 26, 2016 10:01:02 AM",
-      "dateFinished": "Feb 26, 2016 10:01:06 AM",
+      "dateStarted": "Mar 7, 2016 9:07:15 PM",
+      "dateFinished": "Mar 7, 2016 9:07:16 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nirisDf.select([\"Class\", \"sepalLength\"]).groupBy(\"Class\").avg(\"sepalLength\").show()",
-      "dateUpdated": "Feb 22, 2016 12:05:05 PM",
+      "dateUpdated": "Mar 7, 2016 9:07:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -647,7 +669,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -656,15 +679,15 @@
       "jobName": "paragraph_1455733142141_535025542",
       "id": "20160217-191902_1601893514",
       "dateCreated": "Feb 17, 2016 7:19:02 PM",
-      "dateStarted": "Feb 22, 2016 12:05:05 PM",
-      "dateFinished": "Feb 22, 2016 12:05:19 PM",
+      "dateStarted": "Mar 7, 2016 9:07:20 PM",
+      "dateFinished": "Mar 7, 2016 9:07:21 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n\nselect Class, avg(sepalLength) as avgSL\nfrom Iris\ngroup by Class",
-      "dateUpdated": "Feb 22, 2016 12:05:21 PM",
+      "dateUpdated": "Mar 7, 2016 9:07:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -694,7 +717,8 @@
             }
           }
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/sql",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -703,15 +727,15 @@
       "jobName": "paragraph_1455734701542_-4767895",
       "id": "20160217-194501_913187085",
       "dateCreated": "Feb 17, 2016 7:45:01 PM",
-      "dateStarted": "Feb 22, 2016 12:05:21 PM",
-      "dateFinished": "Feb 22, 2016 12:05:30 PM",
+      "dateStarted": "Mar 7, 2016 9:07:22 PM",
+      "dateFinished": "Mar 7, 2016 9:07:24 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n# (LAB 4) Analyze World Development Indicators \n\n## 4.1 Load World Development Indicators from HDFS as DataFrame\n\n**Data source:** https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\n\n**Changes:** Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE) ",
-      "dateUpdated": "Feb 26, 2016 12:04:21 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:03 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -724,7 +748,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -738,14 +763,14 @@
         "msg": "\u003ch1\u003e(LAB 4) Analyze World Development Indicators\u003c/h1\u003e\n\u003ch2\u003e4.1 Load World Development Indicators from HDFS as DataFrame\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eData source:\u003c/strong\u003e https://www.kaggle.com/worldbank/world-development-indicators/downloads/world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eChanges:\u003c/strong\u003e Reduced to a subset with countries of the European Union only  (AUT, BEL, BUL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROM, SVK, SVN, SWE)\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:21 PM",
-      "dateFinished": "Feb 26, 2016 12:04:21 PM",
+      "dateStarted": "Mar 7, 2016 9:15:03 PM",
+      "dateFinished": "Mar 7, 2016 9:15:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sh\n\nhdfs dfs -ls /tmp/europe-indicators.csv",
-      "dateUpdated": "Feb 22, 2016 7:30:33 PM",
+      "dateUpdated": "Mar 7, 2016 9:07:30 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sh",
@@ -757,7 +782,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -766,15 +792,15 @@
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_474000621",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:30:33 PM",
-      "dateFinished": "Feb 22, 2016 7:30:42 PM",
-      "status": "FINISHED",
+      "dateStarted": "Mar 7, 2016 9:07:30 PM",
+      "dateFinished": "Mar 7, 2016 9:07:33 PM",
+      "status": "ERROR",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\nindicators_csv \u003d sqlContext.read.load(\u0027/tmp/europe-indicators.csv\u0027, format\u003d\u0027com.databricks.spark.csv\u0027, header\u003d\u0027true\u0027, schema\u003dschema).cache()\nsqlContext.registerDataFrameAsTable(indicators_csv, \"IndicatorsRDD\")\n\nprint(indicators_csv.count())\n\n",
-      "dateUpdated": "Feb 26, 2016 8:13:39 AM",
+      "dateUpdated": "Mar 7, 2016 9:09:14 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -786,7 +812,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -795,15 +822,15 @@
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_227211711",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 8:13:39 AM",
-      "dateFinished": "Feb 26, 2016 8:13:39 AM",
-      "status": "ERROR",
+      "dateStarted": "Mar 7, 2016 9:09:14 PM",
+      "dateFinished": "Mar 7, 2016 9:09:17 PM",
+      "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nLet\u0027s look at the schema of the Indicators table",
-      "dateUpdated": "Feb 26, 2016 12:04:24 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:06 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -816,7 +843,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -830,14 +858,14 @@
         "msg": "\u003cp\u003eLet\u0027s look at the schema of the Indicators table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:24 PM",
-      "dateFinished": "Feb 26, 2016 12:04:24 PM",
+      "dateStarted": "Mar 7, 2016 9:15:06 PM",
+      "dateFinished": "Mar 7, 2016 9:15:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nindicators_csv.printSchema()\nindicators_csv.sample(False, 0.1).show()",
-      "dateUpdated": "Feb 26, 2016 8:12:43 AM",
+      "dateUpdated": "Mar 7, 2016 9:09:21 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -849,7 +877,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -858,15 +887,15 @@
       "jobName": "paragraph_1455721677994_-631170955",
       "id": "20160217-160757_785447344",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 8:12:43 AM",
-      "dateFinished": "Feb 26, 2016 8:12:44 AM",
-      "status": "ERROR",
+      "dateStarted": "Mar 7, 2016 9:09:21 PM",
+      "dateFinished": "Mar 7, 2016 9:09:21 PM",
+      "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nCode/value encoding is not that optimal ... Let\u0027s transform the data set and store the result os ORC\n",
-      "dateUpdated": "Feb 26, 2016 12:04:26 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:08 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -879,7 +908,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -893,14 +923,14 @@
         "msg": "\u003cp\u003eCode/value encoding is not that optimal \u0026hellip; Let\u0027s transform the data set and store the result os ORC\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:26 PM",
-      "dateFinished": "Feb 26, 2016 12:04:26 PM",
+      "dateStarted": "Mar 7, 2016 9:15:08 PM",
+      "dateFinished": "Mar 7, 2016 9:15:08 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 4.2 Transform Indicators table to Columns \n",
-      "dateUpdated": "Feb 26, 2016 12:04:27 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:10 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -913,7 +943,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -927,14 +958,14 @@
         "msg": "\u003ch2\u003e4.2 Transform Indicators table to Columns\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:27 PM",
-      "dateFinished": "Feb 26, 2016 12:04:28 PM",
+      "dateStarted": "Mar 7, 2016 9:15:10 PM",
+      "dateFinished": "Mar 7, 2016 9:15:10 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nSpark 1.5 does not provide a `pivot` method for DataFrames, hence we need to write our own pivot via RDDs and `aggregateByKey`\n\nSome caveats for this step:\n- Return a row from `merge`, python dictionaries are deprecated\n- `**value` is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\n- Initialize with all indicators and set them to None\n- `.`are not allowed in column names, so replace with `_`",
-      "dateUpdated": "Feb 26, 2016 12:04:30 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:12 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -947,7 +978,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -961,14 +993,14 @@
         "msg": "\u003cp\u003eSpark 1.5 does not provide a \u003ccode\u003epivot\u003c/code\u003e method for DataFrames, hence we need to write our own pivot via RDDs and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSome caveats for this step:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eReturn a row from \u003ccode\u003emerge\u003c/code\u003e, python dictionaries are deprecated\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e**value\u003c/code\u003e is a nice trick to convert a dictionary to a keyword parameter list (Rows are unmutable)\u003c/li\u003e\n\u003cli\u003eInitialize with all indicators and set them to None\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e.\u003c/code\u003eare not allowed in column names, so replace with \u003ccode\u003e_\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:30 PM",
-      "dateFinished": "Feb 26, 2016 12:04:30 PM",
+      "dateStarted": "Mar 7, 2016 9:15:12 PM",
+      "dateFinished": "Mar 7, 2016 9:15:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\ncolumns \u003d indicators_csv.map(lambda row: row.IndicatorCode.replace(\".\", \"_\")).distinct().collect()\nbc \u003d sc.broadcast(columns)\n\ndef seq(u, v):\n    if u \u003d\u003d None: \n        u \u003d {ind: None for ind in bc.value}          # Use value of broadcast variable to initialize the dictionary and ensure all rows have all indicators\n    u[v.IndicatorCode.replace(\".\",\"_\")] \u003d v.Value    # Set this indicators value converted to float\n    return u\n\ndef comb(u1, u2):\n    u1.update(u2)\n    return u1\n\ndef merge(keys, value):\n    value[\"Country\"] \u003d keys[0]\n    value[\"Year\"] \u003d int(keys[1])\n    return Row(**value)\n\ndata \u003d indicators_csv.select([\"CountryCode\", \"IndicatorCode\", \"Year\", \"Value\"])\\\n                     .rdd\\\n                     .keyBy(lambda row: row.CountryCode + \"|\" + str(row.Year))\\\n                     .aggregateByKey(None, seq, comb)\\\n                     .map(lambda tuple: merge(tuple[0].split(\"|\"), tuple[1]))\\\n                     .cache()\n\n",
-      "dateUpdated": "Feb 22, 2016 7:31:21 PM",
+      "dateUpdated": "Mar 7, 2016 9:09:31 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -980,7 +1012,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -989,15 +1022,15 @@
       "jobName": "paragraph_1455721677995_-631555704",
       "id": "20160217-160757_1769713575",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:31:21 PM",
-      "dateFinished": "Feb 22, 2016 7:31:31 PM",
+      "dateStarted": "Mar 7, 2016 9:09:31 PM",
+      "dateFinished": "Mar 7, 2016 9:09:34 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\n\n**Notes:**\n\n- The StructType schema **has to be sorted!** Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\n- Also, due to the many null values, automatic schema inference will only work properly when \"samplingRatio\u003d100\" in createDataFrame. However, I wouldn\u0027t rely on it ...",
-      "dateUpdated": "Feb 26, 2016 12:04:37 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:15 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1010,7 +1043,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1024,14 +1058,14 @@
         "msg": "\u003cp\u003eFinally, transform RDD back to DataFrame and register a table with the hiveContext (due to ORC)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNotes:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe StructType schema \u003cstrong\u003ehas to be sorted!\u003c/strong\u003e Spark does not match schema names with Row column names but uses the order of elements in Row and schema to apply types\u003c/li\u003e\n\u003cli\u003eAlso, due to the many null values, automatic schema inference will only work properly when \u0026ldquo;samplingRatio\u003d100\u0026rdquo; in createDataFrame. However, I wouldn\u0027t rely on it \u0026hellip;\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:37 PM",
-      "dateFinished": "Feb 26, 2016 12:04:37 PM",
+      "dateStarted": "Mar 7, 2016 9:15:15 PM",
+      "dateFinished": "Mar 7, 2016 9:15:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nsqlContext.setConf(\"spark.sql.orc.filterPushdown\", \"true\")\n\nfields \u003d [StructField(ind, DoubleType(), True) for ind in columns ] + \\\n         [StructField(\"Year\", IntegerType(), False), StructField(\"Country\", StringType(), False)]\nsortedFields \u003d sorted(fields, key\u003dlambda x: x.name)\nsortedSchema \u003d StructType(fields\u003dsortedFields)\n\nindicators \u003d sqlContext.createDataFrame(data, schema \u003d sortedSchema)\nsqlContext.registerDataFrameAsTable(indicators, \"Indicators\")",
-      "dateUpdated": "Feb 22, 2016 7:31:35 PM",
+      "dateUpdated": "Mar 7, 2016 9:09:37 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1043,7 +1077,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1052,15 +1087,15 @@
       "jobName": "paragraph_1455721677995_-631555704",
       "id": "20160217-160757_1498734662",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:31:35 PM",
-      "dateFinished": "Feb 22, 2016 7:31:55 PM",
+      "dateStarted": "Mar 7, 2016 9:09:37 PM",
+      "dateFinished": "Mar 7, 2016 9:09:38 PM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## 4.3 Save transformed table as ORC",
-      "dateUpdated": "Feb 26, 2016 12:04:40 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:20 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1073,7 +1108,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1087,14 +1123,14 @@
         "msg": "\u003ch2\u003e4.3 Save transformed table as ORC\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 26, 2016 12:04:40 PM",
-      "dateFinished": "Feb 26, 2016 12:04:40 PM",
+      "dateStarted": "Mar 7, 2016 9:15:20 PM",
+      "dateFinished": "Mar 7, 2016 9:15:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sh\nhdfs dfs -rm -r /tmp/europe-indicators_transformed_orc\n",
-      "dateUpdated": "Feb 22, 2016 7:31:56 PM",
+      "dateUpdated": "Mar 7, 2016 9:09:42 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sh",
@@ -1106,7 +1142,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1115,15 +1152,15 @@
       "jobName": "paragraph_1455721677999_-633094700",
       "id": "20160217-160757_1122870613",
       "dateCreated": "Feb 17, 2016 4:07:57 PM",
-      "dateStarted": "Feb 22, 2016 7:31:56 PM",
-      "dateFinished": "Feb 22, 2016 7:32:02 PM",
-      "status": "FINISHED",
+      "dateStarted": "Mar 7, 2016 9:09:42 PM",
+      "dateFinished": "Mar 7, 2016 9:09:43 PM",
+      "status": "ERROR",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nindicators.write.orc(\"/tmp/europe-indicators_transformed_orc\")\n",
-      "dateUpdated": "Feb 22, 2016 7:32:06 PM",
+      "dateUpdated": "Mar 7, 2016 9:09:46 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1135,7 +1172,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1144,15 +1182,15 @@
       "jobName": "paragraph_1455721678000_-622706479",
       "id": "20160217-160758_1399156780",
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 22, 2016 7:32:06 PM",
-      "dateFinished": "Feb 22, 2016 7:32:14 PM",
-      "status": "FINISHED",
+      "dateStarted": "Mar 7, 2016 9:09:46 PM",
+      "dateFinished": "Mar 7, 2016 9:13:50 PM",
+      "status": "ERROR",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## 4.4 Some simple Queries",
-      "dateUpdated": "Feb 26, 2016 12:04:43 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:23 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1165,7 +1203,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1179,14 +1218,14 @@
         "msg": "\u003ch2\u003e4.4 Some simple Queries\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 26, 2016 12:04:43 PM",
-      "dateFinished": "Feb 26, 2016 12:04:44 PM",
+      "dateStarted": "Mar 7, 2016 9:15:23 PM",
+      "dateFinished": "Mar 7, 2016 9:15:23 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nLoad ORC data again to benefit from predicate pushdow, etc",
-      "dateUpdated": "Feb 26, 2016 12:04:46 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:25 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1199,7 +1238,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1213,8 +1253,8 @@
         "msg": "\u003cp\u003eLoad ORC data again to benefit from predicate pushdow, etc\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 26, 2016 12:04:46 PM",
-      "dateFinished": "Feb 26, 2016 12:04:46 PM",
+      "dateStarted": "Mar 7, 2016 9:15:25 PM",
+      "dateFinished": "Mar 7, 2016 9:15:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1249,7 +1289,7 @@
     },
     {
       "text": "%md\n\nExecute some queries",
-      "dateUpdated": "Feb 26, 2016 12:04:48 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:28 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1262,7 +1302,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1276,8 +1317,8 @@
         "msg": "\u003cp\u003eExecute some queries\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 7:50:06 PM",
-      "dateStarted": "Feb 26, 2016 12:04:48 PM",
-      "dateFinished": "Feb 26, 2016 12:04:48 PM",
+      "dateStarted": "Mar 7, 2016 9:15:28 PM",
+      "dateFinished": "Mar 7, 2016 9:15:28 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1457,7 +1498,7 @@
     },
     {
       "text": "%md\n## Optional: Pure SQL approach\n\nOf course, this result could have been calculated without pivoting the table",
-      "dateUpdated": "Feb 26, 2016 12:04:52 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:32 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1470,7 +1511,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1484,8 +1526,8 @@
         "msg": "\u003ch2\u003eOptional: Pure SQL approach\u003c/h2\u003e\n\u003cp\u003eOf course, this result could have been calculated without pivoting the table\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 26, 2016 12:04:52 PM",
-      "dateFinished": "Feb 26, 2016 12:04:52 PM",
+      "dateStarted": "Mar 7, 2016 9:15:32 PM",
+      "dateFinished": "Mar 7, 2016 9:15:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1588,7 +1630,7 @@
     },
     {
       "text": "%md\n# (Lab 5) Clustering with Spark ML\n\n## 5.1 Select relevant data\n",
-      "dateUpdated": "Feb 26, 2016 12:04:55 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:35 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1601,7 +1643,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1615,14 +1658,14 @@
         "msg": "\u003ch1\u003e(Lab 5) Clustering with Spark ML\u003c/h1\u003e\n\u003ch2\u003e5.1 Select relevant data\u003c/h2\u003e\n"
       },
       "dateCreated": "Feb 17, 2016 4:07:58 PM",
-      "dateStarted": "Feb 26, 2016 12:04:55 PM",
-      "dateFinished": "Feb 26, 2016 12:04:55 PM",
+      "dateStarted": "Mar 7, 2016 9:15:35 PM",
+      "dateFinished": "Mar 7, 2016 9:15:35 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndef cvtCodes(code):\n    return code.lower().replace(\".\", \"_\")\n    \nfeatures \u003d [\n    cvtCodes(c) for c in [\n        \"SL.UEM.1524.NE.ZS\",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n        \"GC.BAL.CASH.GD.ZS\",   # Cash surplus/deficit (% of GDP)\n        \"FP.CPI.TOTL.ZG\"       # Inflation, consumer prices (annual %) \n    ]\n]\n\nyears \u003d [2007, 2008, 2009, 2010, 2011, 2012]\neu \u003d indicators_t[indicators_t.year.isin(years)].select([\"country\", \"year\"] + features)\n\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
-      "dateUpdated": "Feb 23, 2016 5:08:56 PM",
+      "text": "%pyspark\n\ndef cvtCodes(code):\n    return code.lower().replace(\".\", \"_\")\n    \nfeatures \u003d [\n    cvtCodes(c) for c in [\n        \"SL.UEM.1524.NE.ZS\",   # Unemployment, youth total (% of total labor force ages 15-24) (national estimate)\n        \"GC.BAL.CASH.GD.ZS\",   # Cash surplus/deficit (% of GDP)\n        \"FP.CPI.TOTL.ZG\"       # Inflation, consumer prices (annual %) \n    ]\n]\n\nyears \u003d [2007, 2008, 2009, 2010, 2011, 2012]\neu \u003d indicators_t[indicators_t.Year.isin(years)].select([\"country\", \"year\"] + features)\n\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
+      "dateUpdated": "Mar 7, 2016 9:14:35 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1634,7 +1677,8 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1651,7 +1695,7 @@
     },
     {
       "text": "%md\n\n## 5.2 Create KMeans Pipeline\n\nNote: Input columns (features) need to be in `Vector` format. `pyspark.ml.feature.VectorAssembler` allows to pipeline this",
-      "dateUpdated": "Feb 26, 2016 12:04:57 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:38 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1665,7 +1709,8 @@
         },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1679,8 +1724,8 @@
         "msg": "\u003ch2\u003e5.2 Create KMeans Pipeline\u003c/h2\u003e\n\u003cp\u003eNote: Input columns (features) need to be in \u003ccode\u003eVector\u003c/code\u003e format. \u003ccode\u003epyspark.ml.feature.VectorAssembler\u003c/code\u003e allows to pipeline this\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2016 10:36:42 AM",
-      "dateStarted": "Feb 26, 2016 12:04:57 PM",
-      "dateFinished": "Feb 26, 2016 12:04:57 PM",
+      "dateStarted": "Mar 7, 2016 9:15:38 PM",
+      "dateFinished": "Mar 7, 2016 9:15:38 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1715,7 +1760,7 @@
     },
     {
       "text": "%md\n\n## 5.3 Visualize Countries in classes over years\n\n**Caveat**: The classes are **not** to interprete as an ordered list, they are complete random!",
-      "dateUpdated": "Feb 26, 2016 12:05:01 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:41 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1728,7 +1773,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1742,8 +1788,8 @@
         "msg": "\u003ch2\u003e5.3 Visualize Countries in classes over years\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eCaveat\u003c/strong\u003e: The classes are \u003cstrong\u003enot\u003c/strong\u003e to interprete as an ordered list, they are complete random!\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:06:39 PM",
-      "dateStarted": "Feb 26, 2016 12:05:01 PM",
-      "dateFinished": "Feb 26, 2016 12:05:02 PM",
+      "dateStarted": "Mar 7, 2016 9:15:41 PM",
+      "dateFinished": "Mar 7, 2016 9:15:41 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1812,7 +1858,7 @@
     },
     {
       "text": "%md\n\n## 5.4 Show countries per year and class as lists\n\nNote: There is no function for `GroupedData` to collect values as list. Hence, back to `RDD` and `aggregateByKey`",
-      "dateUpdated": "Feb 26, 2016 12:05:03 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:43 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1825,7 +1871,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1839,8 +1886,8 @@
         "msg": "\u003ch2\u003e5.4 Show countries per year and class as lists\u003c/h2\u003e\n\u003cp\u003eNote: There is no function for \u003ccode\u003eGroupedData\u003c/code\u003e to collect values as list. Hence, back to \u003ccode\u003eRDD\u003c/code\u003e and \u003ccode\u003eaggregateByKey\u003c/code\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:08:16 PM",
-      "dateStarted": "Feb 26, 2016 12:05:03 PM",
-      "dateFinished": "Feb 26, 2016 12:05:03 PM",
+      "dateStarted": "Mar 7, 2016 9:15:43 PM",
+      "dateFinished": "Mar 7, 2016 9:15:44 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1875,7 +1922,7 @@
     },
     {
       "text": "%md\n\n### Little helper for indicator codes",
-      "dateUpdated": "Feb 26, 2016 12:05:07 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1888,7 +1935,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1902,8 +1950,8 @@
         "msg": "\u003ch3\u003eLittle helper for indicator codes\u003c/h3\u003e\n"
       },
       "dateCreated": "Feb 21, 2016 10:01:07 PM",
-      "dateStarted": "Feb 26, 2016 12:05:07 PM",
-      "dateFinished": "Feb 26, 2016 12:05:07 PM",
+      "dateStarted": "Mar 7, 2016 9:15:47 PM",
+      "dateFinished": "Mar 7, 2016 9:15:47 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1961,7 +2009,7 @@
     },
     {
       "text": "%md \n# (Lab 6) Spark Streaming\n\n## 6.1 Streaming from terminal \n\nSteps:\n- Open an ssh terminal to your cluster\n- Get the python code\n\n    ```bash\n    wget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py\n    ```\n\n- Look at [SimpleKafkaStreaming](https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming) and follow Steps 2 and 3",
-      "dateUpdated": "Feb 26, 2016 12:05:09 PM",
+      "dateUpdated": "Mar 7, 2016 9:15:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1974,7 +2022,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -1988,8 +2037,8 @@
         "msg": "\u003ch1\u003e(Lab 6) Spark Streaming\u003c/h1\u003e\n\u003ch2\u003e6.1 Streaming from terminal\u003c/h2\u003e\n\u003cp\u003eSteps:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eOpen an ssh terminal to your cluster\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eGet the python code\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"bash\"\u003ewget https://raw.githubusercontent.com/anset/SparkDemos/master/SimpleKafkaStreaming/direct_kafka_wordcount.py\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eLook at \u003ca href\u003d\"https://github.com/anset/SparkDemos/tree/master/SimpleKafkaStreaming\"\u003eSimpleKafkaStreaming\u003c/a\u003e and follow Steps 2 and 3\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 26, 2016 8:11:56 AM",
-      "dateStarted": "Feb 26, 2016 12:05:09 PM",
-      "dateFinished": "Feb 26, 2016 12:05:09 PM",
+      "dateStarted": "Mar 7, 2016 9:15:48 PM",
+      "dateFinished": "Mar 7, 2016 9:15:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2010,10 +2059,10 @@
   "name": "Spark Masterclass",
   "id": "2BB5HRGZ2",
   "angularObjects": {
-    "2BBTUECXQ": [],
-    "2BEVNBGSX": [],
-    "2BE17W31H": [],
-    "2BC4V38PV": []
+    "2AXJWX8UE": [],
+    "2AYJU33A2": [],
+    "2AZHQMDRQ": [],
+    "2AWXZJ28K": []
   },
   "config": {},
   "info": {}
